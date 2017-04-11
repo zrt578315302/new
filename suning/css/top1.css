@@ -1,0 +1,183 @@
+ .normal {
+     border-left: 5px solid transparent;
+     /* 左边框的宽 */
+     border-right: 5px solid transparent;
+     /* 右边框的宽 */
+     border-top: 5px solid #2f2f2f;
+     /* 下边框的长度|高,以及背景色 */
+     position: absolute;
+     top: 50%;
+     right: 10px;
+     transform: translate(-50%, -50%)
+ }
+ 
+ #top1,
+ #top2 {
+     position: relative
+ }
+ 
+ .up {
+     border-left: 5px solid transparent;
+     /* 左边框的宽 */
+     border-right: 5px solid transparent;
+     /* 右边框的宽 */
+     border-bottom: 5px solid #2f2f2f;
+     /* 下边框的长度|高,以及背景色 */
+     position: absolute;
+     top: 50%;
+     right: 10px;
+     transform: translate(-50%, -50%)
+ }
+ 
+ * {
+     margin: 0px;
+     padding: 0px;
+     font-size: 12px;
+ }
+ 
+ #hehe {
+     position: absolute;
+     top: 36px;
+     display: none;
+     left: -1px;
+ }
+ 
+ .top {
+     height: 36px;
+     border: 1px solid #ccc;
+     background-color: #eee;
+     position: relative;
+ }
+ 
+ .one {
+     width: 1190px;
+     height: 36px;
+     margin: 0 auto;
+ }
+ 
+ #top1 {
+     height: 36px;
+     float: left;
+     width: 85px;
+     margin-left: 2px;
+ }
+ 
+ #top1 a active {
+     color: black;
+ }
+ 
+ .topa1 {
+     height: 34px;
+     width: 85px;
+     border: 1px solid #ccc;
+     background-color: white;
+ }
+ 
+ .topa2 {
+     border: 1px solid #ccc;
+     background-color: white;
+     border-bottom: 1px solid white;
+ }
+ 
+ #top2 {
+     height: 36px;
+     float: left;
+     width: 81px;
+ }
+ 
+ #top1 p,
+ #top2 p {
+     text-decoration: none;
+     width: 88px;
+     height: 35px;
+     line-height: 35px;
+     padding-left: 8px;
+ }
+ 
+ .hideya {
+     height: 240px;
+     width: 1005px;
+     border-left: 1px solid #ccc;
+     border-top: none;
+     padding-left: 10px;
+     margin-top: 2px;
+ }
+ 
+ .hide0 {
+     width: 200px;
+     height: 240px;
+     border: 1px solid #ccc;
+     border-top: none;
+     border-bottom: none;
+     float: left;
+     border-left: none;
+ }
+ 
+ .hide0 p {
+     width: 200px;
+     height: 35px;
+     line-height: 35px;
+     padding-left: 20px;
+ }
+ 
+ .hide0 li {
+     line-height: 25px;
+     margin-left: 20px;
+     list-style: none;
+ }
+ 
+ .hide0 ul {
+     float: left;
+ }
+ 
+ .hide2 {
+     margin-left: 10px;
+ }
+ 
+ .hide0 a {
+     line-height: 20px;
+     text-decoration: none;
+ }
+ 
+ .aiyo {
+     background: white;
+     border: 1px solid #ccc;
+     border-bottom: 1px solid white;
+     border-top: none;
+ }
+ 
+ .hidewa {
+     margin-top: 1px;
+     width: 168px;
+     height: 100px;
+     border: 1px solid #ccc;
+     display: none;
+     margin-left: -1px;
+     border-top: none;
+ }
+ 
+ .hidewa-1,
+ .hidewa-2 {
+     float: left;
+ }
+ 
+ .hidewa-1 {
+     list-style: none;
+     display: block;
+     width: 80px;
+     margin-left: 8px;
+     margin-top: 10px;
+ }
+ 
+ .hidewa-2 {
+     list-style: none;
+     display: block;
+     margin-top: 10px;
+ }
+ 
+ .hidewa a {
+     text-decoration: none;
+     display: block;
+     height: 25px;
+     line-height: 25px;
+ }

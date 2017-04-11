@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>会员列表</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link href="css/base.css" type="text/css" rel="stylesheet" />
+		<link href="css/common.css" type="text/css" rel="stylesheet" />
+		<link href="css/lhstyle.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="wrapper viplist">
+			<div class="reserch clearfix pL5 pR5 font12">
+				<ul>
+					<li class="inputli clearfix pL5">
+						<img src="images/reserch.png" alt="">
+						<input class="borN" type="text" name="" placeholder="输入会员名/会员编码/手机号进行搜索">
+					</li>
+					<li class="rescha"><a href="">搜索</a></li>
+				</ul>
+			</div>
+			<div class="tabdiv font10 clearfix font12">
+				<ul id="selectItem">
+					<li class="active">所有</li>
+					<li>未开通</li>
+					<li>未激活</li>
+					<li>已激活</li>
+					<li style="border:none;">已兑购</li>
+				</ul>
+			</div>
+			<div class="vip font10 clearfix font12" id="viplist">
+				<script type="text/html" id="viplist-tmpl">
+					<% if(data.length >0 ) {%>
+					<%
+						for(var i=0 ;i<data.length; i++){
+							
+					%>
+					<div class="vipdetail pL5 pR5">
+						<ul class="user_infoul">
+							<li class="state"><%=data[i].remark%></li>
+							<li class="user_code">账号：<%=data[i].user_code%></li>
+							<li>真实姓名：<%=data[i].user_name%></li>
+							<li>手机号：<%=data[i].phone%></li>
+							<li>注册时间：<%=data[i].create_time%></li>
+							<li>
+								<div class="btn">
+								
+									
+									<% if(data[i].remark=="未开通"){%>
+										<a class="dalect" href="javascript:void(0);" style="" onclick="delect(<%= i%>);">删除</a>
+									    <a href="javascript:void(0)" class="passvip" onclick="passvip(<%= i%>);">开通</a>
+									<%}%>
+									<a href="vip_info.html?user_code=<%=data[i].user_code%>">查看</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<% } %>
+					<% }else{ %>
+						<p>没有此类会员</p>
+						<%}%>
+				</script>
+						<!--<div class="vipdetail pL5 pR5">
+				<ul>
+					<li class="state">未开通</li>
+					<li>账号:</li>
+					<li>真实姓名:</li>
+					<li>手机号:</li>
+					<li>注册时间:</li>
+					<li>
+						<div class="btn">
+							<a href="">开通</a>
+							<a href="">查看</a>
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="vipdetail pL5 pR5">
+				<ul>
+					<li class="state">已激活</li>
+					<li>账号:</li>
+					<li>真实姓名:</li>
+					<li>手机号:</li>
+					<li>注册时间:</li>
+					<li>
+						<div class="btn">
+							<a href="">查看</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="vipdetail pL5 pR5">
+				<ul>
+					<li class="state">未激活</li>
+					<li>账号:</li>
+					<li>真实姓名:</li>
+					<li>手机号:</li>
+					<li>注册时间:</li>
+					<li>
+						<div class="btn">
+							<a href="">查看</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="vipdetail pL5 pR5">
+				<ul>
+					<li class="state">已兑购</li>
+					<li>账号:</li>
+					<li>真实姓名:</li>
+					<li>手机号:</li>
+					<li>注册时间:</li>
+					<li>
+						<div class="btn">
+							<a href="">查看</a>
+						</div>
+					</li>
+				</ul>
+			</div>-->
+					</div>
+			</div>
+	</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="apijs/config.js"></script>
+    <script type="text/javascript" src="apijs/common.js"></script>
+    <script type="text/javascript" src="apijs/zepto.min.js"></script>
+    <script type="text/javascript" src="apijs/template.js"></script>
+    <script type="text/javascript" src="apijs/viplist.js"></script>
+</html>

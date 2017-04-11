@@ -1,0 +1,49 @@
+/*登录*/
+.login_inp{border:none;height:34px;border-radius:7px;line-height:34px;text-indent:50px;}
+.login_ul li{position:relative;}
+.login_ul li img{position:absolute;left:40px;top:50%;margin-top:-10px;}
+.login_wj{padding:0 13px 0 17px;line-height:30px;overflow:hidden;}
+.login_button{border:none;height:34px;border-radius:7px;line-height:34px;}
+.login_link{overflow:hidden;margin-top:37px;}
+.login_link a{margin:0 47px;}
+/*注册商家*/
+.regist_main{width:92%;border-radius:7px;overflow:hidden;}
+.register_ul li{height:43px;border-bottom:1px solid #d2d2d2;position:relative;}
+.refister_icon{width:13%;border-right:1px solid #d2d2d2;height:21px;margin-top:12px;display:table-cell;vertical-align:middle;}
+.refister_icon i { display:inline-block;height:100%;vertical-align:middle;}
+.refister_icon img {vertical-align:middle }
+.register_inp{width:86%;height:21px;margin-top:12px;text-indent:13px;}
+.register_pass{height:31px;width:92%;border-radius:7px;}
+.register_yzm{position:absolute;right:25px;top:12px;width:68px;height:20px;line-height:20px;border-radius:7px;}
+.register_address select{width:27%;float:left;margin-top:10px;}
+/*首页*/
+.index_top{padding-top:7px;padding-bottom:10px;}
+.index_top ul{width:101%;}
+.index_top li{width:33%;float:left;border-right:1px solid #d2d2d2;padding-top:7px;padding-bottom:5px;}
+.index_href{display:block;height:31px;border-radius:7px;line-height:31px;}
+.footer li{width:25%;float:left;}
+/*会员信息*/
+.info_left{border-right:1px solid #e5e5e5;height:20px;margin-top:7px;line-height:20px;padding:0 16px 0 22px;}
+.info_ul li{height:34px;border-bottom:1px solid #d2d2d2;line-height:34px;}
+.info_view{padding-left:8px;}
+/*积分兑换*/
+.integral_li li{border-top:1px solid #d2d2d2;border-bottom:1px solid #d2d2d2;height:42px;background:#fff;margin-top:10px;line-height:42px;overflow:hidden;}
+.integral_li .integral_left{height:25px;line-height:25px;margin-top:9px;border-right:1px solid #e5e5e5;}
+.int_main{padding:0 20px 0 15px;}
+/*内容*/
+.content_top{padding:17px 0 15px 0;}
+.content_main p{padding:0 23px;line-height:23px;}
+/*我是商家*/
+.business_soso{overflow:hidden;padding:11px 11px 12px;}
+.soso_ss{border:1px solid #666666;height:26px;text-indent:29px;border-radius:7px;background:url(../img/ss.png) no-repeat 8px center;background-size:13px;}
+.soso_but{height:27px;border-radius:7px;}
+.my_bao{height:42px;line-height:42px;padding:0 36px;}
+.my_left{height:21px;line-height:21px;margin-top:11px;border-right:1px solid #e5e5e5;padding-right:11px;margin-right:11px;}
+.busin_list ul{width:104%}
+.busin_list li{float:left;width:24%;border-right:1px solid #d4d4d4;border-bottom:1px solid #d4d4d4;padding-top:20px;padding-bottom:20px;}
+/*设置*/
+.set_up li{height:38px;border-top:1px solid #d2d2d2;border-bottom:1px solid #d2d2d2;margin-top:10px;background:#fff;padding-left:31px;line-height:38px;position:relative;}
+.set_up li img{position:absolute;right:17px;top:50%;margin-top:-8px;}
+.set_up li a{display:block;}
+.user_list li{position:relative;}
+.user_list li .xing{position:absolute;right:13px;top:50%;margin-top:-3px;}

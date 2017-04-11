@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>积分明细</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+	<link href="css/base.css" type="text/css" rel="stylesheet"/>
+	<link href="css/common.css" type="text/css" rel="stylesheet"/>
+</head>
+<body style="background:#f7f7f7;">
+	<div class="main">
+    	<ul class="integral_li" id="integral">
+    		<script type="text/html" id="integral-tmpl">
+    		<% if(data.length >0 ) {%>
+				<% for(var i=0 ;i<data.length; i++){ %>
+    			    <li>
+            	        <div class="integral_left fl font16 c333 wd20 texC"><%= data[i].type_name %></div>
+                        <div class="integral_right fl wd75">
+                	        <div class="int_main font14">
+                	            <span class="fl"><%= data[i].integral %></span>
+                	                <span class="fr"><%= data[i].create_time %></span>
+                	        </div>
+                        </div>
+                    </li>
+                <% } %>
+            <% } %>
+    		</script>
+        	<!--<li>
+            	<div class="integral_left fl font16 c333 wd20 texC">兑换</div>
+                <div class="integral_right fl wd75">
+                	<div class="int_main font14"><span class="fl">1000</span><span class="fr">2016-01-01   18:00:00</span></div>
+                </div>
+            </li>
+            <li>
+            	<div class="integral_left fl font16 c333 wd20 texC">兑换</div>
+                <div class="integral_right fl wd75">
+                	<div class="int_main font14"><span class="fl">1000</span><span class="fr">2016-01-01   18:00:00</span></div>
+                </div>
+            </li>
+            <li>
+            	<div class="integral_left fl font16 c333 wd20 texC">赠送</div>
+                <div class="integral_right fl wd75">
+                	<div class="int_main font14"><span class="fl">90</span><span class="fr">2016-01-01   18:00:00</span></div>
+                </div>
+            </li>-->
+        </ul>
+    </div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="apijs/config.js"></script>
+    <script type="text/javascript" src="apijs/common.js"></script>
+    <script type="text/javascript" src="apijs/zepto.min.js"></script>
+    <script type="text/javascript" src="apijs/template.js"></script>
+    <script type="text/javascript" src="apijs/integral_detail.js"></script>
+</body>
+</html>

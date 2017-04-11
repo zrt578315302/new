@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+<title>注册用户</title>
+<link href="css/base.css" type="text/css" rel="stylesheet"/>
+<link href="css/common.css" type="text/css" rel="stylesheet"/>
+<link href="css/animate.css" type="text/css" rel="stylesheet"/>
+</head>
+<body style="background:#f7f7f7;">
+    <div class="main texC">
+    	<form>
+        	<div class="register_wap mB20">
+                <div class="regist_main mA borAll bgfff mT15">
+                    <ul class="register_ul">
+                        <li>
+                            <div class="refister_icon fl texC"><i></i><img src="img/r_8.png" width="15" /></div>
+                            <input id="name" type="text" placeholder="请输入你的真实姓名" class="register_inp fl borN font15">
+                        </li>
+                        <li>
+                            <div class="refister_icon fl texC"><i></i><img src="img/r_9.png" width="19" /></div>
+                            <input id="card" type="text" placeholder="请输入18位身份证号" class="register_inp fl borN font15">
+                        </li>
+                        <li>
+                            <div class="refister_icon fl texC"><i></i><img src="img/r_11.png" width="11" /></div>
+                            <div data-toggle="distpicker" class="register_address" id="city_4">
+                                <select class="prov borN font14 c7f7f" id="prov" style="margin-left:9px;"></select>
+                                <select class="city borN font14 c7f7f" id="city"></select>
+                                <select class="dist borN font14 c7f7f" id="dist"></select>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="refister_icon fl texC"><i></i><img src="img/r_12.png" width="14" /></div>
+                            <input id="adress" type="text" placeholder="请输入您的详细地址" class="register_inp fl borN font15">
+                        </li>
+                        <li>
+                            <div class="refister_icon fl texC"><i></i><img src="img/r_16.png" width="16" /></div>
+                            <input id="user_parent_code" type="text" placeholder="请输入您的推荐人编号" class="register_inp fl borN font15" style="color:;">
+                        </li>
+                        <li>
+                            <div class="refister_icon fl texC"><i></i><img src="img/r_17.png" width="15" /></div>
+							<input id="user_parent_name" type="text" placeholder="自动读取推荐人" class="register_inp fl borN font15">
+                        </li>
+                        <li>
+                            <div class="refister_icon fl texC"><i></i><img src="img/r_18.png" width="14" /></div>
+							<input id="shop_parent_code" type="text" placeholder="请输入商家编号" class="register_inp fl borN font15">
+                        </li>
+                        <li>
+                            <div class="refister_icon fl texC"><i></i><img src="img/r_10.png" width="17" /></div>
+							<input id="shop_parent_name" type="text" placeholder="自动读取商家名称" class="register_inp fl borN font15">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <input id="sure" type="button" value="确 定" class="borN register_pass bg3bb4 cfff font16">
+        </form>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/area/distpicker.data.js"></script>
+<script type="text/javascript" src="js/area/distpicker.js"></script>
+<script type="text/javascript" src="js/area/main.js"></script>
+<script type="text/javascript" src="js/style.js"></script>
+<script type="text/javascript" src="apijs/config.js"></script>
+<script type="text/javascript" src="apijs/common.js"></script>
+<script type="text/javascript" src="apijs/zepto.min.js"></script>
+<script type="text/javascript" src="apijs/template.js"></script>
+<script type="text/javascript" src="apijs/register_user2.js"></script>
+</html>

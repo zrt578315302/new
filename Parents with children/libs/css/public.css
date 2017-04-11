@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+/***************************************默认样式*****************************************************/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, pre, sub, sup, tt, var,
+a, img, abbr, acronym, address, big, cite, code, del, dfn, em, ins, kbd, s, samp, center,
+small, strike, strong, b, u, i, dl, ol, ul, fieldset, form, label, table {
+	margin:0;
+	padding:0;
+	border-width:0;
+	outline:0;
+	vertical-align:baseline;
+	background:transparent;	
+}
+
+body{font-size:12px; background:#ffffff;font-family:"Microsoft Yahei","微软雅黑"}
+
+font{margin:0;padding:0;border-width:0;outline:0;vertical-align:baseline;}
+
+ol, ul{list-style-type:none;}
+
+blockquote, q{padding:0;border-width:0;outline:0;vertical-align:baseline;background:transparent;quotes:none;}
+
+blockquote:before, blockquote:after, q:before, q:after{content:'';content:none;}
+
+table{
+/*    border-collapse:collapse;*/
+    border-spacing:0;}
+
+tbody{vertical-align:baseline;}
+
+:focus{outline:0;}
+
+a{ cursor:pointer; text-decoration:none;}
+
+/****************************** public *********************************/
+.clear{
+	clear:both;
+    zoom:1;
+}
+.clearfix:after{
+   content: "";  
+   display: block;  
+   height: 0;  
+   clear: both;  
+   visibility: hidden;   
+} 
+.clearfix {
+   /* 触发 hasLayout */  
+   zoom: 1;  
+}
+
+/*去掉IE input的 X 统一样式*/
+::-ms-clear, ::-ms-reveal{
+    display: none;
+}
+
+.waiting{
+    display: none;
+}
+.waiting>.mask {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.waiting>.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 40px;
+    width: 40px;
+    border: 5px solid #fff;
+    border-right: 5px solid transparent;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    -webkit-animation: loading .5s infinite linear;
+    animation: loading .5s infinite linear;
+    z-index: 9999;
+}
+
+@-webkit-keyframes loading {
+    from {
+        -webkit-transform: translate(-50%, -50%) rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+    to {
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+@keyframes loading {
+    from {
+        -webkit-transform:translate(-50%, -50%) rotate(360deg);
+        transform:translate(-50%, -50%) rotate(360deg);
+    }
+    to {
+        -webkit-transform:translate(-50%, -50%) rotate(0deg);
+        transform:translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+html{
+	font-size: 10px;
+}
+@media only screen and (min-width: 700px) {
+	html{
+		font-size: 20px;
+	}
+}

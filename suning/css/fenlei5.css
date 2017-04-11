@@ -1,0 +1,328 @@
+ 
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        .fenlei img{border: none;}
+        
+        .fenlei {
+            width: 1349px;
+            margin: 0 auto;
+        }
+        
+        .fenlei li {
+            list-style: none;
+        }
+        
+        .fenlei a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .fzbh {
+            width: 1190px;
+            height: 590px;
+            margin: 0 auto;
+        }
+        
+        .tittle {
+            width: 1190px;
+            height: 40px;
+            margin-top: 20px;
+        }
+        
+        .tittle ul {
+            float: right;
+            height: 34px;
+        }
+        
+        .tittle li {
+            float: left;
+            height: 34px;
+            margin-left: 20px;
+            margin-top: -26px;
+            overflow: hidden;
+        }
+        
+        .tittle h3 {
+            font: bold 20px/34px 'microsoft yahei';
+            height: 40px;
+        }
+        
+        .tittle em {
+            font: bold 14px/34px 'microsoft yahei';
+            vertical-align: middle;
+            color: #666;
+            padding: 0px 1px 0px 1px;
+        }
+        
+        .zuo {
+            float: left;
+            margin-top: 10px;
+            background: #eee;
+        }
+        
+        .zuo-1 {
+            display: block;
+            width: 389px;
+            height: 319px;
+        }
+        
+        .zuo-2 {
+            width: 381px;
+            height: 124px;
+            border-bottom: 1px solid #eee;
+            border-left: 1px solid #eee;
+            background: white;
+        }
+        
+        .zuo-2-1 {
+            float: left;
+            width: 128px;
+            margin: 12px 17px;
+            overflow: hidden;
+        }
+        
+        .zuo-2-2 {
+            float: left;
+            width: 128px;
+            margin: 12px 17px;
+            overflow: hidden;
+            margin-left: 72px;
+        }
+        
+        .zuo-2 a {
+            display: block;
+            float: left;
+            width: 64px;
+            height: 25px;
+            line-height: 25px;
+            color: #666;
+            font-family: "Microsoft Yahei";
+            overflow: hidden;
+            font: 12px/1.5 arial, tahoma, \5b8b\4f53;
+        }
+        
+        .zuo-3 {
+            width: 382px;
+            height: 145px;
+            border-bottom: 1px solid #eee;
+            border-left: 1px solid #eee;
+            background: #eee;
+        }
+        
+        .zuo-3 img {
+            display: block;
+            width: 381px;
+            height: 145px;
+        }
+        
+        .you {
+            background: #eee;
+            width: 806px;
+            height: 585px;
+            float: left;
+            margin-top: -18px;
+            margin-left: -6px;
+        }
+        .youbian{background: #eee;
+            width: 806px;
+            height: 439px;
+            float: left;
+            margin-top: -18px;
+            margin-left: -6px;}
+        .you-1 {
+            border-left: 1px solid #eee;
+            margin-top: 1px;
+            margin-left: -1px;
+        }
+        
+        .you-2 {
+            width: 405px;
+            margin-top: -3px;
+            float: left;
+        }
+        
+        .you-1-1 {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .you-2-1 {
+            display: block;
+            width: 405px;
+            height: 144px;
+            border-bottom: 4px solid #eee;
+        }
+        
+        .you-2-2 {
+            display: block;
+            width: 405px;
+            height: 146px;
+            margin-top: -2px;
+        }
+        
+        .you-3-2 {
+            margin-top: -2px;
+            display: block;
+            width: 199px;
+            height: 292px;
+        }
+        
+        .you-3 {
+            float: left;
+            width: 200px;
+            height: 583px;
+            overflow: hidden;
+            margin-top: -295px;
+            margin-left: 1px;
+        }
+        
+        .you-4 {
+            float: left;
+            width: 200px;
+            height: 583px;
+            overflow: hidden;
+            margin-top: -295px;
+        }
+        
+        .main-cont {
+            float: left;
+            width: 805px;
+            height: 582px;
+            margin-top: -18px;
+            margin-left: -7px;
+            border-top: 1px solid #eee;
+            border-right: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            background: #fff;
+            overflow: hidden;
+        }
+        
+        .prd-list li {
+            position: relative;
+            float: left;
+            width: 200px;
+            height: 291px;
+            text-align: center;
+            border-left: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            overflow: hidden;
+        }
+        
+        .main-cont img {
+            width: 180px;
+            height: 180px;
+            margin-top: 17px;
+            text-align: center;
+        }
+        
+        .name {
+            font: 12px/1.5 arial, tahoma, \5b8b\4f53;
+            display: block;
+            width: 198px;
+            height: 35px;
+            float: left;
+            overflow: hidden;
+        }
+        
+        .name a {
+            color: #666;
+        }
+        
+        .price {
+            font-size: 20px;
+            font-family: "STXihei", tahoma;
+            color: #e12228;
+            text-align: left;
+            padding: 10px 15px 0 15px;
+            float: left;
+        }
+        
+        .price i {
+            font-style: normal;
+        }
+        
+        .sjtx {
+            width: 1190px;
+            height: 590px;
+            margin: 0 auto;
+            margin-top: 60px;
+        }
+        .jssp{ width: 1190px;
+            height: 444px;
+            margin: 0 auto;
+            margin-top: 60px;
+            
+        }
+        
+        .bian {
+            width: 405px;
+            height: 583px;
+            border-top: 1px solid #eee;
+        }
+        .huan{width: 405px;
+            height: 436px;
+        border-top: 1px solid #eee;}
+        
+        .bian li {
+            float: left;
+        }
+        
+        .bian-1-1 {
+            margin-top: -2px;
+        }
+        
+        .bian-2-1 {
+            float: left;
+            width: 202.5px;
+            height: 144px;
+            margin-top: -1px;
+        }
+        
+        .bian2 {
+            width: 399px;
+            height: 250px;
+            float: right;
+            margin-top: -582px;
+            margin-right: 1px;
+        }
+        
+        .bian2 a {
+            display: block;
+            width: 399px;
+            height: 145px;
+        }
+        
+        .bian3 {
+            float: right;
+            height: 290px;
+            margin-right: 1px;
+            margin-top: -290px;
+        }
+        
+        .bian3 a {
+            display: block;
+            width: 199px;
+            height: 290px;
+        }
+        
+        .bian3 li {
+            float: left;
+            margin-top: -1px;
+        }
+        
+        .bian3-1 {
+            margin-left: -1px;
+        }
+        
+        .bian3 img {
+            display: block;
+            height: 290px;
+            width: 199px;
+        }
+        .right-1{float: left;
+            width: 200px;
+            height: 435px;
+                 margin-top: -436px;
+        }
+        .right-1 img{display: block;}

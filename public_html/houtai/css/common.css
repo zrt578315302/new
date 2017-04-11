@@ -1,0 +1,26 @@
+/*登录*/
+.login_inp{border:none;height:34px;border-radius:7px;line-height:34px;text-indent:50px;}
+.login_ul li{position:relative;}
+.login_ul li img{position:absolute;left:40px;top:50%;margin-top:-10px;}
+.login_wj{padding:0 13px 0 17px;line-height:30px;overflow:hidden;}
+.login_button{border:none;height:34px;border-radius:7px;line-height:34px;}
+.login_link{overflow:hidden;margin-top:37px;}
+.login_link a{margin:0 47px;}
+/*修改密码*/
+.regist_main{width:92%;border-radius:7px;overflow:hidden;}
+.register_ul li{height:43px;border-bottom:1px solid #d2d2d2;position:relative;}
+.refister_icon{width:13%;border-right:1px solid #d2d2d2;height:21px;margin-top:12px;display:table-cell;vertical-align:middle;}
+.refister_icon i { display:inline-block;height:100%;vertical-align:middle;}
+.refister_icon img {vertical-align:middle }
+.register_inp{width:86%;height:21px;margin-top:12px;text-indent:13px;}
+.register_pass{height:31px;width:92%;border-radius:7px;}
+.register_yzm{position:absolute;right:25px;top:12px;width:68px;height:20px;line-height:20px;border-radius:7px;}
+.register_address select{width:27%;float:left;margin-top:10px;}
+/*首页*/
+.index_top{padding-top:7px;padding-bottom:10px;}
+.index_top ul{width:101%;}
+.index_top li{width:33%;float:left;border-right:1px solid #d2d2d2;padding-top:7px;padding-bottom:5px;}
+.index_href{display:block;height:31px;border-radius:7px;line-height:31px;}
+.footer li{width:25%;float:left;}
+.hout_index li{width:50%;float:left;}
+.hout_index img{margin-top:15px;}

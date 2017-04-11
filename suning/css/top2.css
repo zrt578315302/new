@@ -1,0 +1,95 @@
+     * {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        body img {
+            border: 0px;
+            display: block;
+        }
+        
+        .ke {
+            width: 1349px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            width: 1190px;
+            margin: 0 auto;
+            height: 100px;
+        }
+        
+        .tu1 {
+            float: left;
+        }
+        
+        .tu2 {
+            float: left;
+        }
+        
+        .serch {
+            margin-left: 20px;
+            float: left;
+            width: 600px;
+            height: 100px;
+            position: relative;
+        }
+        
+        .tu3 {
+            float: left;
+            margin-left: 30px;
+        }
+        .search-keyword{
+            width: 458px;
+  height: 18px;
+  margin-top: 0;
+  padding: 8px 10px 8px 0;
+  border: 0;
+  
+  background: #FFF;
+  color: #BBB;
+  font-size: 14px;
+  line-height: 18px;
+  
+  -webkit-border-radius: 0;
+        }
+        .serch i{position: absolute;
+  display: block;
+  height: 34px;
+  width: 34px;
+  top: 0;
+  left: 0;
+  text-align: center;
+  line-height: 34px;
+  font-size: 18px;
+  color: #ccc;}
+        .search-keyword-box{
+            margin-top: 25px;
+              float: left;
+  width: 468px;
+  padding-left: 30px;
+  border: 2px solid #ffc001;
+  border-right: 0;
+        }
+ 
+        .g-search-hotwords a{
+            margin-top: 5px;
+            float: left;
+  margin-right: 10px;
+  white-space: nowrap;
+  font-size: 12px;
+            text-decoration: none;
+            color: #666;
+        }
+        .search-btn{
+            width: 100px;
+            height: 38px;
+            margin-top: 25px;
+              background: #fa0;
+              border: 0;
+              font-weight: normal;
+            font-family: 'MicroSoft YaHei';
+  font-size: 16px;
+           letter-spacing: 7px;
+            color: #333;
+        }

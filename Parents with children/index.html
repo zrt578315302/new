@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no" />
+		<title>萌宝亲子大赛</title>
+		<link rel="stylesheet" type="text/css" href="index.css" />
+		<link rel="stylesheet" type="text/css" href="../lib/css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../lib/dialog/dialog1/dialog.css" />
+		<link rel="stylesheet" type="text/css" href="../lib/css/swiper.min.css" />
+		<script src="../lib/js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var __openId = __getParam(window.location.href, 'openId');
+			if(__openId == "oxqOVjmellsruQQx0rVTJ7ueUjBA") {
+				window.location.replace("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa04873527032bf1d&redirect_uri=http%3A%2F%2Fwx.520wawa.com%2Fmini%2Feventvote.html&response_type=code&scope=snsapi_base&state=123#wechat_redirect");
+			}
+		</script>
+	</head>
+
+	<body>
+		<img src="../lib/images/introduce.png" class="introduce" />
+		<div class="enroll">我要报名</div>
+		<div class="bg"></div>
+		<div class="swiper-container notice swiper-no-swiping" id="swiper2">
+			<img src="../lib/images/Notice.png" />
+			<div class="swiper-wrapper notice_text" id="wrapper2">
+			</div>
+		</div>
+		<div class="swiper-container swiper-no-swiping" id="swiper1">
+			<div class="swiper-wrapper" id="wrapper1">
+			</div>
+		</div>
+		<div class="content">
+			<div class="statistics">
+				<div>
+					<img src="images/type_3.png" />
+					<span id="userCounts"></span>
+				</div>
+				<div>
+					<img src="images/type_2.png" />
+					<span id="allCounts"></span>
+				</div>
+				<div>
+					<img src="images/type__1.png" />
+					<span id="browse"></span>
+				</div>
+			</div>
+			<div class="search">
+				<input type="text" id="searchText" placeholder="请输入选手编号或姓名" />
+				<div id="searchImg">
+					<img src="images/search.png" />
+				</div>
+			</div>
+			<div class="nolist"></div>
+			<div class="list" id="list">
+
+			</div>
+		</div>		
+		<script src="../lib/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>		
+		<script src="../lib/dialog/dialog1/dialog.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://wcvoteh.5260wawa.com/eventvote/eventhtml/index/index.js?index=1" type="text/javascript" charset="utf-8"></script>
+		<!--<script type="text/javascript" src="index.js"></script>-->
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript" src="../lib/js/jssdk.js"></script>
+
+	</body>
+
+</html>

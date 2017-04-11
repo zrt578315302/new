@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>会员信息</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+	<link href="css/base.css" type="text/css" rel="stylesheet"/>
+	<link href="css/common.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+	<div class="main">
+    	<div class="regist_main mA borAll bgfff mT15">
+        	<ul class="info_ul" id="vip_info">
+        		<script type="text/html" id="vip_info-tmpl">
+        		<li>
+                	<div class="info_left fl font13 c333 bold">注册时间</div>
+                    <div class="info_view fl font13"><%= data.create_time%></div>
+                </li>
+                <li>
+                	<div class="info_left fl font13 c333 bold">客户编号</div>
+                    <div class="info_view fl font13"><%= data.user_code%></div>
+                </li>
+                <li>
+                	<div class="info_left fl font13 c333 bold">手机号码</div>
+                    <div class="info_view fl font13"><%=data.phone%></div>
+                </li>
+                <li>
+                	<div class="info_left fl font13 c333 bold">真实姓名</div>
+                    <div class="info_view fl font13"><%=data.user_name%></div>
+                </li>
+                <li>
+                	<div class="info_left fl font13 c333 bold">身份证号</div>
+                    <div class="info_view fl font13"><%=data.user_card%></div>
+                </li>
+                <li>
+                	<div class="info_left fl font13 c333 bold">商家地址</div>
+                    <div class="info_view fl font13"><%=data.area%></div>
+                </li>
+                <li>
+                	<div class="info_left fl font13 c333 bold">详细地址</div>
+                    <div class="info_view fl font13"><%=data.address%></div>
+                </li>
+                <li>
+                	<div class="info_left fl font13 c333 bold">所属商家</div>
+                    <div class="info_view fl font13" id="shop_name"></div>
+                </li>
+                <li>
+                	<div class="info_left fl font13 c333 bold">推 荐 人</div>
+                    <div class="info_view fl font13"><%=data.user_parent_name%></div>
+                </li>
+                <!--<li>
+                	<div class="info_left fl font13 c333 bold">冻结积分</div>
+                    <div class="info_view fl font13"></div>
+                </li>-->
+                <li>
+                	<div class="info_left fl font13 c333 bold">可用积分</div>
+                    <div class="info_view fl font13"><%=data.user_integral%></div>
+                </li>
+                <li>
+                	<div class="info_left fl font13 c333 bold">已兑购积分数</div>
+                    <div class="info_view fl font13"><%=data.shop_integral%></div>
+                </li>
+                <li style="border:none;">
+                	<div class="info_left fl font13 c333 bold">赠送积分数</div>
+                    <div class="info_view fl font13"><%=data.send_integral%></div>
+                </li>
+        		</script>
+            	
+            </ul>
+        </div>
+    </div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="apijs/config.js"></script>
+    <script type="text/javascript" src="apijs/common.js"></script>
+    <script type="text/javascript" src="apijs/zepto.min.js"></script>
+    <script type="text/javascript" src="apijs/template.js"></script>
+    <script type="text/javascript" src="apijs/vip_info.js"></script>
+</body>
+</html>

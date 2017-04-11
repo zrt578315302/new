@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>商家资料修改</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+	<link href="css/base.css" type="text/css" rel="stylesheet"/>
+	<link href="css/common.css" type="text/css" rel="stylesheet"/>
+	<link href="css/lhstyle.css" type="text/css" rel="stylesheet"/>
+</head>
+<body style="background:#f7f7f7;">
+	<div class="main texC">
+		<form>
+			<div class="change_wap mB20">
+				<div class="user_main mA borAll bgfff mT15">
+					<ul class="change_ul">
+                        <li>
+                            <div class="change_icon fl texC"><i></i><img src="img/r_8.png" width="15" /></div>
+                            <input type="text" placeholder="请输入你的真实姓名" class="change_inp fl borN font15" id="user_name">
+                        </li>
+                        <li>
+                            <div class="change_icon fl texC"><i></i><img src="img/r_9.png" width="19" /></div>
+                            <input type="text" placeholder="请输入18位身份证号" class="change_inp fl borN font15" id="user_card">
+                        </li>
+                        <li>
+                            <div class="change_icon fl texC"><i></i><img src="img/r_10.png" width="17" /></div>
+                            <input type="text" placeholder="请输入您实体店名称" class="change_inp fl borN font15" id="shop_name">
+                        </li>
+                        <li>
+                            <div class="change_icon fl texC"><i></i><img src="img/r_11.png" width="11" /></div>
+                            <div data-toggle="distpicker" class="register_address" id="city_4">
+                                <select class="prov borN font14 c7f7f" id="prov" style="margin-left:9px;"></select>
+                                <select class="city borN font14 c7f7f" id="city"></select>
+                                <select class="dist borN font14 c7f7f" id="dist"></select>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="change_icon fl texC"><i></i><img src="img/r_12.png" width="14" /></div>
+                            <input type="text" placeholder="请输入您的详细地址" class="change_inp fl borN font15" id="address">
+                        </li>
+                        <li>
+                            <div class="change_icon fl texC"><i></i><img src="img/r_13.png" width="19" /></div>
+                            <input type="text" placeholder="请输入您的银行名称" class="change_inp fl borN font15" id="bank_name">
+                        </li>
+                        <li>
+                            <div class="change_icon fl texC"><i></i><img src="img/r_14.png" width="17" /></div>
+                            <input type="text" placeholder="请输入您的银行卡号" class="change_inp fl borN font15" id="bank_card">
+                        </li>
+                        <li>
+                            <div class="change_icon fl texC"><i></i><img src="img/r_15.png" width="16" /></div>
+                            <input type="text" placeholder="请输入您的办理网点" class="change_inp fl borN font15" id="sales_address">
+                        </li>
+                        <li>
+                            <div class="change_icon fl texC"><i></i><img src="img/r_6.png" width="13" /></div>
+                            <input type="text" placeholder="请输入您的座机号" class="change_inp fl borN font15" id="tel">
+                        </li>
+                    </ul>
+				</div>
+			</div>
+			<input id="sure" type="button" value="保存" class="borN change_pass bg3bb4 cfff font12">
+		</form>
+	</div>
+</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/area/distpicker.data.js"></script>
+	<script type="text/javascript" src="js/area/distpicker.js"></script>
+	<script type="text/javascript" src="js/area/main.js"></script>
+    <script type="text/javascript" src="apijs/config.js"></script>
+    <script type="text/javascript" src="apijs/common.js"></script>
+    <script type="text/javascript" src="apijs/zepto.min.js"></script>
+    <script type="text/javascript" src="apijs/template.js"></script>
+    <script type="text/javascript" src="apijs/user_change.js"></script>
+</html>

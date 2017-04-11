@@ -1,0 +1,4374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+
+    <title>Document</title>
+    <style type="text/css">
+        .normal {
+            border-left: 5px solid transparent;
+            /* 左边框的宽 */
+            border-right: 5px solid transparent;
+            /* 右边框的宽 */
+            border-top: 5px solid #2f2f2f;
+            /* 下边框的长度|高,以及背景色 */
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translate(-50%, -50%)
+        }
+        
+        body li {
+            list-style: none;
+        }
+        
+        body img {
+            border: 0px;
+        }
+        
+        body a {
+            text-decoration: none;
+        }
+        
+        #top1,
+        #top2 {
+            position: relative
+        }
+        
+        .up {
+            border-left: 5px solid transparent;
+            /* 左边框的宽 */
+            border-right: 5px solid transparent;
+            /* 右边框的宽 */
+            border-bottom: 5px solid #2f2f2f;
+            /* 下边框的长度|高,以及背景色 */
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translate(-50%, -50%)
+        }
+        
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-size: 12px;
+        }
+        
+        .ng-toolbar {
+            position: relative;
+            width: 100%;
+            height: 35px;
+            min-width: 1190px;
+            border-bottom: 1px solid #eee;
+            background: #f5f5f5;
+            font: 12px/1.5 arial, tahoma, \5b8b\4f53;
+        }
+        
+        .ng-toolbar-con {
+            width: 1190px;
+            margin: 0 auto;
+            height: 35px;
+        }
+        
+        .ng-toolbar-left {
+            float: left;
+        }
+        
+        .ng-toolbar-right {
+            float: right;
+        }
+        
+        .ng-bar-node-box {
+            position: relative;
+            float: left;
+            margin-left: -1px;
+            border: 1px solid #f5f5f5;
+            margin-left: 0.5px;
+        }
+        
+        .ng-bar-node {
+            display: block;
+            position: relative;
+            float: left;
+            padding: 8px;
+            overflow: hidden;
+        }
+        
+        .ng-d-box {
+            position: absolute;
+            top: 35px;
+            border: 1px solid #ddd;
+            border-top: none;
+            background: #fff;
+            width: 988px;
+            margin-left: -1px;
+            z-index: 99;
+        }
+        
+        .sn-site-list {
+            float: left;
+            width: 176px;
+            height: 239px;
+            border-right: 1px solid #eee;
+            padding-left: 20px;
+        }
+        
+        .sn-site-list dt {
+            padding-top: 20px;
+            height: 25px;
+            width: 100%;
+            font-size: 14px;
+            line-height: 17px;
+        }
+        
+        .sn-site-list dd {
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .sn-site-list dd p {
+            float: left;
+            height: 25px;
+            width: 78px;
+            line-height: 25px;
+        }
+        
+        lnb {
+            float: left;
+        }
+        
+        .shop-center-child {
+            width: 162px;
+            padding-top: 5px;
+            left: 0;
+            right: auto;
+        }
+        
+        .shop-center-child a {
+            display: block;
+            height: 28px;
+            line-height: 28px;
+            float: left;
+            padding-left: 10px;
+            width: 71px;
+        }
+        
+        .myorder-child {
+            width: 73px;
+            padding-bottom: 5px;
+        }
+        
+        .myorder-child a {
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 10px;
+            width: 71px;
+        }
+        
+        .ng-mb-box {
+            left: -64px;
+            width: 360px;
+            height: 220px;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .top-code {
+            display: block;
+            width: 147px;
+            height: 147px;
+            margin: 10px auto;
+        }
+        
+        .ng-app-code li {
+            float: left;
+            width: 180px;
+        }
+        
+        .aoyun-text {
+            width: 151px;
+            height: 16px;
+            margin: 5px 14px;
+        }
+        
+        .tianjia {
+            border-color: #ddd;
+            border-bottom: 2px solid white;
+        }
+        
+        .kongbai {
+            background: white;
+        }
+        
+        .service-center-child {
+            width: 162px;
+            padding-top: 5px;
+            left: auto;
+            right: -1px;
+            ;
+        }
+        
+        .ng-down-box a {
+            display: block;
+            height: 28px;
+            line-height: 28px;
+            padding-left: 10px;
+            width: 71px;
+            float: left;
+        }
+        
+        .mysuning-child {
+            width: 162px;
+        }
+        
+        .mysuning-infor {
+            width: 142px;
+            height: 56px;
+            margin: 5px 10px;
+            overflow: hidden;
+        }
+        
+        .mysuning-detail a {
+            display: block;
+            margin-left: 80px;
+            line-height: 28px;
+            float: none;
+            padding: 0;
+            width: 64px;
+            word-break: break-all;
+        }
+        
+        #userHead {
+            display: block;
+            width: 50px;
+            height: 50px;
+            margin-left: -10px;
+        }
+        
+        body img {
+            border: 0px;
+            display: block;
+        }
+        
+        .ke {
+            width: 1349px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            position: relative;
+            width: 1190px;
+            margin: 0 auto;
+            height: 100px;
+        }
+        
+        .tu1 {
+            position: absolute;
+            left: 0px;
+        }
+        
+        .tu2 {
+            position: absolute;
+            left: 190px;
+        }
+        
+        .serch {
+            left: 380px;
+            width: 600px;
+            height: 100px;
+            position: absolute;
+        }
+        
+        .tu3 {
+            position: absolute;
+            right: 0px;
+            top: 10px;
+        }
+        
+        .search-keyword {
+            width: 458px;
+            height: 18px;
+            margin-top: 0;
+            padding: 8px 10px 8px 0;
+            border: 0;
+            background: #FFF;
+            color: #BBB;
+            font-size: 14px;
+            line-height: 18px;
+            -webkit-border-radius: 0;
+        }
+        
+        .serch i {
+            position: absolute;
+            display: block;
+            height: 34px;
+            width: 34px;
+            top: 27px;
+            left: 0;
+            text-align: center;
+            line-height: 34px;
+            font-size: 18px;
+            color: #ccc;
+        }
+        
+        .search-keyword-box {
+            margin-top: 25px;
+            float: left;
+            width: 468px;
+            padding-left: 30px;
+            border: 2px solid #ffc001;
+            border-right: 0;
+        }
+        
+        .g-search-hotwords a {
+            margin-top: 5px;
+            float: left;
+            margin-right: 10px;
+            white-space: nowrap;
+            font-size: 12px;
+            text-decoration: none;
+            color: #666;
+        }
+        
+        .search-btn {
+            width: 100px;
+            height: 38px;
+            margin-top: 25px;
+            background: #fa0;
+            border: 0;
+            font-weight: normal;
+            font-family: 'MicroSoft YaHei';
+            font-size: 16px;
+            letter-spacing: 7px;
+            color: #333;
+        }
+        
+        body a {
+            color: #333;
+        }
+        
+        #pic {
+            width: 1349px;
+            height: 455px;
+            border-top: 2px solid black;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        #pic0 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 455px;
+        }
+        
+        #pic0 li {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 455px;
+        }
+        
+        #pic0 a {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 770px;
+            height: 455px;
+            margin-left: -405px;
+            overflow: hidden;
+        }
+        
+        #list {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+        }
+        
+        #list2 {
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+        }
+        
+        #list a {
+            display: inline-block;
+            margin-left: 8px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #333;
+            color: #FFF;
+            font-size: 12px;
+            line-height: 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .anniu {
+            display: inline-block;
+            padding-top: 20px;
+            width: 60px;
+            height: 40px;
+            line-height: 50px;
+            border-radius: 50%;
+            background: #333;
+            color: #FFF;
+            font-size: 32px;
+            line-height: 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        #an1 {
+            position: absolute;
+            left: 286px;
+            bottom: 200px;
+            display: none;
+        }
+        
+        #an2 {
+            position: absolute;
+            left: 956px;
+            bottom: 200px;
+            display: none;
+        }
+        
+        #pic:hover .anniu {
+            display: block;
+            opacity: 0.5;
+        }
+        
+        .anniu:hover {
+            background-color: brown;
+        }
+        
+        #on1 {
+            background: rgb(220, 13, 31);
+        }
+        
+        #on2 {
+            background: rgb(156, 0, 159);
+        }
+        
+        #on3 {
+            background: rgb(156, 0, 159);
+        }
+        
+        #on4 {
+            background: rgb(244, 251, 243);
+        }
+        
+        #on5 {
+            background: rgb(255, 1, 125);
+        }
+        
+        #on6 {
+            background: rgb(157, 214, 244);
+        }
+        
+        #head {
+            position: relative;
+            width: 1349px;
+            min-width: 990px;
+            background: #fff;
+            overflow: visible;
+            height: 38px;
+            margin: 0 auto;
+        }
+        
+        .xfc {
+            position: absolute;
+            left: 80px;
+            top: 38px;
+            height: 455px;
+            width: 190px;
+            padding: 2px 0 0 0;
+            box-shadow: 0 1px 1px 1px #eee;
+            background: #f4f4f4;
+            opacity: 0.95;
+        }
+        
+        #xfc li {
+            display: block;
+            height: 35px;
+            line-height: 35px;
+            width: 190px;
+            font-size: 14px;
+            list-style: none;
+            border: 0;
+            background: #FFF;
+            overflow: hidden;
+        }
+        
+        .feilei1 {
+            position: absolute;
+            display: block;
+            width: 178px;
+            height: 36px;
+            line-height: 36px;
+            font-size: 14px;
+            left: 90px;
+            top: 2px;
+            background: #ffc001;
+            padding-left: 12px;
+            color: #333 !important;
+            font-weight: normal;
+            overflow: visible;
+            text-decoration: none;
+        }
+        
+        #xfc li a {
+            text-decoration: none;
+            float: left;
+            margin-left: 7px;
+        }
+        
+        .xfc1 {
+            position: absolute;
+            left: 90px;
+            top: 38px;
+            height: 455px;
+            width: 190px;
+            padding: 2px 0 0 0;
+            box-shadow: 0 1px 1px 1px #eee;
+            background: #f4f4f4;
+            z-index: 7675;
+            opacity: .95;
+            z-index: 2;
+        }
+        
+        .head-1 {
+            position: absolute;
+            left: 50%;
+            margin-left: -405px;
+            width: 785px;
+            padding-left: 10px;
+            height: 36px;
+            line-height: 36px;
+            z-index: 1;
+        }
+        
+        .head-1 li {
+            float: left;
+            display: block;
+            height: 36px;
+            line-height: 36px;
+            padding: 0 12px 0 13px;
+        }
+        
+        .head-1 li a {
+            position: relative;
+            float: left;
+            color: #333;
+            font-size: 15px;
+            text-decoration: none;
+        }
+        
+        #xfc-2 {
+            position: absolute;
+            left: 1040px;
+            top: 20px;
+            background-color: white;
+            width: 218px;
+            height: 431px;
+        }
+        
+        #xfc-2 ul {
+            display: block;
+            width: 188px;
+            height: 30px;
+            margin: 0 auto;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .xfc-2-1 li {
+            display: block;
+            position: relative;
+            width: 80px;
+            float: left;
+            height: 30px;
+            text-align: center;
+            line-height: 26px;
+            padding-top: 4px;
+        }
+        
+        .x-right {
+            padding-left: 28px;
+        }
+        
+        .xfc-2-1 li a {
+            display: block;
+            width: 80px;
+            height: 24px;
+            text-decoration: none;
+            color: #666;
+            font: 12px/1.5 arial, tahoma, \5b8b\4f53;
+        }
+        
+        .ls {
+            font: 12px/1.5 arial, tahoma, \5b8b\4f53;
+        }
+        
+        .ls p {
+            width: 179px;
+            height: 29px;
+            line-height: 29px;
+            overflow: hidden;
+        }
+        
+        .ls-1 {
+            position: relative;
+            width: 179px;
+            height: 116px;
+            margin: 10px auto 5px auto;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .ls-2 {
+            position: relative;
+            width: 179px;
+            height: 116px;
+            margin: 10px auto 5px auto;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .ls a {
+            text-decoration: none;
+        }
+        
+        .mi {
+            height: 183px;
+            width: 218px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .mi2 {
+            width: 218px;
+            height: 30px;
+            margin-top: 10px;
+        }
+        
+        .mi2-1 {
+            padding-left: 15px;
+            font: bold 12px/30px "Microsoft YaHei";
+            color: #333;
+        }
+        
+        .do {
+            float: left;
+            width: 188px;
+            margin-left: 1px;
+        }
+        
+        .do li {
+            position: relative;
+            float: left;
+            width: 32px;
+            height: 32px;
+            margin-left: 15px;
+            list-style: none;
+        }
+        
+        #list a.yanse {
+            background: red;
+        }
+        
+        .zhong {
+            width: 1349px;
+            height: 290px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+        
+        .zhong li {
+            list-style: none;
+            text-decoration: none;
+            float: left;
+            display: block;
+            width: 230px;
+            height: 180px;
+            margin-left: 6px;
+            margin-top: 8px;
+        }
+        
+        .zho {
+            width: 1190px;
+            height: 250px;
+            margin: 0 auto;
+            background: red;
+        }
+        
+        #xia {
+            width: 1349px;
+            height: 184px;
+            margin: 0 auto;
+        }
+        
+        #xia-1 {
+            width: 1190px;
+            height: 184px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #xia-1 img {
+            display: inline-block;
+        }
+        
+        #xia-1-1 {
+            width: 10000px;
+            position: absolute;
+            left: -1190px;
+        }
+        
+        #xia li {
+            float: left;
+        }
+        
+        .x1,
+        .x2,
+        .x3 {
+            margin-left: 10px;
+        }
+        
+        .oniu {
+            display: inline-block;
+            padding-top: 20px;
+            width: 60px;
+            height: 40px;
+            line-height: 50px;
+            border-radius: 50%;
+            background: #333;
+            color: #FFF;
+            font-size: 32px;
+            line-height: 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        #ou1 {
+            position: absolute;
+            left: 0px;
+            top: 70px;
+            display: none;
+            opacity: 0.2;
+        }
+        
+        #ou2 {
+            position: absolute;
+            right: 0px;
+            top: 70px;
+            display: none;
+            opacity: 0.2;
+        }
+        
+        .yyz {
+            width: 1349px;
+            height: 430px;
+            margin: 20px auto;
+        }
+        
+        .yinying {
+            width: 1190px;
+            height: 430px;
+            margin: 0 auto;
+        }
+        
+        .yinying-1 {
+            margin-top: 20px;
+            width: 381px;
+            float: left;
+        }
+        
+        .yinying-2 {
+            float: left;
+            width: 797px;
+            height: 379px;
+            background: #EEE;
+            margin: 20px 0 0 12px;
+        }
+        
+        .yinying-2 li {
+            float: left;
+            width: 198px;
+            height: 188px;
+            margin: 1px 0 0 1px;
+        }
+        
+        .yinying-2 img:hover {
+            box-shadow: 0 2px 10px #999;
+            z-index: 55;
+        }
+        
+        .yinying li {
+            list-style: none;
+        }
+        
+        .yinying-1 li {
+            display: block;
+            width: 379px;
+            height: 188px;
+        }
+        
+        .yy h3 {
+            width: 100px;
+            height: 40px;
+            font: bold 20px/40px 'microsoft yahei';
+        }
+        
+        .yyy1 {
+            float: left;
+            width: 1190px;
+        }
+        
+        .yinying-2-1 img {
+            position: relative;
+            display: block;
+            z-index: 50;
+        }
+        
+        .naike {
+            width: 1349px;
+            margin: 0 auto;
+        }
+        
+        .second-screen {
+            width: 1190px;
+            height: 330px;
+            clear: both;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        
+        .title {
+            widrh: 100px;
+            height: 40px;
+        }
+        
+        .title h3 {
+            width: 100px;
+            height: 40px;
+            font: bold 20px/40px 'microsoft yahei';
+        }
+        
+        .brands-enter img {
+            float: left;
+            display: block;
+            width: 379px;
+            height: 278px;
+            margin-top: 10px;
+        }
+        
+        .brands-list {
+            float: left;
+            width: 799px;
+            height: 280px;
+            background: #EEE;
+            margin: 0px 0 0 12px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        
+        .brands-list li {
+            position: relative;
+            display: block;
+            float: left;
+            width: 132px;
+            height: 92px;
+            margin: 1px 0 0 1px;
+            list-style: none;
+        }
+        
+        .black-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.8;
+        }
+        
+        .cover-content {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .cover-content a.enter {
+            display: block;
+            margin: 10px auto;
+            width: 65px;
+            height: 22px;
+            font: 12px/20px "Microsoft yahei";
+            color: #FFF;
+            text-decoration: none;
+            background-color: #FA0;
+            border-radius: 11px;
+            text-align: center;
+        }
+        
+        .cover-content p {
+            width: 100%;
+            height: 20px;
+            margin-top: 25px;
+            font: 12px/20px "Microsoft yahei";
+            color: #FFF;
+            text-align: center;
+            color: #FFF;
+            overflow: hidden;
+        }
+        
+        .tu {
+            width: 1190px;
+            height: 120px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        
+        .cnxh {
+            width: 1190px;
+            height: 340px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        
+        .tu-list {
+            width: 1190px;
+            height: 283px;
+            margin-top: 20px;
+            overflow: hidden;
+            background: #eee;
+        }
+        
+        .tu-list li {
+            float: left;
+            list-style: none;
+            height: 281px;
+            width: 197px;
+            margin: 1px 0 0 1px;
+            background: #FFF;
+        }
+        
+        .tukuang {
+            width: 160px;
+            height: 160px;
+            margin: 19px 0 0 19px;
+        }
+        
+        .tu-list li {
+            float: left;
+        }
+        
+        .tu-list li p {
+            width: 160px;
+            height: 44px;
+            margin: 13px auto 0;
+            display: block;
+            line-height: 22px;
+            overflow: hidden;
+        }
+        
+        .tu-list li p a {
+            height: 44px;
+            font: 12px/1.5 arial, tahoma, \5b8b\4f53;
+            text-decoration: none;
+            -webkit-margin-before: 1em;
+        }
+        
+        .price i {
+            display: block;
+            float: left;
+            margin: 5px 0 0 19px;
+            font: 20px/26px "arial";
+            color: #e12228;
+            font-style: normal;
+        }
+        
+        .price em {
+            display: block;
+            float: left;
+            margin: 5px 0 0 0px;
+            font: 20px/26px "arial";
+            color: #e12228;
+            font-style: normal;
+            font-family: tahoma;
+        }
+        
+        .cuxiao {
+            float: right;
+            width: 47px;
+            height: 18px;
+            margin: 10px 19px 0 0;
+            line-height: 18px;
+            text-align: center;
+            background: #fa4b4b;
+            border-radius: 2px;
+            color: #FFF;
+        }
+        
+        .changeCommodity {
+            margin-top: -20px;
+            float: right;
+            font: 16px/50px "microsoft yahei";
+            text-decoration: none;
+        }
+        
+        .baohan {
+            width: 1349px;
+            margin: 0 auto;
+        }
+        
+        .bo {
+            width: 1190px;
+            height: 426px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        .tittle {
+            margin-top: 40px;
+            height: 40px;
+            color: #222;
+        }
+        
+        .tittle h3 {
+            float: left;
+            font: bold 20px/40px 'microsoft yahei';
+        }
+        
+        .tittle p {
+            float: left;
+            line-height: 40px;
+            margin-top: 10px;
+            font: normal 12px/30px arial;
+        }
+        
+        .lb li {
+            position: relative;
+            float: left;
+            height: 331px;
+            width: 237px;
+            border-right: 1px solid #EEE;
+            margin-left: -1px;
+        }
+        
+        .lb {
+            width: 10000px;
+            margin-top: 10px;
+            height: 332px;
+            border: 1px solid #eee;
+        }
+        
+        .lb li img {
+            margin: 14px auto 5px;
+            display: block;
+            width: 210px;
+            height: 158px;
+        }
+        
+        .zsq-name {
+            width: 210px;
+            height: 44px;
+            margin: 0 auto;
+            font: 12px/22px "Microsoft YaHei";
+            overflow: hidden;
+        }
+        
+        .zsq-now-price {
+            float: left;
+            height: 20px;
+            overflow: hidden;
+            font: 14px/20px "microsoft YaHei";
+            color: #e12228;
+        }
+        
+        .zsq-price {
+            height: 26px;
+            margin: 12px 3px 0 14px;
+        }
+        
+        .gan {
+            float: left;
+            height: 16px;
+            overflow: hidden;
+            margin-left: 5px;
+            font: 12px/20px "microsoft YaHei";
+            color: #999;
+        }
+        
+        .zsq-discount {
+            float: left;
+            height: 18px;
+            background: #fa4b4b;
+            color: #FFF;
+            font: 12px/18px "microsoft YaHei";
+            text-align: center;
+            border-radius: 2px;
+            margin-left: 14px;
+            padding: 0 5px;
+        }
+        
+        .bottom {
+            margin-top: 10px;
+        }
+        
+        .bottom a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .ng-ser-box {
+            margin-top: 40px;
+            width: 100%;
+            background: #f5f5f5;
+            border-top: 1px solid #e7e7e7;
+            min-width: 990px;
+            font: 12px/1.5 arial, tahoma, \5b8b\4f53;
+            height: 254px;
+        }
+        
+        .ng-ser-box-con {
+            width: 1190px;
+            margin: 0 auto;
+        }
+        
+        .ng-promise {
+            width: 1250px;
+        }
+        
+        .ng-promise dl {
+            float: left;
+            width: 250px;
+            height: 73px;
+            overflow: hidden;
+        }
+        
+        .ng-promise dt {
+            display: block;
+            width: 48px;
+            height: 48px;
+            text-indent: -999em;
+            margin-top: 13px;
+            margin-right: 8px;
+        }
+        
+        .zheng {
+            background: url(img/npbg.png) no-repeat;
+            ;
+            background-position: 0 0;
+            float: left;
+        }
+        
+        .jisu {
+            background: url(img/npbg.png) no-repeat;
+            background-position: -48px 0;
+            float: left;
+        }
+        
+        .wuyou {
+            background: url(img/npbg.png) no-repeat;
+            background-position: -96px 0;
+            float: left;
+        }
+        
+        .te {
+            background: url(img/npbg.png) no-repeat;
+            background-position: -144px 0;
+            float: left;
+        }
+        
+        .help {
+            background: url(img/npbg.png) no-repeat;
+            background-position: -192px 0;
+            float: left;
+        }
+        
+        .ng-promise dl dd {
+            display: block;
+            float: left;
+            margin-top: 13px;
+        }
+        
+        .ng-promise dl dd p {
+            line-height: 25px;
+            height: 25px;
+        }
+        
+        .ng-help-box {
+            border-top: 1px solid #eee;
+            float: left;
+            width: 1050px;
+        }
+        
+        .ng-help-box dl {
+            float: left;
+            height: 160px;
+            width: 210px;
+        }
+        
+        .ng-help-box dt {
+            display: block;
+            width: 100%;
+            line-height: 40px;
+            font-weight: 700;
+            color: #545454;
+            height: 35px;
+            font-size: 14px;
+            overflow: hidden;
+        }
+        
+        .ng-help-box dd {
+            line-height: 22px;
+        }
+        
+        .ng-help-box dd a {
+            color: #545454;
+        }
+        
+        .ng-new-pro {
+            position: relative;
+            width: 100%;
+            min-width: 1190px;
+            height: 125px;
+            background: #33302b;
+        }
+        
+        .ng-new-pro-con {
+            width: 1190px;
+            margin: 0 auto;
+        }
+        
+        .ng-new-pro-list {
+            width: 850px;
+            height: 125px;
+            margin-left: -50px;
+            float: left;
+        }
+        
+        .ng-new-pro-list dt {
+            float: left;
+            height: 80px;
+            width: 80px;
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+        
+        .ng-new-pro-list dl {
+            float: left;
+            height: 100px;
+            width: 424px;
+            margin-top: 12px;
+            border-right: 1px dotted #8d8d8d;
+        }
+        
+        .ng-new-pro-list dd {
+            float: left;
+            height: 100px;
+            width: 224px;
+        }
+        
+        ..ng-new-pro-list a {
+            line-height: 25px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        
+        .ng-title {
+            line-height: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #eee;
+        }
+        
+        .ng-intro {
+            font: 12px/1.5 arial, tahoma, \5b8b\4f53;
+            font-family: "Microsoft Yahei";
+        }
+        
+        .tuichi {
+            margin-left: 50px
+        }
+        
+        .ng-serch-suning dt {
+            float: left;
+            height: 94px;
+            width: 140px;
+            margin-top: 3px;
+            background: url(img/npbg.png) 0 -50px no-repeat;
+        }
+        
+        .ng-serch-suning {
+            float: left;
+            width: 390px;
+            height: 100px;
+            margin-top: 10px;
+        }
+        
+        .ng-ti {
+            margin-top: 5px;
+        }
+        
+        .ng-s-footer {
+            width: 100%;
+            background: #33302b;
+        }
+        
+        .ng-s-f-con {
+            height: 145px;
+            width: 1190px;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+        
+        .ng-url-list a {
+            color: #f9f9f9;
+            font: 12px/1.5 arial, tahoma, \5b8b\4f53;
+        }
+        
+        .ng-url-list span {
+            color: #888;
+            padding: 0 8px;
+        }
+        
+        .ng-copyright {
+            width: 1190px;
+            float: left;
+            color: #999;
+            margin-top: 0;
+            font: 12px/1.5 arial, tahoma, \5b8b\4f53;
+            line-height: 25px;
+            height: 25px;
+        }
+        
+        .feilei {
+            width: 1349px;
+            margin: 0 auto;
+        }
+        
+        .jssp {
+            width: 1190px;
+            margin: 0 auto;
+            clear: both;
+            padding-top: 20px;
+        }
+        
+        .fzbh {
+            width: 1190px;
+            margin: 0 auto;
+            clear: both;
+            padding-top: 20px;
+        }
+        
+        .fz-xia {
+            margin-top: 40px;
+        }
+        
+        .fenlei a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .fenlei img {
+            display: block;
+            border: 0px;
+        }
+        
+        .fenlei li {
+            list-style: none;
+        }
+        
+        .tittle1 {
+            float: left;
+            bottom: 6px;
+            width: 1190px;
+            height: 34px;
+            color: #222;
+        }
+        
+        .tittle1 h3 {
+            width: 190px;
+            display: block;
+            height: 34px;
+            font: bold 20px/34px 'microsoft yahei';
+        }
+        
+        .tittle1 ul {
+            float: right;
+            display: block;
+            left: 200px;
+            height: 34px;
+        }
+        
+        .tittle1 li {
+            float: left;
+            height: 34px;
+            margin-left: 20px;
+            margin-top: -26px;
+            overflow: hidden;
+        }
+        
+        .tittle1 li a em {
+            font: 14px/34px 'microsoft yahei';
+        }
+        
+        .zuo {
+            margin-top: 5px;
+            float: left;
+        }
+        
+        .zuo-2 {
+            width: 383px;
+            height: 125px;
+            border-bottom: 1px solid #eee;
+            border-left: 1px solid #eee;
+        }
+        
+        .zuo-3 {
+            float: left;
+            width: 383px;
+            height: 145px;
+            border-bottom: 1px solid #eee;
+            border-left: 1px solid #eee;
+        }
+        
+        .fz-zuo-2 {}
+        
+        .zuo-2-1 {
+            float: left;
+            width: 128px;
+            margin: 12px 18px;
+            overflow: hidden;
+            _display: inline;
+        }
+        
+        .zuo-2-2 {
+            float: left;
+            width: 128px;
+            margin: 12px 18px;
+            overflow: hidden;
+            _display: inline;
+            margin-left: 72px;
+        }
+        
+        .zuo-2 a {
+            display: block;
+            float: left;
+            width: 64px;
+            height: 25px;
+            line-height: 25px;
+            color: #666;
+            font-family: "Microsoft Yahei";
+            overflow: hidden;
+            font: 12px/1.5 arial, tahoma, \5b8b\4f53;
+        }
+        
+        .youbian {
+            float: left;
+            width: 806px;
+            height: 437px;
+            margin-top: 11px;
+            margin-left: -6px;
+            border-top: 1px solid #eee;
+            border-right: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            background: #fff;
+            background: #eee;
+        }
+        
+        .fz-youbian {
+            float: left;
+            width: 806px;
+            height: 583px;
+            margin-top: 11px;
+            margin-left: -6px;
+            border-top: 1px solid #eee;
+            border-right: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            background: #fff;
+            background: #eee;
+        }
+        
+        .huan {
+            position: relative;
+            width: 406px;
+            height: 291px;
+            overflow: hidden;
+            background: white;
+        }
+        
+        .right-0 li {
+            width: 202px;
+            height: 145px;
+            float: left;
+        }
+        
+        .fz-right-0 li {
+            float: left;
+            width: 405px;
+        }
+        
+        .right-0-1 {
+            margin-left: 1px;
+            margin-top: 1px;
+        }
+        
+        .fz-right-0-1 {
+            margin-left: 1px;
+            margin-top: 1px;
+        }
+        
+        .right-0-2 {
+            margin-left: 2px;
+            margin-top: 1px;
+        }
+        
+        .fz-right-0-2 {
+            margin-left: 1px;
+            margin-top: 1px;
+        }
+        
+        .right-1 {
+            float: left;
+            margin-top: -291px;
+            margin-left: 3px;
+        }
+        
+        .right-2 {
+            float: left;
+            margin-top: -291px;
+            margin-left: 1px;
+        }
+        
+        .bian-1 {
+            margin-left: 1px;
+        }
+        
+        .right-1-1 {
+            margin-top: 1px;
+        }
+        
+        .fz-right-1 {
+            float: left;
+            margin-top: -437px;
+            margin-left: 2px;
+        }
+        
+        .fz-right-2 {
+            float: left;
+            margin-top: -437px;
+            margin-left: 1px;
+        }
+        
+        .sj-right a {
+            float: left;
+        }
+        
+        .sj-right-1 {
+            margin-top: 1px;
+            display: block;
+            width: 202px;
+            height: 145px;
+            margin-left: 1px;
+        }
+        
+        .sj-right1 {
+            width: 399px;
+            float: left;
+            height: 145px;
+            margin-top: -437px;
+            margin-left: 1px;
+        }
+        
+        .sj-right2 {
+            width: 400px;
+            float: left;
+            height: 290px;
+        }
+        
+        .sj-right2 a {
+            float: left;
+            margin-top: -145px;
+            margin-left: 1px;
+        }
+        
+        .banner-nav {
+            display: inline-block;
+            height: 8px;
+            padding: 5px 6px 5px 2px;
+            background: rgba(255, 255, 255, 0.8);
+            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#66FFFFFF, endColorstr=#66FFFFFF);
+            border-radius: 8px;
+            margin: 0 auto;
+            opacity: 0.5;
+        }
+        
+        .banner-nav a {
+            font: 12px/1.5 arial, tahoma, \5b8b\4f53;
+            display: inline-block;
+            margin-left: 8px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #333;
+            color: #FFF;
+            font-size: 12px;
+            line-height: 20px;
+            text-align: center;
+            text-decoration: none;
+            opacity: 0.5;
+        }
+        
+        .banner-nav-wrapper {
+            position: absolute;
+            top: 265px;
+            width: 100%;
+            height: 18px;
+            text-align: center;
+            font-size: 0;
+        }
+        
+        .page-current {
+            background-color: red !important;
+        }
+        
+        .angle-btn {
+            position: absolute;
+            padding-top: 10px;
+            display: inline-block;
+            left: 0px;
+            top: 130px;
+            width: 40px;
+            height: 30px;
+            line-height: 50px;
+            border-radius: 50%;
+            background: #eee;
+            color: #FFF;
+            font-size: 32px;
+            line-height: 20px;
+            text-align: center;
+            text-decoration: none;
+            opacity: 0.5;
+        }
+        
+        .next-btn {
+            margin-left: 365px;
+        }
+        
+        .prev-btn {
+            margin-left: 1px;
+        }
+        
+        .main-cont {
+            float: left;
+            width: 805px;
+            height: 582px;
+            margin-top: 12px;
+            margin-left: -7px;
+            border-top: 1px solid #eee;
+            border-right: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            background: #fff;
+            overflow: hidden;
+        }
+        
+        .prd-list li {
+            position: relative;
+            float: left;
+            width: 200px;
+            height: 291px;
+            text-align: center;
+            border-left: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            overflow: hidden;
+        }
+        
+        .main-cont img {
+            width: 180px;
+            height: 180px;
+            margin-top: 17px;
+            text-align: center;
+            margin-left: 10px;
+        }
+        
+        .name {
+            font: 12px/1.5 arial, tahoma, \5b8b\4f53;
+            display: block;
+            width: 198px;
+            height: 35px;
+            float: left;
+            overflow: hidden;
+        }
+        
+        .name a {
+            color: #666;
+        }
+        
+        .price {
+            font-size: 20px;
+            font-family: "STXihei", tahoma;
+            color: #e12228;
+            text-align: left;
+            padding: 10px 15px 0 15px;
+            float: left;
+        }
+        
+        .price i {
+            font-style: normal;
+        }
+        
+        .ng-authentication img {
+            display: block;
+            float: left;
+        }
+        
+        .ng-authentication {
+            background: #33302b;
+        }
+        
+        @font-face {
+            font-family: 'ng-iconfont';
+            src: url('..fonts/icomoon.eot?5loltz');
+            src: url('..fonts/icomoon.eot?5loltz#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?5loltz') format('truetype'), url('fonts/icomoon.woff?5loltz') format('woff'), url('fonts/icomoon.svg?5loltz#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        .ng-iconfont {
+            font-family: 'ng-iconfont';
+            font-style: normal;
+            font-weight: normal;
+            font-style: 64px;
+        }
+        
+        .down {
+            padding-left: 2px;
+            line-height: 15px;
+        }
+        
+        .cart {
+            padding-right: 10px;
+        }
+        
+        .mb {
+            padding-right: 5px;
+        }
+        
+        #ssl {
+            position: absolute;
+            width: 498px;
+            border: 1px solid #eee;
+            top: 64px;
+            background: white;
+            z-index: 5;
+            display: none;
+        }
+        
+        #srk li {
+            line-height: 25px;
+            height: 25px;
+        }
+        
+        #srk li:hover {
+            background: #eee;
+        }
+        
+        #srk li p {
+            color: #333;
+        }
+    </style>
+
+
+</head>
+
+
+
+
+<body>
+    <div class="ng-toolbar">
+        <div class="ng-toolbar-con wrapper">
+            <div class="ng-toolbar-left">
+                <a href="javascripr:;" class="ng-bar-node ng-bar-node-backhome" id="ng-bar-node-backhome" name="public0_none_dbgjt_fhyisy01" style="display:none;">
+                    <i class="ng-iconfont ng-backhome"></i><span>返回易购首页</span>
+                    <i class="ng-line ng-iconfont ml10"></i>
+                </a>
+
+                <!--网站导航 [[-->
+                <div class="ng-bar-node-box ng-site-nav-box">
+                    <a href="javascript:void(0);" class="ng-bar-node ng-bar-node-site" name="public0_none_dbgjt_wzdh03">
+                        <span>网站导航</span><em class="ng-iconfont down">&#xe900;</em>
+                    </a>
+                    <div class="ng-sn-site-nav ng-d-box site-nav-child child" style="left: 0px; display:none;">
+                        <dl class="sn-site-list lnb">
+                            <dt>
+特色购物
+</dt>
+                            <dd>
+                                <p><a name="public0_none_dbgjt_wzdh030101" href="javascripr:;" target="_blank">苏宁互联</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030116" href="http://sale.suning.com/syb/pcdr/index.html" target="_blank">苏宁达人</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030102" href="javascripr:;" target="_blank">苏宁V购</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030103" href="javascripr:;" target="_blank">苏宁卡</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030104" href="javascripr:;" target="_blank">海外购</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030105" href="javascripr:;" target="_blank">企业采购</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030106" href="javascripr:;" target="_blank">大聚惠<i class="hot"></i></a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030107" href="javascripr:;" target="_blank">免费试用</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030108" href="javascripr:;" target="_blank">视频购物</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030111" href="http://sale.suning.com/images/advertise/mdr/oabangong526/index.html" target="_blank">办公直通车</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030112" href="javascripr:;" target="_blank">以旧换新</a></p>
+                                <!-- <p><a name="public0_none_dbgjt_wzdh030113" href="http://yushou.suning.com" target="_blank">预售</a></p> -->
+                                <p><a name="public0_none_dbgjt_wzdh030114" href="javascripr:;" target="_blank">新发现</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030115" href="javascripr:;" target="_blank">二手优品</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030116" href="javascripr:;" target="_blank">领券中心</a></p>
+                            </dd>
+                        </dl>
+                        <dl class="sn-site-list">
+                            <dt>
+主题频道
+</dt>
+                            <dd>
+                                <p><a name="public0_none_dbgjt_wzdh030201" href="javascripr:;" target="_blank">电器城</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030202" href="javascripr:;" target="_blank">苏宁超市</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030203" href="javascripr:;" target="_blank">手机</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030204" href="javascripr:;" target="_blank">运动馆</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030205" href="javascripr:;" target="_blank">图书</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030207" href="javascripr:;" target="_blank">红孩子母婴</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030208" href="javascripr:;" target="_blank">美妆个护</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030209" href="javascripr:;" target="_blank">电脑</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030210" href="javascripr:;" target="_blank">服装城</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030213" href="javascripr:;" target="_blank">智能生活</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030214" href="javascripr:;" target="_blank">家装馆</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030215" href="javascripr:;" target="_blank">汽车用品</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030216" href="javascripr:;" target="_blank">苏宁热卖<i class="hot"></i></a>
+                                </p>
+                                <p><a name="public0_none_dbgjt_wzdh030217" href="javascripr:;" target="_blank">排行榜</a></p>
+                            </dd>
+                        </dl>
+                        <dl class="sn-site-list">
+                            <dt>
+生活助手
+</dt>
+                            <dd>
+                                <p><a name="public0_none_dbgjt_wzdh030301" href="javascripr:;" target="_blank">零钱宝<i class="hot"></i></a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030302" href="javascripr:;" target="_blank">手机充值</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030303" href="javascripr:;" target="_blank">火车票</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030304" href="javascripr:;" target="_blank">转账还款</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030305" href="javascripr:;" target="_blank">约服务</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030306" href="javascripr:;" target="_blank">水电煤</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030307" href="javascripr:;" target="_blank">保险</a></p>
+                                <!-- <p><a name="public0_none_dbgjt_wzdh030308" href="http://caipiao.suning.com/" target="_blank">彩票</a></p> -->
+                                <p><a name="public0_none_dbgjt_wzdh030309" href="javascripr:;" target="_blank">机票</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030509" href="javascripr:;" target="_blank">门店查询</a></p>
+                            </dd>
+                        </dl>
+                        <dl class="sn-site-list">
+                            <dt>
+会员服务
+</dt>
+                            <dd>
+                                <p><a name="public0_none_dbgjt_wzdh030401" href="javascripr:;" target="_blank"><span>会员联盟</span><i class="hot"></i></a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030402" href="javascripr:;" target="_blank">苏宁社区</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030403" href="javascripr:;" target="_blank">延长保修</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030404" href="javascripr:;" target="_blank">免费书城</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030405" href="javascripr:;" target="_blank">易付宝</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030407" href="javascripr:;" target="_blank">苏宁理财</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030406" href="javascripr:;" target="_blank">苏宁金融</a></p>
+                            </dd>
+                        </dl>
+                        <dl class="sn-site-list rnb">
+                            <dt>
+更多热点
+</dt>
+                            <dd>
+                                <p><a name="public0_none_dbgjt_wzdh030503" href="javascripr:;" target="_blank">PPTV</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030504" href="javascripr:;" target="_blank">客户端</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030505" href="javascripr:;" target="_blank">商家入驻<i class="hot"></i></a></p>
+                                <!-- <p><a name="public0_none_dbgjt_wzdh030506" href="http://pan.suning.com/cloud-web/web2/cloud.html" target="_blank">苏宁云盘</a></p> -->
+                                <p><a name="public0_none_dbgjt_wzdh030507" href="javascripr:;" target="_blank">苏宁众包</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030508" href="javascripr:;" target="_blank">苏宁联盟</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030510" href="javascripr:;" target="_blank">用户体验</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030511" href="javascripr:;" target="_blank">公益频道</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030502" href="javascripr:;" target="_blank">校园先锋</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030512" href="javascripr:;" target="_blank">苏宁加盟</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030513" href="javascripr:;" target="_blank">苏宁云</a></p>
+                                <p><a name="public0_none_dbgjt_wzdh030514" href="javascripr:;" target="_blank">苏宁足球</a></p>
+                            </dd>
+                        </dl>
+                        <a href="javascript:void(0);" class="ng-close" name="public0_none_dbgjt_wzdh030516"><em class="ng-iconfont"></em></a>
+                    </div>
+                </div>
+                <div class="ng-bar-node-box shop-handle">
+                    <a href="javascripr:;" class="ng-bar-node ng-bar-node-pr5 ng-bar-node-shop touch-href" name="public0_none_dbgjt_sjrz01" target="_blank"><span>商家入驻</span><em class="ng-iconfont down">&#xe900;</em></a>
+                    <div class="ng-down-box ng-d-box shop-center-child ng-ser-list" style="display:none;">
+                        <a href="javascripr:;" rel="nofollow" target="_blank" name="public0_none_xdbgjt_sjrz02">商家工具</a>
+                        <a href="javascripr:;" rel="nofollow" target="_blank" name="public0_none_xdbgjt_sjrz03">金融中心</a>
+                        <a href="javascripr:;" rel="nofollow" target="_blank" name="public0_none_xdbgjt_sjrz04">商家论坛</a>
+                        <a href="javascripr:;" rel="nofollow" target="_blank" name="public0_none_xdbgjt_sjrz06">培训中心</a>
+                        <a href="javascripr:;" rel="nofollow" target="_blank" name="public0_none_xdbgjt_sjrz07">增值服务</a>
+                    </div>
+                </div>
+                <!--网站导航 ]]-->
+                <!-- 消息 [[ -->
+                <!-- <div class="ng-bar-node-box ng-msg-box">
+<a href="//msg.suning.com/" class="ng-bar-node ng-bar-node-msg" name="public0_none_dbgjt_wdxx01" target="_blank">
+<span>消息<i class="ng-iconfont dot"></i></span><em class="ng-iconfont down">&#xe62e;</em>
+</a>
+<div class="ng-d-box ng-msg-child" style="display:none;">
+<div class="ng-msg-list">
+<div class="ng-msg-item ng-msg-item-no">
+<i></i><span>嗷~ 没有新消息...</span>
+</div>
+</div>
+<div class="ng-msg-bottom"><a href="//msg.suning.com/" name="public0_none_dbgjt_wdxx01" target="_blank">查看更多</a></div>
+</div>
+</div> -->
+                <!-- 消息 ]] -->
+            </div>
+            <div class="ng-toolbar-right">
+                <!-- 登录注册 -->
+                <a href="javascript:void(0)" class="ng-bar-node username-bar-node username-bar-node-showside" id="username-node" rel="nofollow" style="display: none;">
+                    <span id="usernameHtml01"></span>
+                    <em class="hasmsg ng-iconfont"></em>
+                </a>
+                <div class="ng-bar-node-box username-handle" id="username-node-slide" style="display: none;">
+                    <a href="javascripr:;" rel="nofollow" class="ng-bar-node username-bar-node username-bar-node-noside" style="display: none;">
+                        <span id="usernameHtml02"></span>
+                        <em class="hasmsg ng-iconfont"></em>
+                        <em class="ng-iconfont down"></em>
+                    </a>
+                    <div class="ng-d-box ng-down-box ng-username-slide" style="display:none;">
+                        <a href="javascripr:;" class="ng-vip-union" target="_blank" rel="nofollow">账号管理</a>
+                        <a href="javascript:SFE.base.logoff();" rel="nofollow">退出登录</a>
+                    </div>
+                </div>
+                <div class="ng-bar-node reg-bar-node" id="reg-bar-node" style="display: block;">
+                    <a href="javascript:SFE.base.logonurl();" name="public0_none_dbgjt_login0800" rel="nofollow" class="login">登录</a>
+                    <a href="javascripr:;" target="_blank" class="login reg-bbb" rel="nofollow" name="public0_none_dbgjt_register09">注册</a>
+                </div>
+
+                <!-- <i class="ng-line ng-iconfont">&#xe628;</i> -->
+                <!--我的订单 [[-->
+                <div class="ng-bar-node-box myorder-handle">
+                    <a href="javascripr:;" rel="nofollow" name="public0_none_dbgjt_order04" class="ng-bar-node ng-bar-node-fix touch-href ng-bar-node-pr5 wddd"><span>我的订单</span><em class="ng-iconfont down"></em></a>
+                    <div class="ng-down-box ng-d-box myorder-child" style="display:none;">
+                        <a href="javascripr:;" rel="nofollow" name="public0_none_dbgjt_order0401">待支付<em id="waitPayCounts"></em></a>
+                        <a href="javascripr:;" rel="nofollow" name="public0_none_dbgjt_order0402">待收货<em id="waitDeliveryCounts"></em></a>
+                        <a href="javascripr:;" name="public0_none_dbgjt_order0403">待评价<em id="waitEvaluation"></em></a>
+                        <a href="javascripr:;" rel="nofollow" name="public0_none_dbgjt_order0404">修改订单</a>
+                    </div>
+                </div>
+                <!--我的订单 ]]-->
+                <!--我的易购 [[-->
+                <div class="ng-bar-node-box mysuning-handle">
+                    <a href="http://my.suning.com" rel="nofollow" name="public0_none_xdbgjt_wdyg01" class="ng-bar-node ng-bar-node-fix touch-href ng-bar-node-pr5 wdyg"><span>我的易购</span><em class="ng-iconfont down">&#xe900;</em></a>
+                    <div class="ng-down-box ng-d-box mysuning-child" style="display:none;">
+                        <div class="mysuning-infor clearfix">
+                            <a name="public0_none_xdbgjt_wdyg02" target="_blank" href="http://my.suning.com/person.do?targetTab=head" class="headimg"><img src="img/0000000000_01_60x60.jpg" alt="" id="userHead"></a>
+                            <div class="mysuning-detail">
+                                <a name="public0_none_xdbgjt_wdyg03" href="javascript:SFE.base.logonurl();" class="login">请登录</a>
+                                <a name="public0_none_xdbgjt_wdyg04" href="http://my.suning.com" rel="nofollow" class="username" id="userNickname">141******13</a>
+                                <a href="http://vip.suning.com/sign/welcome.do" rel="nofollow" name="public0_none_xdbgjt_wdyg05" class="daka">点击打卡</a>
+                            </div>
+                        </div>
+                        <a href="http://2.suning.com/myOrder/queryMyOrders.do" name="public0_none_xdbgjt_wdyg06" rel="nofollow" target="_blank">我的二手</a>
+                        <a href="http://favorite.suning.com/myFavoriteImg.do" rel="nofollow" name="public0_none_xdbgjt_wdyg07" target="_blank">我的收藏</a>
+                        <a href="https://passport.suning.com/ids/trustLogin?sysCode=epp&amp;targetUrl=http://my.jr.suning.com/sfp/accountAssets/index.htm" rel="nofollow" name="public0_none_xdbgjt_wdyg08" target="_blank">我的金融</a>
+                        <a href="http://vip.suning.com" class="ng-vip-union" target="_blank" rel="nofollow" name="public0_none_xdbgjt_wdyg09">会员联盟<em class="ng-iconfont"></em></a>
+                        <a href="https://rxf.suning.com/epps-cpf/accountMgt/assetOverview.do" rel="nofollow" name="public0_none_xdbgjt_wdyg10">我的任性付</a>
+                        <a href="http://quan.suning.com/yhq.do" rel="nofollow" name="public0_none_xdbgjt_wdyg11">我的优惠券</a>
+                    </div>
+                </div>
+                <!--我的易购 ]]-->
+                <!-- 购物车 -->
+                <a class="ng-bar-node ng-bar-node-mini-cart" name="public0_none_minicart_gouwclj" rel="nofollow" href="http://shopping.suning.com/cart.do">
+                    <em class="ng-iconfont cart">&#xe93a;</em><span>购物车</span>
+                    <span class="total-num-box" id="J_total_num_box">
+<b class="total-num J_cart_total_num" id="showTotalQty">0</b>
+<span class="total-num-bg-box">
+<em></em>
+<i></i>
+</span>
+                    </span>
+                </a>
+
+                <!--手机苏宁 [[-->
+                <div class="ng-bar-node-box app-down-box">
+                    <a href="http://sale.suning.com/syb/20120419xsjkhd/index.html" target="_blank" name="public0_none_xdbgjt_sjsn01" rel="nofollow" class="ng-bar-node mb-suning touch-href">
+                        <em class="ng-iconfont mb">&#xe959;</em><span>手机苏宁</span><em class="ng-iconfont down">&#xe900;</em>
+                    </a>
+                    <div class="ng-mb-box ng-d-box mb-down-child" style="display:none;">
+                        <ul class="ng-app-code">
+                            <li>
+                                <img class="top-code" src='img/erweima1.png' alt="苏宁易购APP">
+                                <p>下载苏宁易购APP</p>
+                                <img class="aoyun-text" src='img/erweima2.jpg' alt="">
+                            </li>
+                            <li>
+                                <img class="top-code" src='img/erweima3.png' alt="易付宝APP">
+                                <p>扫一扫</p>
+                                <p>下载易付宝APP</p>
+                            </li>
+                        </ul>
+                        <div class="line"></div>
+                        <!-- <ul class="ng-app-list">
+<li>
+<a href="https://passport.suning.com/ids/trustLogin?sysCode=epp&targetUrl=https://pay.suning.com/epp-epw/login/login.action" name="public0_none_xdbgjt_sjsn02" title="易付宝钱包"><img src3="" alt="易付宝钱包"/><p>易付宝钱包</p></a>
+</li>
+<li>
+<a href="http://app.pptv.com/pg_get_clt" name="public0_none_xdbgjt_sjsn03" title="PPTV"><img src3="" alt="PPTV"/><p>PPTV</p></a>
+</li>
+<li>
+<a href="http://sale.suning.com/syb/yinliuye0512/index.html" name="public0_none_xdbgjt_sjsn04" title="苏宁阅读"><img src3="" alt="苏宁阅读"/><p>苏宁阅读</p></a>
+</li>
+</ul> -->
+                    </div>
+                </div>
+                <!--手机苏宁 ]]-->
+                <a href="https://passport.suning.com/ids/trustLogin?sysCode=epp&amp;targetUrl=https://pay.suning.com/epp-epw/login/login.action" name="public0_none_dbgjt_yfb06" class="ng-bar-node ng-bar-node-pr5" target="_blank"><span>易付宝</span></a>
+                <a href="http://b.suning.com/" class="ng-bar-node ng-bar-node-pr5" name="public0_none_dbgjt_qypd01" target="_blank"><span>企业采购</span></a>
+                <!--服务中心 [[-->
+                <div class="ng-bar-node-box service-handle">
+                    <a href="javascript:void(0);" class="ng-bar-node ng-bar-node-service ng-bar-node-fix touch-href ng-bar-node-pr5 khfw" rel="nofollow" name="public0_none_xdbgjt_khfw01"><span>客户服务</span><em class="ng-iconfont down">&#xe900;</em>
+</a>
+                    <div class="ng-down-box ng-d-box service-center-child ng-ser-list" style="display:none;">
+                        <a href="http://help.suning.com" rel="nofollow" target="_blank" name="public0_none_xdbgjt_khfw02">帮助中心</a>
+                        <a href="http://assss.suning.com/assss-web/pc/appointService/queryAppointService.do" rel="nofollow" target="_blank" name="public0_none_xdbgjt_khfw03">帮客预约</a>
+                        <a href="http://store.suning.com" rel="nofollow" target="_blank" name="public0_none_xdbgjt_khfw04">查找门店</a>
+                        <!-- <a href="" target="_blank" name="public0_none_xdbgjt_khfw05">投诉</a> -->
+                        <a href="http://member.suning.com/emall/returnGoodsOrderView?storeId=10052&amp;catalogId=10051" rel="nofollow" name="public0_none_xdbgjt_khfw06" target="_blank">退换货</a>
+                        <a href="http://s.suning.com" rel="nofollow" name="public0_none_xdbgjt_khfw07" target="_blank">建议反馈</a>
+                        <a href="javascript:findpass();" rel="nofollow" name="public0_none_xdbgjt_khfw08"><span>在线咨询</span><em class="ng-iconfont"></em></a>
+                    </div>
+                </div>
+                <!--服务中心 ]]-->
+            </div>
+            <div id="ng-minicart-slide-box"></div>
+        </div>
+    </div>
+    <div class="ke">
+        <div class="header">
+            <a href="" class="tu1"><img src="img/top1.gif" alt=""></a>
+            <img src="img/top3.jpg" alt="" class="tu2">
+            <div class="serch">
+                <i class="ng-iconfont search-icon">&#xe986;</i>
+                <form method="get" onsubmit="return SFE.search.onSubmitSearch(this)">
+                    <div class="search-keyword-box">
+                        <input tabindex="0" id="searchKeywords" type="text" class="search-keyword" name="index1_none_search_ss2" value="" autocomplete="off">
+                    </div>
+                    <input id="searchSubmit" type="submit" class="search-btn" name="index1_none_search_ss1" value="搜索">
+                    <div id="ssl">
+                        <ul id="srk">
+                            <li>
+                                <p>搜索结果1</p>
+                            </li>
+                            <li>
+                                <p>搜索结果2</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="snKeywordNew" class="g-search-hotwords">
+                        <input type="hidden" id="searchDefaultKeyword" value="家电满1999减240" key="家电满1999减240">
+                        <a name="public0_RSC_国庆千万红包_0-0" target="_blank" href="http://search.suning.com/%E5%9B%BD%E5%BA%86%E5%8D%83%E4%B8%87%E7%BA%A2%E5%8C%85/"><font style="color:#FF6600">国庆千万红包</font></a>
+                        <a name="public0_RSC_买家电送空调_1-0" target="_blank" href="http://search.suning.com/%E4%B9%B0%E5%AE%B6%E7%94%B5%E9%80%81%E7%A9%BA%E8%B0%83/">买家电送空调</a>
+                        <a name="public0_RSC_空调999元起_2-0" target="_blank" href="http://search.suning.com/%E7%A9%BA%E8%B0%83999%E5%85%83%E8%B5%B7/">空调999元起</a>
+                        <a name="public0_RSC_1元抢车品_3-0" target="_blank" href="http://search.suning.com/1%E5%85%83%E6%8A%A2%E8%BD%A6%E5%93%81/">1元抢车品</a>
+                        <a name="public0_RSC_9.9元抢鼠标_4-0" target="_blank" href="http://search.suning.com/9%252E9%E5%85%83%E6%8A%A2%E9%BC%A0%E6%A0%87/">9.9元抢鼠标</a>
+                        <a name="public0_RSC_手机大放价_5-0" target="_blank" href="http://search.suning.com/%E6%89%8B%E6%9C%BA%E5%A4%A7%E6%94%BE%E4%BB%B7/">手机大放价</a>
+                        <a name="public0_RSC_空调95折抢_6-0" target="_blank" href="http://search.suning.com/%E7%A9%BA%E8%B0%8395%E6%8A%98%E6%8A%A2/">空调95折抢</a>
+                        <a name="public0_RSC_夹克男_7-0" target="_blank" href="http://search.suning.com/%E5%A4%B9%E5%85%8B%E7%94%B7/">夹克男</a>
+
+                    </div>
+                </form>
+            </div>
+            <a href="script" class="tu3"><img src="img/top2.jpg" alt=""></a>
+        </div>
+    </div>
+    <div id="head">
+        <div id=xfc>
+            <a class="feilei1" href="#">全部商品分类</a>
+            <ul class="xfc1">
+                <li>
+                    <a href="#">手机</a>
+                    <a href="#">数码</a>
+                    <a href="#">苏宁互联</a>
+                </li>
+                <li>
+                    <a href="#">电视</a>
+                    <a href="#">办公配件</a>
+                </li>
+                <li>
+                    <a href="#">空调</a>
+                    <a href="#">电视</a>
+                    <a href="#">冰箱</a>
+                    <a href="#">洗衣机</a>
+                </li>
+                <li>
+                    <a href="#">厨卫电器</a>
+                    <a href="#">小家电</a>
+                </li>
+                <li>
+                    <a href="#">家居</a>
+                    <a href="#">家具</a>
+                    <a href="#">家装</a>
+                </li>
+                <li>
+                    <a href="#">食品粮油</a>
+                    <a href="#">酒水冲调</a>
+                </li>
+                <li>
+                    <a href="#">个户化妆</a>
+                    <a href="#">清洁</a>
+                    <a href="#">纸品</a>
+                </li>
+                <li>
+                    <a href="#">母婴</a>
+                    <a href="#">玩具</a>
+                    <a href="#">童装童鞋</a>
+                </li>
+                <li>
+                    <a href="#">男装</a>
+                    <a href="#">女装</a>
+                    <a href="#">内衣</a>
+                </li>
+                <li>
+                    <a href="#">鞋靴</a>
+                    <a href="#">箱包</a>
+                    <a href="#">钟表</a>
+                    <a href="#">珠宝</a>
+                </li>
+                <li>
+                    <a href="#">运动户外</a>
+                    <a href="#">足球</a>
+                    <a href="#">汽车</a>
+                </li>
+                <li>
+                    <a href="#">图书</a>
+                    <a href="#">免费书城</a>
+                    <a href="#">童书</a>
+                </li>
+                <li>
+                    <a href="#">金融</a>
+                    <a href="#">理财</a>
+                    <a href="#">众筹</a>
+                    <a href="#">任性付</a>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="head-1">
+            <ul class="head-1-1">
+                <li><a name="index3_homepage1_968837676_word01" href="http://vip.suning.com/" target="_blank">苏宁会员
+                    </a></li>
+                <li><a name="index3_homepage1_968837676_word02" href="http://fashion.suning.com/" target="_blank">服装城
+                    </a></li>
+                <li><a name="index3_homepage1_968837676_word03" href="http://chaoshi.suning.com/" target="_blank">苏宁超市
+                    </a></li>
+                <li><a name="index3_homepage1_968837676_word04" href="http://dianqi.suning.com/" target="_blank">电器城
+                    
+                    </a></li>
+                <li><a name="index3_homepage1_968837676_word05" href="http://redbaby.suning.com/" target="_blank">红孩子母婴
+                    </a></li>
+                <li><a name="index3_homepage1_968837676_word06" href="http://ju.suning.com/" target="_blank">大聚惠
+                    </a></li>
+                <li><a name="index3_homepage1_968837676_word07" href="http://jinrong.suning.com/" target="_blank">苏宁金融
+                    </a></li>
+                <li><a name="index3_homepage1_968837676_word08" href="http://g.suning.com/mall.htm" target="_blank">海外购
+                    </a></li>
+                <li><a name="index3_homepage1_968837676_word09" href="http://china.suning.com/" target="_blank">中华特色馆
+                    </a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="pic">
+
+        <div id="pic0">
+
+            <ul>
+
+                <li id="on1" class="yc">
+                    <a href="javascript:;"><img src="img/147130681132155568.jpg" alt=""></a>
+                </li>
+                <li id="on2" class="yc">
+                    <a href="javascript:;"><img src="img/2.jpg" alt=""></a>
+                </li>
+                <li id="on3" class="yc">
+                    <a href="javascript:;"><img src="img/3.jpg" alt=""></a>
+                </li>
+                <li id="on4" class="yc">
+                    <a href="javascript:;"><img src="img/4.jpg" alt=""></a>
+                </li>
+                <li id="on5" class="yc">
+                    <a href="javascript:;"><img src="img/5.jpg" alt=""></a>
+                </li>
+                <li id="on6" class="yc">
+                    <a href="javascript:;"><img src="img/6.jpg" alt=""></a>
+                </li>
+
+            </ul>
+        </div>
+        <div id="list">
+            <a href="javascript:;" class="hong">1</a>
+            <a href="javascript:;" class="hong">2</a>
+            <a href="javascript:;" class="hong">3</a>
+            <a href="javascript:;" class="hong">4</a>
+            <a href="javascript:;" class="hong">5</a>
+            <a href="javascript:;" class="hong">6</a>
+
+        </div>
+        <div id=list2>
+            <a href="javascript:;" class="anniu" id="an1">&lt;</a>
+            <a href="javascript:;" class="anniu" id="an2">&gt;</a>
+        </div>
+        <div id="xfc-2">
+            <ul class="xfc-2-1">
+                <li><a href="#">公告</a></li>
+                <li class="x-right"><a href="#">足球</a></li>
+            </ul>
+            <div class="ls">
+                <div class="ls-1" style="display: block;">
+                    <p class="red-show"><a href="http://shop.suning.com/30000920/index.html" title="DOBBY无人机 自拍飞宠" name="index3_homepage1_968847695_word01" target="_blank"><span>[促销]</span>&nbsp;DOBBY无人机 自拍飞宠</a></p>
+                    <p><a href="https://licai.suning.com/lcportal/portal/promotion/list.htm?channelCode=PC_YGMstation_gonggao" title=" 6.2%爆款限量抢" name="index3_homepage1_968847695_word02" target="_blank"><span>[促销]</span> &nbsp;6.2%爆款限量抢</a></p>
+                    <p><a href="http://cuxiao.suning.com/city/cw20160525.html" title="西门子钜惠返场" name="index3_homepage1_968847695_word03" target="_blank"><span>[促销]</span>&nbsp;西门子钜惠返场</a></p>
+                    <p><a href="http://club.suning.com/forum-435-1.html" title="杭州/海口配送延迟公告" name="index3_homepage1_968847695_word04" target="_blank"><span>[公告]</span>&nbsp;杭州/海口配送延迟公告</a></p>
+
+                </div>
+                <div class="ls-2" style="display: none;">
+                    <p><a href="http://snfc.suning.com/" title="江苏苏宁足球俱乐部官方旗舰店" name="index3_homepage1_968847697_word01" target="_blank"><span>[头条]</span>&nbsp;江苏苏宁足球俱乐部官方旗舰店</a></p>
+                    <p><a href="http://cuxiao.suning.com/city/hwjs00093.htm" title="阿迪跑鞋399元" name="index3_homepage1_968847697_word02" target="_blank"><span>[促销]</span>&nbsp;阿迪跑鞋399元</a></p>
+                    <p><a href="http://zc.suning.com/project/detail.htm?projectId=10637" title="体育消费宝认1000得1150" name="index3_homepage1_968847697_word03" target="_blank"><span>[促销]</span>&nbsp;体育消费宝认1000得1150</a></p>
+                    <p><a href="http://sports.suning.com/" title="运动大牌3折起" name="index3_homepage1_968847697_word04" target="_blank"><span>[促销]</span>&nbsp;运动大牌3折起</a></p>
+                </div>
+            </div>
+            <div class="mi">
+
+
+            </div>
+            <div class="mi2">
+                <p class="mi2-1">苏宁旗下app</p>
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+    <div class="zhong">
+        <div class="zho">
+            <a href="#"><img src="img/8.jpg" alt=""></a>
+            <ul>
+                <li>
+                    <a href="#"><img src="img/9.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/10.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/11.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/12.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/13.png" alt=""></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="xia">
+        <div id="xia-1">
+            <ul id="xia-1-1">
+                <li id='suibian2'>
+                    <a href="javascripr:;"><img src="img/28.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="javascripr:;" class="x1"><img src="img/29.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="javascripr:;" class="x2"><img src="img/30.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" class="x3"><img src="img/31.jpg" alt=""></a>
+                </li>
+
+
+                <li>
+                    <a href="#"><img src="img/20.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" class="x1"><img src="img/21.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" class="x2"><img src="img/22.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" class="x3"><img src="img/23.jpg" alt=""></a>
+                </li>
+
+                <li id='suibian'>
+                    <a href="#"><img src="img/24.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" class="x1"><img src="img/25.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" class="x2"><img src="img/26.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" class="x3"><img src="img/27.jpg" alt=""></a>
+                </li>
+
+                <li id='suibian2'>
+                    <a href="#"><img src="img/28.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" class="x1"><img src="img/29.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" class="x2"><img src="img/30.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" class="x3"><img src="img/31.jpg" alt=""></a>
+                </li>
+
+                <li id='suibian3'>
+                    <a href="#"><img src="img/20.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" class="x1"><img src="img/21.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" class="x2"><img src="img/22.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" class="x3"><img src="img/23.jpg" alt=""></a>
+                </li>
+            </ul>
+            <div>
+                <a href="javascript:;" class="oniu" id="ou1">&lt;</a>
+                <a href="javascript:;" class="oniu" id="ou2">&gt;</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="yyz">
+        <div class="yinying">
+            <div class="yy">
+                <h3>
+               放心去喜欢
+           </h3>
+            </div>
+            <div class="yyy1">
+                <ul class="yinying-1">
+                    <li>
+                        <a href="javascript:;"><img src="img/a1.jpg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/a2.jpg" alt=""></a>
+                    </li>
+                </ul>
+
+
+                <ul class="yinying-2">
+
+
+                    <li class="yinying-2-1">
+                        <a href="javascript:;"></a><img src="img/a3.png" alt="" class="yinying-2-2"></li>
+                    <li class="yinying-2-1">
+                        <a href="javascript:;"></a><img src="img/a4.png" alt="" class="yinying-2-2"></li>
+                    <li class="yinying-2-1">
+                        <a href="javascript:;"></a><img src="img/a5.png" alt="" class="yinying-2-2"></li>
+                    <li class="yinying-2-1">
+                        <a href="javascript:;"></a><img src="img/a6.png" alt="" class="yinying-2-2"></li>
+
+
+
+                    <li class="yinying-2-1">
+                        <a href="javascript:;"></a><img src="img/a7.png" alt="" class="yinying-2-2"></li>
+                    <li class="yinying-2-1">
+                        <a href="javascript:;"></a><img src="img/a8.png" alt="" class="yinying-2-2"></li>
+                    <li class="yinying-2-1">
+                        <a href="javascript:;"></a><img src="img/a9.png" alt="" class="yinying-2-2"></li>
+                    <li class="yinying-2-1">
+                        <a href="javascript:;"></a><img src="img/a10.png" alt="" class="yinying-2-2"></li>
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="naike">
+        <div class="second-screen brands-wall wrapper g-brand">
+            <div class="title">
+
+                <h3>大牌盛宴</h3>
+                <h4></h4>
+                <ul class="floor-tab">
+                </ul>
+            </div>
+            <a href="http://pinpai.suning.com/" title="华硕" name="index3_homepage1_968917706_pic01" target="_blank" class="brands-enter">
+                <img alt="" class="lazy-loading" src="img/c20.jpg">
+            </a>
+            <ul class="brands-list g-tab-list" style="display:block;">
+
+                <li class="item1 xuanze" data-shopid="IPHONE">
+                    <img alt="iPhone6s64G4749元抢" class="lazy-loading" src="img/c1.jpg">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>iPhone6s64G4749元抢</p>
+                        <a href="http://cuxiao.suning.com/city/tx00065.htm" class="enter" name="index3_homepage1_968917708_pic01" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart1"></a>
+                    </div>
+                </li>
+                <li class="item2 xuanze " data-shopid="0070074453">
+                    <img alt="49元起" class="lazy-loading" src="img/c2.jpg">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>49元起</p>
+                        <a href="http://mxkyd.suning.com/" class="enter" name="index3_homepage1_968917708_pic02" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart2"></a>
+                    </div>
+                </li>
+                <li class="item3 xuanze" data-shopid="小米">
+                    <img alt="小米5 直降300" class="lazy-loading" src="img/c3.jpg">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>小米5 直降300</p>
+                        <a href="http://cuxiao.suning.com/city/tx00666.htm" class="enter" name="index3_homepage1_968917708_pic03" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart3"></a>
+                    </div>
+                </li>
+                <li class="item4 xuanze" data-shopid="阿迪达斯">
+                    <img alt="满299减50" class="lazy-loading" src="img/c4.png">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>满299减50</p>
+                        <a href="http://shengdao.suning.com/" class="enter" name="index3_homepage1_968917708_pic04" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart4"></a>
+                    </div>
+                </li>
+                <li class="item5 xuanze" data-shopid="0070086258">
+                    <img alt="荣耀5X直降300" class="lazy-loading" src="img/c5.jpg">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>荣耀5X直降300</p>
+                        <a href="http://honor.suning.com/index.html" class="enter" name="index3_homepage1_968917708_pic05" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart5"></a>
+                    </div>
+                </li>
+                <li class="item6 xuanze" data-shopid="蓝月亮">
+                    <img alt="满199减100" class="lazy-loading" src="img/c6.jpg">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>满199减100</p>
+                        <a href="http://shop.suning.com/30000485/index.html?adtype=cpt" class="enter" name="index3_homepage1_968917708_pic06" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart6"></a>
+                    </div>
+                </li>
+                <li class="item7 xuanze" data-shopid="0070074453">
+                    <img alt="满299减50" class="lazy-loading" src="img/c7.png">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>满299减50</p>
+                        <a href="http://shop.suning.com/70112972/index.html" class="enter" name="index3_homepage1_968917708_pic07" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart7"></a>
+                    </div>
+                </li>
+                <li class="item8 xuanze" data-shopid="0030000134">
+                    <img alt="PRO6直降200" class="lazy-loading" src="img/c8.jpg">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>PRO6直降200</p>
+                        <a href="http://shop.suning.com/30000134/index.html" class="enter" name="index3_homepage1_968917708_pic08" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart8"></a>
+                    </div>
+                </li>
+                <li class="item9 xuanze" data-shopid="百草味">
+                    <img alt="买2付1" class="lazy-loading" src="img/c9.jpg">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>买2付1</p>
+                        <a href="http://shop.suning.com/30000861/index.html" class="enter" name="index3_homepage1_968917708_pic09" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart9"></a>
+                    </div>
+                </li>
+                <li class="item10 xuanze" data-shopid="史密斯">
+                    <img alt="套购最高可省2350元" class="lazy-loading" src="img/c10.jpg">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>套购最高可省2350元</p>
+                        <a href="http://shop.suning.com/30000025/index.html" class="enter" name="index3_homepage1_968917708_pic10" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart10"></a>
+                    </div>
+                </li>
+                <li class="item11 xuanze" data-shopid="vivo">
+                    <img alt="X7享12期免息" class="lazy-loading" src="img/c11.png">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>X7享12期免息</p>
+                        <a href="http://shop.suning.com/30000019/index.html" class="enter" name="index3_homepage1_968917708_pic11" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart11"></a>
+                    </div>
+                </li>
+                <li class="item12 xuanze" data-shopid="特步">
+                    <img alt="秋季精选 两双149元" class="lazy-loading" src="img/c12.png">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>秋季精选 两双149元</p>
+                        <a href="http://xtep.suning.com/" class="enter" name="index3_homepage1_968917708_pic12" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart12"></a>
+                    </div>
+                </li>
+                <li class="item13 xuanze" data-shopid="美的">
+                    <img alt="爆款777元起" class="lazy-loading" src="img/c13.jpg">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>爆款777元起</p>
+                        <a href="http://meidi.suning.com/10122452.html" class="enter" name="index3_homepage1_968917708_pic13" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart13"></a>
+                    </div>
+                </li>
+                <li class="item14 xuanze" data-shopid="安踏">
+                    <img alt="满199减30" class="lazy-loading" src="img/c14.png">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>满199减30</p>
+                        <a href="http://shop.suning.com/70138745/index.html" class="enter" name="index3_homepage1_968917708_pic14" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart14"></a>
+                    </div>
+                </li>
+                <li class="item15 xuanze" data-shopid="三只松鼠">
+                    <img alt="全场8.9元起" class="lazy-loading" src="img/c15.jpg">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>全场8.9元起</p>
+                        <a href="http://shop.suning.com/70067092/index.html" class="enter" name="index3_homepage1_968917708_pic15" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart15"></a>
+                    </div>
+                </li>
+                <li class="item16 xuanze" data-shopid="TCL">
+                    <img alt="55时4K只需4535" class="lazy-loading" src="img/c16.jpg">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>55时4K只需4535</p>
+                        <a href="http://shop.suning.com/30000024/10005579.html" class="enter" name="index3_homepage1_968917708_pic16" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart16"></a>
+                    </div>
+                </li>
+                <li class="item17 xuanze" data-shopid="全棉时代">
+                    <img alt="低至6.5折" class="lazy-loading" src="img/c17.jpg">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>低至6.5折</p>
+                        <a href="http://shop.suning.com/70130091/index.html" class="enter" name="index3_homepage1_968917708_pic17" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart17"></a>
+                    </div>
+                </li>
+                <li class="item18 xuanze" data-shopid="水星家纺">
+                    <img alt="全棉印花套件299元起" class="lazy-loading" src="img/c18.jpg">
+                    <div class="black-cover" style="display: none;"></div>
+                    <div class="cover-content" style="display: none;">
+                        <p>全棉印花套件299元起</p>
+                        <a href="http://shop.suning.com/70063001/index.html" class="enter" name="index3_homepage1_968917708_pic18" target="_blank">点击进入</a>
+                        <a href="javascript:;" class="collect" name="index3_homepage1_dpsy1_heart18"></a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="tu">
+            <a href="javascript:;"><img src="img/e1.jpg" alt=""></a>
+        </div>
+        <div class="cnxh">
+            <div class="title">
+                <h3>猜你喜欢</h3>
+                <a class="changeCommodity" href="javascript:;"><i class="ng-iconfont"></i>换一换</a>
+                <ul class="tu-list">
+                    <li>
+                        <a href="javascript:;"><img src="img/f1.jpg" alt="" class="tukuang"></a>
+                        <p><a href="javascript:;">荣事达（Royalstar）电火锅电热锅爆款升级5升大容量双管</a></p>
+                        <span class="price"><i>¥</i><em>10000</em></span>
+                        <span class="cuxiao">大聚惠</span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f2.jpg" alt="" class="tukuang"></a>
+                        <p><a href="javascript:;">天际(TONZE)DGD40-40SWD电炖锅香槟金色</a></p><span class="price"><i>¥</i><em>10000</em></span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f3.jpg" alt="" class="tukuang"></a>
+                        <p> <a href="javascript:;">小熊（Bear）养生壶YSH-A15E1玻璃电热水壶全自动保温煎药煲中药壶智能预约定时</a></p><span class="price"><i>¥</i><em>10000</em></span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f4.jpg" alt="" class="tukuang"></a>
+                        <p><a href="javascript:;">九阳(Joyoung)DJ14B-D06D 全自动 植物奶牛 全钢 多功能 </a></p><span class="price"><i>¥</i><em>10000</em></span>
+                        <span class="cuxiao">大聚惠</span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f5.jpg" alt="" class="tukuang"></a>
+                        <p><a href="javascript:;">九阳（Joyoung）JYF-40FS80 电饭煲4L智能预约多</a></p><span class="price"><i>¥</i><em>10000</em></span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f6.jpg" alt="" class="tukuang"></a>
+                        <p><a href="javascript:;">美的(Midea)SN2105T大功率多功能电磁炉 (赠汤锅+炒锅)</a></p><span class="price"><i>¥</i><em>10000</em></span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f7.jpg" alt="" class="tukuang"></a>
+                        <a href="javascript:;">九阳(Joyoung)DJ13B-C617SG 多功能家用 双磨全</a></p><span class="price"><i>¥</i><em>10000</em></span><span class="cuxiao">大聚惠</span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f8.jpg" alt="" class="tukuang"></a>
+                        <p><a href="javascript:;">【苏宁易购超市】哈尔滨啤酒小麦王听装330ml*6*4</a></p><span class="price"><i>¥</i><em>10000</em></span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f9.jpg" alt="" class="tukuang"></a>
+                        <p><a href="javascript:;">【苏宁易购超市】桂格即食燕麦片1478g/袋</a></p><span class="price"><i>¥</i><em>10000</em></span><span class="cuxiao">大聚惠</span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f10.jpg" alt="" class="tukuang"></a>
+                        <p><a href="javascript:;">【苏宁易购超市】达利园 蛋糕蛋香味 600g 饼干糕点 零食 下</a></p><span class="price"><i>¥</i><em>10000</em></span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f12.jpg" alt="" class="tukuang"></a>
+                        <p><a href="javascript:;">【苏宁易购超市】 农夫山泉 饮用天然水550ml普通装1*24</a></p><span class="price"><i>¥</i><em>10000</em></span><span class="cuxiao">大聚惠</span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f13.jpg" alt="" class="tukuang"></a>
+                        <p><a href="javascript:;">【苏宁易购超市】怡宝纯净水4.5L*4箱装</a></p><span class="price"><i>¥</i><em>10000</em></span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f14.jpg" alt="" class="tukuang"></a>
+                        <p><a href="javascript:;">【苏宁易购超市】福临门 苏软香大米 4kg</a></p><span class="price"><i>¥</i><em>10000</em></span><span class="cuxiao">大聚惠</span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f15.jpg" alt="" class="tukuang"></a>
+                        <p><a href="javascript:;">【苏宁易购超市】福临门葵花籽原香食用调和油5L</a></p><span class="price"><i>¥</i><em>10000</em></span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f16.jpg" alt="" class="tukuang"></a>
+                        <p><a href="javascript:;">【苏宁易购超市】光明莫斯利安350克*6</a></p><span class="price"><i>¥</i><em>10000</em></span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f17.jpg" alt="" class="tukuang"></a>
+                        <p><a href="javascript:;">【苏宁易购超市】百威啤酒500ML*18</a></p><span class="price"><i>¥</i><em>10000</em></span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f18.jpg" alt="" class="tukuang"></a>
+                        <p><a href="javascript:;">【苏宁易购超市】中裕(ZHONGYU)原味小麦粉</a></p><span class="price"><i>¥</i><em>10000</em></span><span class="cuxiao">大聚惠</span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/f19.jpg" alt="" class="tukuang"></a>
+                        <p><a href="javascript:;">爱乡亲800g手撕面包早餐面包蒸奶香口袋小面包食品蛋糕点</a></p><span class="price"><i>¥</i><em>10000</em></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="fenlei">
+
+        <div class="fzbh fz-xia">
+            <div class="tittle1">
+
+                <h3>F1 服装百货</h3>
+                <ul>
+                    <li class="fl fz-child"><a href=""><em>热门活动</em></a></li>
+                    <li class="fl fz-child"><a href=""><em>绅士男装</em></a></li>
+                    <li class="fl fz-child"><a href=""><em>女装内衣</em></a></li>
+                    <li class="fl fz-child"><a href=""><em>运动户外</em></a></li>
+                    <li class="fl fz-child"><a href=""><em>鞋包内饰</em></a></li>
+                </ul>
+            </div>
+            <div class="zuo">
+
+                <img src="img/g1.png" alt="" class="zuo-1">
+
+
+
+                <div class="zuo-2">
+                    <div class="zuo-2-1">
+                        <a href="http://search.suning.com/%E7%94%B7%E5%A3%AB%E8%A1%AC%E8%A1%AB/" target="_blank" name="index3_homepage1_975287716_word01">衬衫</a>
+                        <a href="http://list.suning.com/0-346872-0.html" target="_blank" name="index3_homepage1_975287716_word02">牛仔裤男</a>
+                        <a href="http://search.suning.com/%E5%A5%B3%E5%A3%AB%E7%89%9B%E4%BB%94%E8%A3%A4/" target="_blank" name="index3_homepage1_975287716_word03">牛仔裤女</a>
+                        <a href="http://search.suning.com/%E7%9F%AD%E5%A4%96%E5%A5%97/" target="_blank" name="index3_homepage1_975287716_word04">短外套</a>
+                        <a href="http://search.suning.com/%E7%94%B7%E5%A3%AB%E5%86%85%E8%A3%A4/" target="_blank" name="index3_homepage1_975287716_word05">男士内裤</a>
+                        <a href="http://list.suning.com/0-346870-0.html" target="_blank" name="index3_homepage1_975287716_word06">潮流衬衫</a>
+                        <a href="http://search.suning.com/%E5%A5%B3%E8%A3%85%20%202016%E5%A4%8F/" target="_blank" name="index3_homepage1_975287716_word07">连衣裙</a>
+                        <a href="http://list.suning.com/0-340558-0.html" target="_blank" name="index3_homepage1_975287716_word08">休闲鞋男</a>
+                    </div>
+                    <div class="zuo-2-2">
+                        <a href="http://search.suning.com/%E9%92%B1%E5%8C%85/" target="_blank" name="index3_homepage1_975287717_word01">钱包</a>
+                        <a href="http://list.suning.com/0-344256-0.html" target="_blank" name="index3_homepage1_975287717_word02">拉杆箱</a>
+                        <a href="http://search.suning.com/%E9%BB%84%E9%87%91/" target="_blank" name="index3_homepage1_975287717_word03">黄金</a>
+                        <a href="http://list.suning.com/0-454003-0.html" target="_blank" name="index3_homepage1_975287717_word04">男士手表</a>
+                        <a href="http://search.suning.com/%E6%89%93%E7%81%AB%E6%9C%BA/" target="_blank" name="index3_homepage1_975287717_word05">打火机</a>
+                        <a href="http://list.suning.com/0-420503-0.html" target="_blank" name="index3_homepage1_975287717_word06">跑步鞋</a>
+                        <a href="http://list.suning.com/0-420555-0.html" target="_blank" name="index3_homepage1_975287717_word07">跑步机</a>
+                        <a href="http://search.suning.com/%E5%B1%B1%E5%9C%B0%E8%BD%A6/" target="_blank" name="index3_homepage1_975287717_word08">山地车</a>
+                    </div>
+                </div>
+                <div class="zuo-3">
+                    <a href="javascript:;"><img src="img/g7.jpg" alt=""></a>
+                </div>
+
+                <!--左边-->
+
+
+
+            </div>
+            <div class="fz-youbian g-tab-list">
+                <div class="huan">
+                    <ul>
+                        <li>
+                            <a href="javascripr:;"><img src="img/g2.jpg" alt="" class="bian-1"></a>
+                        </li>
+                        <li>
+                            <a href="javascripr:;"><img src="img/g1g.jpg" alt="" class="bian-1" style="display:none;"></a>
+                        </li>
+                        <li>
+                            <a href="javascripr:;"><img src="img/g2g.jpg" alt="" class="bian-1" style="display:none;"></a>
+                        </li>
+                    </ul>
+
+                    <a href="javascript:;" class="angle-btn prev-btn" style="display:none;">&lt;</a>
+                    <a href="javascript:;" class="angle-btn next-btn" style="display:none;">&gt;</a>
+
+                    <div class="banner-nav-wrapper">
+                        <div class="banner-nav">
+                            <a href="javascript:;" class="page-item page-current"></a>
+                            <a href="javascript:;" class="page-item"></a>
+                            <a href="javascript:;" class="page-item"></a>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+                <ul class="fz-right-0 ">
+
+                    <li>
+
+                        <a href="javascript:;"><img src="img/g8.jpg" alt="" class="fz-right-0-1"></a>
+
+
+                    </li>
+                    <li>
+
+                        <a href="javascript:;"><img src="img/g9.jpg" alt="" class="fz-right-0-2"></a>
+
+
+                    </li>
+
+                </ul>
+                <div class="fz-right-1">
+                    <ul>
+
+                        <li>
+                            <a href="javascript:;"><img src="img/g5.jpg" alt=""></a>
+                            <a href="javascript:;"><img src="img/g10.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="fz-right-2">
+                    <ul>
+                        <li>
+                            <a href="javascript:;"><img src="img/g6.jpg" alt=""></a>
+
+                            <a href="javascript:;"><img src="img/g11.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+            <div class="main-cont g-tab-list" style="display:none;">
+
+                <ul class="prd-list">
+                    <li data-sku="150832857|1|2|0070137430">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287724_prod01" href="http://product.suning.com/0070137430/150832857.html?srcpoint=index3_homepage1_975287724_prod01" target="_blank" title="墨麦客2016春季新款男士针织开衫男装韩版修身毛衣薄外套潮2027"><img src="img/q1.jpg" alt="发布价 129 100%纯棉 多色百搭"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070137430/150832857.html?srcpoint=index3_homepage1_975287724_prod01" target="_blank">墨麦客2016春季新款男士针织开衫男装韩版修身毛衣薄外套潮2027</a></p>
+                        <p class="price"><i>¥</i><span>99.00</span></p>
+                    </li>
+                    <li data-sku="124330435|1|2|0070062935">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287724_prod02" href="http://product.suning.com/0070062935/124330435.html?srcpoint=index3_homepage1_975287724_prod02" target="_blank" title="红豆男装新品 秋冬男士商务绅士气质呢大衣 绅士品牌外套S10黑色 180/96A"><img src="img/q2.jpg" alt=""></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070062935/124330435.html?srcpoint=index3_homepage1_975287724_prod02" target="_blank">红豆男装新品 秋冬男士商务绅士气质呢大衣 绅士品牌外套S10黑色 180/96A</a></p>
+                        <p class="price"><i>¥</i><span>229.00</span></p>
+                    </li>
+                    <li data-sku="167692080|1|2|0070075676">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287724_prod03" href="http://product.suning.com/0070075676/167692080.html?srcpoint=index3_homepage1_975287724_prod03" target="_blank" title="七匹狼经典款T恤 2016新品 男士纯棉多色翻领时尚商务休闲POLO衫长袖t恤 男装"><img src="img/q3.jpg" alt="新品上架"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070075676/167692080.html?srcpoint=index3_homepage1_975287724_prod03" target="_blank">七匹狼经典款T恤 2016新品 男士纯棉多色翻领时尚商务休闲POLO衫长袖t恤 男装</a></p>
+                        <p class="price"><i>¥</i><span>179.00</span></p>
+                    </li>
+                    <li data-sku="158120951|1|2|0070134588">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287724_prod04" href="http://product.suning.com/0070134588/158120951.html?srcpoint=index3_homepage1_975287724_prod04" target="_blank" title="GXG[特惠]男装现在 男士时尚潮流斯文修身休闲裤#32202093"><img src="img/q4.jpg" alt="热卖中"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070134588/158120951.html?srcpoint=index3_homepage1_975287724_prod04" target="_blank">GXG[特惠]男装现在 男士时尚潮流斯文修身休闲裤#32202093</a></p>
+                        <p class="price"><i>¥</i><span>498.00</span></p>
+                    </li>
+                    <li data-sku="168573955|1|2|0070092167">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287724_prod05" href="http://product.suning.com/0070092167/168573955.html?srcpoint=index3_homepage1_975287724_prod05" target="_blank" title="Jussara Lee秋季新款弹力男士牛仔裤直筒裤男装长裤"><img src="img/q5.jpg" alt="防伪正品，秋季新款，弹力舒适，买两条领券减10元，精美包装送礼倍有面子"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070092167/168573955.html?srcpoint=index3_homepage1_975287724_prod05" target="_blank">Jussara Lee秋季新款弹力男士牛仔裤直筒裤男装长裤</a></p>
+                        <p class="price"><i>¥</i><span>78.00</span></p>
+                    </li>
+                    <li data-sku="171982907|1|2|0070100330">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287724_prod06" href="http://product.suning.com/0070100330/171982907.html?srcpoint=index3_homepage1_975287724_prod06" target="_blank" title="美特斯邦威毛衣男2016秋装新款男士毛衣韩版时尚纯棉开衫男601660"><img src="img/q6.jpg" alt="新品上架"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070100330/171982907.html?srcpoint=index3_homepage1_975287724_prod06" target="_blank">美特斯邦威毛衣男2016秋装新款男士毛衣韩版时尚纯棉开衫男601660</a></p>
+                        <p class="price"><i>¥</i><span>159.00</span></p>
+                    </li>
+                    <li data-sku="170748338|1|2|0070081108">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287724_prod07" href="http://product.suning.com/0070081108/170748338.html?srcpoint=index3_homepage1_975287724_prod07" target="_blank" title="海澜之家/Heilan Home2016秋季新品男士修身长袖t恤圆领HNTAJ3N093A"><img src="img/q7.jpg" alt="秋季新品"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070081108/170748338.html?srcpoint=index3_homepage1_975287724_prod07" target="_blank">海澜之家/Heilan Home2016秋季新品男士修身长袖t恤圆领HNTAJ3N093A</a></p>
+                        <p class="price"><i>¥</i><span>98.00</span></p>
+                    </li>
+                    <li data-sku="175263390|1|2|0070125137">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287724_prod08" href="http://product.suning.com/0070125137/175263390.html?srcpoint=index3_homepage1_975287724_prod08" target="_blank" title="花花公子贵宾蓝色条纹 50 深蓝色"><img src="img/q8.jpg" alt=""></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070125137/175263390.html?srcpoint=index3_homepage1_975287724_prod08" target="_blank">花花公子贵宾蓝色条纹 50 深蓝色</a></p>
+                        <p class="price"><i>¥</i><span>159.00</span></p>
+                    </li>
+                </ul>
+
+
+            </div>
+            <div class="main-cont g-tab-list" style="display:none;">
+                <ul class="prd-list">
+                    <li data-sku="162725909|1|2|0070068626">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287725_prod01" href="http://product.suning.com/0070068626/162725909.html?srcpoint=index3_homepage1_975287725_prod01" target="_blank" title="妖精的口袋 海龟马戏团 秋装女修身针织套头一字领条纹毛衣 1639070预售 9.9发"><img src="img/w1.jpg" alt="美貌如花妞儿，致妖精的新装，点击查看新品，潮搭时髦态度！！！"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070068626/162725909.html?srcpoint=index3_homepage1_975287725_prod01" target="_blank">妖精的口袋 海龟马戏团 秋装女修身针织套头一字领条纹毛衣 1639070预售 9.9发</a></p>
+                        <p class="price"><i>¥</i><span>99.00</span></p>
+                    </li>
+                    <li data-sku="167840837|1|2|0070096237">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287725_prod02" href="http://product.suning.com/0070096237/167840837.html?srcpoint=index3_homepage1_975287725_prod02" target="_blank" title="佐露丝2016秋装新款韩版衬衫女拼接娃娃领上衣修身显瘦衬衣假两件衬衫女"><img src="img/w2.jpg" alt="包邮  支持七天退换货"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070096237/167840837.html?srcpoint=index3_homepage1_975287725_prod02" target="_blank">佐露丝2016秋装新款韩版衬衫女拼接娃娃领上衣修身显瘦衬衣假两件衬衫女</a></p>
+                        <p class="price"><i>¥</i><span>69.90</span></p>
+                    </li>
+                    <li data-sku="173586023|1|2|0070119585">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287725_prod03" href="http://product.suning.com/0070119585/173586023.html?srcpoint=index3_homepage1_975287725_prod03" target="_blank" title="朗妮姿 呢子大衣女 2016秋冬新款韩版中长款修身茧型字母毛呢大衣外套 W8642"><img src="img/w3.jpg" alt="秋冬新品，火热上市，全场满99减10，满199减20，满350减50，满599减100，更多优惠，请进店咨询！"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070119585/173586023.html?srcpoint=index3_homepage1_975287725_prod03" target="_blank">朗妮姿 呢子大衣女 2016秋冬新款韩版中长款修身茧型字母毛呢大衣外套 W8642</a></p>
+                        <p class="price"><i>¥</i><span>198.00</span></p>
+                    </li>
+                    <li data-sku="163803855|1|2|0070068626">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287725_prod04" href="http://product.suning.com/0070068626/163803855.html?srcpoint=index3_homepage1_975287725_prod04" target="_blank" title="妖精的口袋 流动的童话 秋装女甜美淑女纯色前短后长娃娃领衬衫 1634008预8.15发"><img src="img/w4.jpg" alt="美貌如花妞儿，致妖精的新装，点击查看新品，潮搭时髦态度！！！"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070068626/163803855.html?srcpoint=index3_homepage1_975287725_prod04" target="_blank">妖精的口袋 流动的童话 秋装女甜美淑女纯色前短后长娃娃领衬衫 1634008预8.15发</a></p>
+                        <p class="price"><i>¥</i><span>159.20</span></p>
+                    </li>
+                    <li data-sku="172449149|1|2|0070140597">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287725_prod05" href="http://product.suning.com/0070140597/172449149.html?srcpoint=index3_homepage1_975287725_prod05" target="_blank" title="安之伴2016秋冬季珊瑚绒卡通条纹情侣套装"><img src="img/w5.jpg" alt="清新简约设计 清新简约风格，多元设计让家居服时尚休闲蔚然成风"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070140597/172449149.html?srcpoint=index3_homepage1_975287725_prod05" target="_blank">安之伴2016秋冬季珊瑚绒卡通条纹情侣套装</a></p>
+                        <p class="price"><i>¥</i><span>129.00</span></p>
+                    </li>
+                    <li data-sku="149662287|1|2|0070081143">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287725_prod06" href="http://product.suning.com/0070081143/149662287.html?srcpoint=index3_homepage1_975287725_prod06" target="_blank" title="南极人【4条盒装】男士内裤U凸莫代尔透气内裤男 P2035"><img src="img/w6.jpg" alt="【包邮】面料吸湿排汗，舒适透气亲肤"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070081143/149662287.html?srcpoint=index3_homepage1_975287725_prod06" target="_blank">南极人【4条盒装】男士内裤U凸莫代尔透气内裤男 P2035</a></p>
+                        <p class="price"><i>¥</i><span>29.90</span></p>
+                    </li>
+                    <li data-sku="140237467|1|2|0070088751">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287725_prod07" href="http://product.suning.com/0070088751/140237467.html?srcpoint=index3_homepage1_975287725_prod07" target="_blank" title="曲慕 无钢圈运动文胸 防震跑步跳舞内衣前拉链运动背心内衣QM6271"><img src="img/w7.jpg" alt="买满99减10、159减20、259减40元。全场包邮，默认发圆通！穿时尚内衣，做回羡慕女人！"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070088751/140237467.html?srcpoint=index3_homepage1_975287725_prod07" target="_blank">曲慕 无钢圈运动文胸 防震跑步跳舞内衣前拉链运动背心内衣QM6271</a></p>
+                        b
+                        <p class="price"><i>¥</i><span>69.00</span></p>
+                    </li>
+                    <li data-sku="174541170|1|2|0070084118">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287725_prod08" href="http://product.suning.com/0070084118/174541170.html?srcpoint=index3_homepage1_975287725_prod08" target="_blank" title="锦序新款睡衣夏季棉质情侣家居服休闲卡通大白男女两件套装睡衣 女款M T字母请"><img src="img/w8.jpg" alt=""></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070084118/174541170.html?srcpoint=index3_homepage1_975287725_prod08" target="_blank">锦序新款睡衣夏季棉质情侣家居服休闲卡通大白男女两件套装睡衣 女款M T字母请</a></p>
+                        <p class="price"><i>¥</i><span>39.90</span></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-cont g-tab-list" style="display:none;">
+                <ul class="prd-list">
+                    <li data-sku="144111549|1|2|0070075082">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287726_prod01" href="http://product.suning.com/0070075082/144111549.html?srcpoint=index3_homepage1_975287726_prod01" target="_blank" title="adidas 阿迪达斯 2016新款 情侣款跑步鞋减震透气运动鞋"><img src='img/r1.jpg' alt="【胜道】全场满199包邮，首页有惊喜哦！"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070075082/144111549.html?srcpoint=index3_homepage1_975287726_prod01" target="_blank">adidas 阿迪达斯 2016新款 情侣款跑步鞋减震透气运动鞋</a></p>
+                        <p class="price"><i>¥</i><span>369.00</span></p>
+                    </li>
+                    <li data-sku="142807998|1|2|0070065619">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287726_prod02" href="http://product.suning.com/0070065619/142807998.html?srcpoint=index3_homepage1_975287726_prod02" target="_blank" title="特步正品男跑鞋2016新款时尚舒适轻便百搭男子休闲旅游运动鞋984219119385"><img src='img/r2.jpg' alt=" 官方正品 品质保证 全国包邮 急速送达"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070065619/142807998.html?srcpoint=index3_homepage1_975287726_prod02" target="_blank">特步正品男跑鞋2016新款时尚舒适轻便百搭男子休闲旅游运动鞋984219119385</a></p>
+                        <p class="price"><i>¥</i><span>99.00</span></p>
+                    </li>
+                    <li data-sku="141354315|1|2|0070078830">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287726_prod03" href="http://product.suning.com/0070078830/141354315.html?srcpoint=index3_homepage1_975287726_prod03" target="_blank" title="鸿星尔克 跑步鞋男运动鞋蓄能减震跑鞋51116103062"><img src='img/r3.jpg' alt="【该款下单送袜！送袜时间：7.15-7.31】全店限时包邮；单笔订单满199立减20（满减不含福袋及专享优惠）"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070078830/141354315.html?srcpoint=index3_homepage1_975287726_prod03" target="_blank">鸿星尔克 跑步鞋男运动鞋蓄能减震跑鞋51116103062</a></p>
+                        <p class="price"><i>¥</i><span>139.00</span></p>
+                    </li>
+                    <li data-sku="154626717|1|2|0070138745">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287726_prod04" href="http://product.suning.com/0070138745/154626717.html?srcpoint=index3_homepage1_975287726_prod04" target="_blank" title="安踏男鞋 运动鞋男网面跑步鞋夏季透气潮易弯折跑鞋休闲鞋91625507"><img src='img/r4.jpg' alt="新品上架"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070138745/154626717.html?srcpoint=index3_homepage1_975287726_prod04" target="_blank">安踏男鞋 运动鞋男网面跑步鞋夏季透气潮易弯折跑鞋休闲鞋91625507</a></p>
+                        <p class="price"><i>¥</i><span>169.00</span></p>
+                    </li>
+                    <li data-sku="156425352|1|2|0070063412">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287726_prod05" href="http://product.suning.com/0070063412/156425352.html?srcpoint=index3_homepage1_975287726_prod05" target="_blank" title="威迪瑞 户外3-4人露营全自动手抛帐篷 多人防雨野营登山免搭建自动帐篷"><img src='img/r5.jpg' alt="送铝箔防潮垫，三秒速开自动帐篷"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070063412/156425352.html?srcpoint=index3_homepage1_975287726_prod05" target="_blank">威迪瑞 户外3-4人露营全自动手抛帐篷 多人防雨野营登山免搭建自动帐篷</a></p>
+                        <p class="price"><i>¥</i><span>69.00</span></p>
+                    </li>
+                    <li data-sku="170308444|1|2|0070078929">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287726_prod06" href="http://product.suning.com/0070078929/170308444.html?srcpoint=index3_homepage1_975287726_prod06" target="_blank" title="匹克 时尚立领保暖运动卫衣 FA63057"><img src='img/r6.jpg' alt="新品上架"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070078929/170308444.html?srcpoint=index3_homepage1_975287726_prod06" target="_blank">匹克 时尚立领保暖运动卫衣 FA63057</a></p>
+                        <p class="price"><i>¥</i><span>289.00</span></p>
+                    </li>
+                    <li data-sku="129416890|1|2|0070074036">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287726_prod07" href="http://product.suning.com/0070074036/129416890.html?srcpoint=index3_homepage1_975287726_prod07" target="_blank" title="亿健8088D豪华版跑步机家用款 静音 跑步机折叠多功能"><img src='img/r7.jpg' alt="奔驰六级减震 自助加油 静音马达 终身质保 送货上楼包安装 具体地址咨询客服"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070074036/129416890.html?srcpoint=index3_homepage1_975287726_prod07" target="_blank">亿健8088D豪华版跑步机家用款 静音 跑步机折叠多功能</a></p>
+                        <p class="price"><i>¥</i><span>2798.00</span></p>
+                    </li>
+                    <li data-sku="108952072|1|2|0070062402">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287726_prod08" href="http://product.suning.com/0070062402/108952072.html?srcpoint=index3_homepage1_975287726_prod08" target="_blank" title="篮球 李宁020篮球 比赛训练球PU皮 耐磨防滑手感强"><img src='img/r8.jpg' alt="送气筒+球针+球包"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070062402/108952072.html?srcpoint=index3_homepage1_975287726_prod08" target="_blank">篮球 李宁020篮球 比赛训练球PU皮 耐磨防滑手感强</a></p>
+                        <p class="price"><i>¥</i><span>65.00</span></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-cont g-tab-list" style="display: none;">
+                <ul class="prd-list">
+                    <li data-sku="105143286|1|2|0070065603">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287727_prod01" href="http://product.suning.com/0070065603/105143286.html?srcpoint=index3_homepage1_975287727_prod01" target="_blank" title="宾格BINGER 2016年上新夜光版全自动机械表 双面镂空防水 男士手表 精钢耐磨表带 个性蓝调 时尚运动男表"><img src='img/t1.jpg' alt="【领券立减20】9.25-10.7苏宁国庆狂欢购：无门槛券即领即用、买一送六、买贵赔偿。陈小春代言，品牌直供，一年包换。"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070065603/105143286.html?srcpoint=index3_homepage1_975287727_prod01" target="_blank">宾格BINGER 2016年上新夜光版全自动机械表 双面镂空防水 男士手表 精钢耐磨表带 个性蓝调 时尚运动男表</a></p>
+                        <p class="price"><i>¥</i><span>428.00</span></p>
+                    </li>
+                    <li data-sku="159704784|1|2|0070142114">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287727_prod02" href="http://product.suning.com/0070142114/159704784.html?srcpoint=index3_homepage1_975287727_prod02" target="_blank" title="EMPORIO.ARMANI阿玛尼女士手表休闲商务女表钻石腕表正装防水手表女士石英表指针式精钢时尚石英腕表母贝表盘钢带"><img src='img/t2.jpg' alt="七夕震撼低价，保价全年，买情侣对表再77折，更送真皮钱包~~~"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070142114/159704784.html?srcpoint=index3_homepage1_975287727_prod02" target="_blank">EMPORIO.ARMANI阿玛尼女士手表休闲商务女表钻石腕表正装防水手表女士石英表指针式精钢时尚石英腕表母贝表盘钢带</a></p>
+                        <p class="price"><i>¥</i><span>999.00</span></p>
+                    </li>
+                    <li data-sku="174674232|1|2|0070069672">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287727_prod03" href="http://product.suning.com/0070069672/174674232.html?srcpoint=index3_homepage1_975287727_prod03" target="_blank" title="周大生 黄金转运珠女款 3D硬足金红绳手链 珠宝首饰 花中四君子 Y0GC0242"><img src='img/t3.jpg' alt="【美丽出游 9.21-9.30】领取10元、50元、80元优惠券"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070069672/174674232.html?srcpoint=index3_homepage1_975287727_prod03" target="_blank">周大生 黄金转运珠女款 3D硬足金红绳手链 珠宝首饰 花中四君子 Y0GC0242</a></p>
+                        <p class="price"><i>¥</i><span>456.00</span></p>
+                    </li>
+                    <li data-sku="171961893|1|2|0070088768">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287727_prod04" href="http://product.suning.com/0070088768/171961893.html?srcpoint=index3_homepage1_975287727_prod04" target="_blank" title="金利福珠宝 黄金手链吊坠足金手串 原创设计十二生肖鸡祈福-淘淘王子手串 GC88"><img src='img/t4.jpg' alt="免邮 免费刻字 免费代写贺卡 指定产品满500减60，钻石产品低至5.5折"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070088768/171961893.html?srcpoint=index3_homepage1_975287727_prod04" target="_blank">金利福珠宝 黄金手链吊坠足金手串 原创设计十二生肖鸡祈福-淘淘王子手串 GC88</a></p>
+                        <p class="price"><i>¥</i><span>540.00</span></p>
+                    </li>
+                    <li data-sku="124483037|1|2|0070062999">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287727_prod05" href="http://product.suning.com/0070062999/124483037.html?srcpoint=index3_homepage1_975287727_prod05" target="_blank" title="TRANPATH细条纹拉杆箱万向轮男女行李箱子铝框旅行箱硬皮箱包20 24 28寸"><img src='img/t5.jpg' alt="单拉杆设计，铝合金深框"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070062999/124483037.html?srcpoint=index3_homepage1_975287727_prod05" target="_blank">TRANPATH细条纹拉杆箱万向轮男女行李箱子铝框旅行箱硬皮箱包20 24 28寸</a></p>
+                        <p class="price"><i>¥</i><span>313.00</span></p>
+                    </li>
+                    <li data-sku="168456803|1|2|0070074295">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287727_prod06" href="http://product.suning.com/0070074295/168456803.html?srcpoint=index3_homepage1_975287727_prod06" target="_blank" title="品点新款粗跟尖头短靴中低跟马丁靴秋冬女靴"><img src='img/t6.jpg' alt="简约时尚，舒适好穿！成都女鞋！"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070074295/168456803.html?srcpoint=index3_homepage1_975287727_prod06" target="_blank">品点新款粗跟尖头短靴中低跟马丁靴秋冬女靴</a></p>
+                        <p class="price"><i>¥</i><span>119.00</span></p>
+                    </li>
+                    <li data-sku="141101355|1|2|0070127888">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287727_prod07" href="http://product.suning.com/0070127888/141101355.html?srcpoint=index3_homepage1_975287727_prod07" target="_blank" title="Dante丹迪男士钱包牛皮长款多卡位多功能休闲商务手拿包经典款内拉链牛皮钱夹"><img src='img/t7.jpg' alt="全国顺丰包邮 精美礼盒 支持7天无理由退货 保修服务"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070127888/141101355.html?srcpoint=index3_homepage1_975287727_prod07" target="_blank">Dante丹迪男士钱包牛皮长款多卡位多功能休闲商务手拿包经典款内拉链牛皮钱夹</a></p>
+                        <p class="price"><i>¥</i><span>98.00</span></p>
+                    </li>
+                    <li data-sku="152493499|1|2|0070138753">
+                        <p class="prd-img">
+                            <a name="index3_homepage1_975287727_prod08" href="http://product.suning.com/0070138753/152493499.html?srcpoint=index3_homepage1_975287727_prod08" target="_blank" title="特斯黛2016新款欧美时尚波士顿桶包 经典印花手提单肩斜挎包包邮"><img src='img/t8.jpg' alt="一包多用 简约百搭 防水帆布 大容量性 价比高 全国包邮"></a>
+                        </p>
+                        <p class="name"><a href="http://product.suning.com/0070138753/152493499.html?srcpoint=index3_homepage1_975287727_prod08" target="_blank">特斯黛2016新款欧美时尚波士顿桶包 经典印花手提单肩斜挎包包邮</a></p>
+                        <p class="price"><i>¥</i><span>99.00</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--服装-->
+        <div class="fzbh">
+            <div class="tittle1">
+
+                <h3>F2 手机通讯</h3>
+                <ul>
+                    <li class="fl"><a href=""><em>热门活动</em></a></li>
+                    <li class="fl"><a href=""><em>潮机推荐</em></a></li>
+                    <li class="fl"><a href=""><em>手机配件</em></a></li>
+                    <li class="fl"><a href=""><em>智能手环</em></a></li>
+                    <li class="fl"><a href=""><em>VR眼镜</em></a></li>
+                </ul>
+            </div>
+            <div class="zuo">
+
+                <img src="img/p1.jpg" alt="" class="zuo-1">
+
+
+                <div class="zuo-2">
+                    <div class="zuo-2-1">
+                        <a href="http://search.suning.com/%E7%94%B7%E5%A3%AB%E8%A1%AC%E8%A1%AB/" target="_blank" name="index3_homepage1_975287716_word01">衬衫</a>
+                        <a href="http://list.suning.com/0-346872-0.html" target="_blank" name="index3_homepage1_975287716_word02">牛仔裤男</a>
+                        <a href="http://search.suning.com/%E5%A5%B3%E5%A3%AB%E7%89%9B%E4%BB%94%E8%A3%A4/" target="_blank" name="index3_homepage1_975287716_word03">牛仔裤女</a>
+                        <a href="http://search.suning.com/%E7%9F%AD%E5%A4%96%E5%A5%97/" target="_blank" name="index3_homepage1_975287716_word04">短外套</a>
+                        <a href="http://search.suning.com/%E7%94%B7%E5%A3%AB%E5%86%85%E8%A3%A4/" target="_blank" name="index3_homepage1_975287716_word05">男士内裤</a>
+                        <a href="http://list.suning.com/0-346870-0.html" target="_blank" name="index3_homepage1_975287716_word06">潮流衬衫</a>
+                        <a href="http://search.suning.com/%E5%A5%B3%E8%A3%85%20%202016%E5%A4%8F/" target="_blank" name="index3_homepage1_975287716_word07">连衣裙</a>
+                        <a href="http://list.suning.com/0-340558-0.html" target="_blank" name="index3_homepage1_975287716_word08">休闲鞋男</a>
+                    </div>
+                    <div class="zuo-2-2">
+                        <a href="http://search.suning.com/%E9%92%B1%E5%8C%85/" target="_blank" name="index3_homepage1_975287717_word01">钱包</a>
+                        <a href="http://list.suning.com/0-344256-0.html" target="_blank" name="index3_homepage1_975287717_word02">拉杆箱</a>
+                        <a href="http://search.suning.com/%E9%BB%84%E9%87%91/" target="_blank" name="index3_homepage1_975287717_word03">黄金</a>
+                        <a href="http://list.suning.com/0-454003-0.html" target="_blank" name="index3_homepage1_975287717_word04">男士手表</a>
+                        <a href="http://search.suning.com/%E6%89%93%E7%81%AB%E6%9C%BA/" target="_blank" name="index3_homepage1_975287717_word05">打火机</a>
+                        <a href="http://list.suning.com/0-420503-0.html" target="_blank" name="index3_homepage1_975287717_word06">跑步鞋</a>
+                        <a href="http://list.suning.com/0-420555-0.html" target="_blank" name="index3_homepage1_975287717_word07">跑步机</a>
+                        <a href="http://search.suning.com/%E5%B1%B1%E5%9C%B0%E8%BD%A6/" target="_blank" name="index3_homepage1_975287717_word08">山地车</a>
+                    </div>
+                </div>
+                <div class="zuo-3">
+                    <a href="javascript:;"><img src="img/p2.jpg" alt=""></a>
+                </div>
+
+                <!--左边-->
+
+            </div>
+            <div class="fz-youbian">
+                <div class="huan">
+                    <ul>
+                        <li>
+                            <a href="javascripr:;"><img src="img/p3.jpg" alt="" class="bian-1"></a>
+                        </li>
+                        <li>
+                            <a href="javascripr:;"><img src="img/lun1.jpg" alt="" class="bian-1" style="display:none;"></a>
+                        </li>
+                        <li>
+                            <a href="javascripr:;"><img src="img/lun2.jpg" alt="" class="bian-1" style="display:none;"></a>
+                        </li>
+                    </ul>
+
+                    <a href="javascripr:;" class="angle-btn prev-btn" style="display:none;">&lt;</a>
+                    <a href="javascripr:;" class="angle-btn next-btn" style="display:none;">&gt;</a>
+
+                    <div class="banner-nav-wrapper">
+                        <div class="banner-nav">
+                            <a href="javascript:;" class="page-item page-current"></a>
+                            <a href="javascript:;" class="page-item"></a>
+                            <a href="javascript:;" class="page-item"></a>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+
+                <ul class="fz-right-0 ">
+
+                    <li>
+
+                        <a href="javascript:;"><img src="img/p4.jpg" alt="" class="fz-right-0-1"></a>
+
+
+
+                    </li>
+                    <li class="sj-right" style="width:406px;">
+
+                        <a href="javascript:;"><img src="img/p5.jpg" alt="" class="fz-right-0-2"></a>
+
+                        <a href="javascript:;"><img src="img/p6.jpg" alt="" class="sj-right-1"></a>
+
+
+
+                    </li>
+
+                </ul>
+                <div class="sj-right1">
+                    <ul>
+
+                        <li>
+                            <a href="javascript:;"><img src="img/p7.jpg" alt=""></a>
+                            <a href="javascript:;"><img src="img/p8.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sj-right2">
+                    <ul>
+                        <li>
+                            <a href="javascript:;"><img src="img/p9.jpg" alt=""></a>
+
+                            <a href="javascript:;"><img src="img/p10.jpg" alt="" class="sj-right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </div>
+        <!--手机-->
+        <div class="jssp">
+            <div class="tittle1">
+
+                <h3>F3 食品酒水</h3>
+                <ul>
+                    <li class="fl"><a href=""><em>热门活动</em></a></li>
+                    <li class="fl"><a href=""><em>潮机推荐</em></a></li>
+                    <li class="fl"><a href=""><em>手机配件</em></a></li>
+                    <li class="fl"><a href=""><em>智能手环</em></a></li>
+                    <li class="fl"><a href=""><em>VR眼镜</em></a></li>
+                </ul>
+            </div>
+            <div class="zuo">
+
+                <img src="img/z1.jpg" alt="" class="zuo-1">
+
+
+                <div class="zuo-2">
+                    <div class="zuo-2-1">
+                        <a href="http://search.suning.com/%E7%89%9B%E5%A5%B6/" target="_blank" name="index3_homepage1_968977755_word01">牛奶</a>
+                        <a href="http://search.suning.com/%E9%A3%9F%E7%94%A8%E6%B2%B9/" target="_blank" name="index3_homepage1_968977755_word02">食用油</a>
+                        <a href="http://search.suning.com/%E5%86%9C%E5%A4%AB%E5%B1%B1%E6%B3%89/" target="_blank" name="index3_homepage1_968977755_word03">农夫山泉</a>
+                        <a href="http://search.suning.com/%E9%9B%B6%E9%A3%9F/" target="_blank" name="index3_homepage1_968977755_word04">零食</a>
+                        <a href="http://search.suning.com/%E9%85%B8%E5%A5%B6/" target="_blank" name="index3_homepage1_968977755_word05">酸奶</a>
+                        <a href="http://search.suning.com/%E5%95%A4%E9%85%92/" target="_blank" name="index3_homepage1_968977755_word06">啤酒</a>
+                        <a href="http://list.suning.com/0-500360-0.html" target="_blank" name="index3_homepage1_968977755_word07">进口食品</a>
+                        <a href="http://search.suning.com/%E6%B0%B4%E6%9E%9C/" target="_blank" name="index3_homepage1_968977755_word08">水果</a>
+                    </div>
+                    <div class="zuo-2-2">
+                        <a href="http://search.suning.com/%E5%9D%9A%E6%9E%9C/" target="_blank" name="index3_homepage1_968977756_word01">坚果</a>
+                        <a href="http://search.suning.com/%E9%9D%92%E5%B2%9B/" target="_blank" name="index3_homepage1_968977756_word02">青岛</a>
+                        <a href="http://search.suning.com/%E6%AC%A7%E5%BE%B7%E5%A0%A1/" target="_blank" name="index3_homepage1_968977756_word03">欧德堡</a>
+                        <a href="http://search.suning.com/%E5%A4%A7%E7%B1%B3/" target="_blank" name="index3_homepage1_968977756_word04">大米</a>
+                        <a href="http://search.suning.com/%E8%BF%9B%E5%8F%A3%E7%89%9B%E5%A5%B6/" target="_blank" name="index3_homepage1_968977756_word05">进口牛奶</a>
+                        <a href="http://search.suning.com/%E6%B5%B7%E9%B2%9C/" target="_blank" name="index3_homepage1_968977756_word06">海鲜</a>
+                        <a href="http://search.suning.com/%E5%B7%A6%E6%97%8B%E8%82%89%E7%A2%B1/" target="_blank" name="index3_homepage1_968977756_word07">瘦身</a>
+                        <a href="http://shop.suning.com/70090308/index.html" target="_blank" name="index3_homepage1_968977756_word08">茶叶</a>
+                    </div>
+                </div>
+
+                <!--左边-->
+
+            </div>
+            <div class="youbian">
+                <div class="huan">
+                    <a href="javascripr:;"><img src="img/z2.jpg" alt="" class="bian-1"></a>
+
+                </div>
+                <ul class="right-0 ">
+
+                    <li>
+
+                        <a href="javascript:;"><img src="img/z3.jpg" alt="" class="right-0-1"></a>
+
+
+                    </li>
+                    <li>
+
+                        <a href="javascript:;"><img src="img/z4.jpg" alt="" class="right-0-2"></a>
+
+
+                    </li>
+
+                </ul>
+                <div class="right-1">
+                    <ul>
+
+                        <li>
+                            <a href="javascript:;"><img src="img/z5.jpg" alt=""></a>
+                            <a href="javascript:;"><img src="img/z7.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-2">
+                    <ul>
+                        <li>
+                            <a href="javascript:;"><img src="img/z6.jpg" alt=""></a>
+
+                            <a href="javascript:;"><img src="img/z8.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <!--食品-->
+        <div class="fzbh">
+            <div class="tittle1">
+
+                <h3>F4 家用电器</h3>
+                <ul>
+                    <li class="fl"><a href=""><em>热门活动</em></a></li>
+                    <li class="fl"><a href=""><em>家用空调</em></a></li>
+                    <li class="fl"><a href=""><em>冰箱洗衣机</em></a></li>
+                    <li class="fl"><a href=""><em>平板电视</em></a></li>
+                    <li class="fl"><a href=""><em>厨卫电器</em></a></li>
+                    <li class="fl"><a href=""><em>净水器</em></a></li>
+                </ul>
+            </div>
+            <div class="zuo">
+
+                <img src="img/k1.png" alt="" class="zuo-1">
+
+
+                <div class="zuo-2">
+                    <div class="zuo-2-1">
+                        <a href="http://list.suning.com/0-243505-0.html" target="_blank" name="index3_homepage1_969027736_word01">平板电视</a>
+                        <a href="http://list.suning.com/0-243505-0-0-0-0-0-0-0-0-914936.html" target="_blank" name="index3_homepage1_969027736_word02">智能电视</a>
+                        <a href="http://search.suning.com/%E6%99%BA%E8%83%BD%E5%86%B0%E7%AE%B1/" target="_blank" name="index3_homepage1_969027736_word03">智能冰箱</a>
+                        <a href="http://list.suning.com/0-244005-0-0-0-0-0-0-0-0-23518.html" target="_blank" name="index3_homepage1_969027736_word04">风冷冰箱</a>
+                        <a href="http://list.suning.com/0-244006-0-0-0-0-0-0-0-0-782291.html" target="_blank" name="index3_homepage1_969027736_word05">滚筒洗衣机</a>
+                        <a href="http://list.suning.com/0-244006-0-0-0-0-0-0-0-0-795657.html" target="_blank" name="index3_homepage1_969027736_word06">变频洗衣机</a>
+                        <a href="http://list.suning.com/0-243505-0-0-0-0-0-0-0-0-914940.html" target="_blank" name="index3_homepage1_969027736_word07">4K超高清</a>
+                        <a href="http://list.suning.com/0-243505-0-0-0-0-0-0-0-0-914942.html" target="_blank" name="index3_homepage1_969027736_word08">曲面电视</a>
+                    </div>
+                    <div class="zuo-2-2">
+                        <a href="http://list.suning.com/0-431505-0.html" target="_blank" name="index3_homepage1_969027737_word01">家用空调</a>
+                        <a href="http://list.suning.com/0-431505-0-0-0-0-0-0-0-0-125483.html" target="_blank" name="index3_homepage1_969027737_word02">变频空调</a>
+                        <a href="http://search.suning.com/%E7%83%AD%E6%B0%B4%E5%99%A8/" target="_blank" name="index3_homepage1_969027737_word03">热水器</a>
+                        <a href="http://search.suning.com/%E6%B2%B9%E7%83%9F%E6%9C%BA/" target="_blank" name="index3_homepage1_969027737_word04">油烟机/灶具</a>
+                        <a href="http://list.suning.com/0-20356-0.html" target="_blank" name="index3_homepage1_969027737_word05">净水器</a>
+                        <a href="http://search.suning.com/%E6%B6%88%E6%AF%92%E6%9F%9C/&amp;sc=0&amp;ci=20323&amp;sc=0&amp;iy=-1&amp;ct=1&amp;st=0" target="_blank" name="index3_homepage1_969027737_word06">消毒柜</a>
+                        <a href="http://search.suning.com/1%252E5%E5%8C%B9/" target="_blank" name="index3_homepage1_969027737_word07">1.5匹空调</a>
+                        <a href="http://list.suning.com/0-431506-0.html" target="_blank" name="index3_homepage1_969027737_word08">中央空调</a>
+                    </div>
+                </div>
+                <div class="zuo-3">
+                    <a href="javascript:;"><img src="img/k3.png" alt=""></a>
+                </div>
+
+                <!--左边-->
+
+            </div>
+            <div class="fz-youbian">
+                <div class="huan">
+                    <a href="javascripr:;"><img src="img/k2.png" alt="" class="bian-1"></a>
+
+                </div>
+                <ul class="fz-right-0 ">
+
+                    <li>
+
+                        <a href="javascript:;"><img src="img/k4.png" alt="" class="fz-right-0-1"></a>
+
+
+
+                    </li>
+                    <li class="sj-right" style="width:406px;">
+
+                        <a href="javascript:;"><img src="img/k5.jpg" alt="" class="fz-right-0-2"></a>
+
+                        <a href="javascript:;"><img src="img/k6.png" alt="" class="sj-right-1"></a>
+
+
+
+                    </li>
+
+                </ul>
+                <div class="sj-right1">
+                    <ul>
+
+                        <li>
+                            <a href="javascript:;"><img src="img/k7.jpg" alt=""></a>
+                            <a href="javascript:;"><img src="img/k8.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sj-right2">
+                    <ul>
+                        <li>
+                            <a href="javascript:;"><img src="img/k9.jpg" alt=""></a>
+
+                            <a href="javascript:;"><img src="img/k10.jpg" alt="" class="sj-right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <!--家用电器-->
+        <div class="jssp">
+            <div class="tittle1">
+
+                <h3>F5 生活电器</h3>
+                <ul>
+                    <li class="fl"><a href=""><em>热门活动</em></a></li>
+                    <li class="fl"><a href=""><em>生活电器</em></a></li>
+                    <li class="fl"><a href=""><em>厨房电器</em></a></li>
+                    <li class="fl"><a href=""><em>个护健康</em></a></li>
+                    <li class="fl"><a href=""><em>炊具水杯</em></a></li>
+                    <li class="fl"><a href=""><em>云台热卖</em></a></li>
+                </ul>
+            </div>
+            <div class="zuo">
+
+                <img src="img/l1.png" alt="" class="zuo-1">
+
+
+                <div class="zuo-2">
+                    <div class="zuo-2-1">
+                        <a href="http://search.suning.com/%E7%89%9B%E5%A5%B6/" target="_blank" name="index3_homepage1_968977755_word01">牛奶</a>
+                        <a href="http://search.suning.com/%E9%A3%9F%E7%94%A8%E6%B2%B9/" target="_blank" name="index3_homepage1_968977755_word02">食用油</a>
+                        <a href="http://search.suning.com/%E5%86%9C%E5%A4%AB%E5%B1%B1%E6%B3%89/" target="_blank" name="index3_homepage1_968977755_word03">农夫山泉</a>
+                        <a href="http://search.suning.com/%E9%9B%B6%E9%A3%9F/" target="_blank" name="index3_homepage1_968977755_word04">零食</a>
+                        <a href="http://search.suning.com/%E9%85%B8%E5%A5%B6/" target="_blank" name="index3_homepage1_968977755_word05">酸奶</a>
+                        <a href="http://search.suning.com/%E5%95%A4%E9%85%92/" target="_blank" name="index3_homepage1_968977755_word06">啤酒</a>
+                        <a href="http://list.suning.com/0-500360-0.html" target="_blank" name="index3_homepage1_968977755_word07">进口食品</a>
+                        <a href="http://search.suning.com/%E6%B0%B4%E6%9E%9C/" target="_blank" name="index3_homepage1_968977755_word08">水果</a>
+                    </div>
+                    <div class="zuo-2-2">
+                        <a href="http://search.suning.com/%E5%9D%9A%E6%9E%9C/" target="_blank" name="index3_homepage1_968977756_word01">坚果</a>
+                        <a href="http://search.suning.com/%E9%9D%92%E5%B2%9B/" target="_blank" name="index3_homepage1_968977756_word02">青岛</a>
+                        <a href="http://search.suning.com/%E6%AC%A7%E5%BE%B7%E5%A0%A1/" target="_blank" name="index3_homepage1_968977756_word03">欧德堡</a>
+                        <a href="http://search.suning.com/%E5%A4%A7%E7%B1%B3/" target="_blank" name="index3_homepage1_968977756_word04">大米</a>
+                        <a href="http://search.suning.com/%E8%BF%9B%E5%8F%A3%E7%89%9B%E5%A5%B6/" target="_blank" name="index3_homepage1_968977756_word05">进口牛奶</a>
+                        <a href="http://search.suning.com/%E6%B5%B7%E9%B2%9C/" target="_blank" name="index3_homepage1_968977756_word06">海鲜</a>
+                        <a href="http://search.suning.com/%E5%B7%A6%E6%97%8B%E8%82%89%E7%A2%B1/" target="_blank" name="index3_homepage1_968977756_word07">瘦身</a>
+                        <a href="http://shop.suning.com/70090308/index.html" target="_blank" name="index3_homepage1_968977756_word08">茶叶</a>
+                    </div>
+                </div>
+
+                <!--左边-->
+
+            </div>
+            <div class="youbian">
+                <div class="huan">
+                    <a href="javascripr:;"><img src="img/l2.jpg" alt="" class="bian-1"></a>
+
+                </div>
+                <ul class="right-0 ">
+
+                    <li>
+
+                        <a href="javascript:;"><img src="img/l3.jpg" alt="" class="right-0-1"></a>
+
+
+                    </li>
+                    <li>
+
+                        <a href="javascript:;"><img src="img/l4.jpg" alt="" class="right-0-2"></a>
+
+
+                    </li>
+
+                </ul>
+                <div class="right-1">
+                    <ul>
+
+                        <li>
+                            <a href="javascript:;"><img src="img/l5.jpg" alt=""></a>
+                            <a href="javascript:;"><img src="img/l6.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-2">
+                    <ul>
+                        <li>
+                            <a href="javascript:;"><img src="img/l7.jpg" alt=""></a>
+
+                            <a href="javascript:;"><img src="img/l8.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <!--生活电器-->
+        <div class="fzbh">
+            <div class="tittle1">
+
+                <h3>F6 电脑数码</h3>
+                <ul>
+                    <li class="fl"><a href=""><em>热门活动</em></a></li>
+                    <li class="fl"><a href=""><em>电脑平板</em></a></li>
+                    <li class="fl"><a href=""><em>摄影摄像</em></a></li>
+                    <li class="fl"><a href=""><em>办公配件</em></a></li>
+                    <li class="fl"><a href=""><em>智能数码</em></a></li>
+                </ul>
+            </div>
+            <div class="zuo">
+
+                <img src="img/m1.png" alt="" class="zuo-1">
+
+
+                <div class="zuo-2">
+                    <div class="zuo-2-1">
+                        <a href="http://list.suning.com/0-258004-0.html" target="_blank" name="index3_homepage1_975307736_word01">笔记本</a>
+                        <a href="http://list.suning.com/0-258006-0.html" target="_blank" name="index3_homepage1_975307736_word02">平板电脑</a>
+                        <a href="http://list.suning.com/0-258009-0.html" target="_blank" name="index3_homepage1_975307736_word03">台式电脑</a>
+                        <a href="http://list.suning.com/0-157162-0.html" target="_blank" name="index3_homepage1_975307736_word04">路由器</a>
+                        <a href="http://list.suning.com/0-258011-0.html" target="_blank" name="index3_homepage1_975307736_word05">显示器</a>
+                        <a href="http://list.suning.com/0-157124-0.html" target="_blank" name="index3_homepage1_975307736_word06">投影仪</a>
+                        <a href="http://list.suning.com/0-157127-0.html" target="_blank" name="index3_homepage1_975307736_word07">打印机</a>
+                        <a href="http://shop.suning.com/30000094/index.html" target="_blank" name="index3_homepage1_975307736_word08">Intel</a>
+                    </div>
+                    <div class="zuo-2-2">
+                        <a href="http://sale.suning.com/sm/xwy913/index.html" target="_blank" name="index3_homepage1_975307737_word01">卡西欧新品</a>
+                        <a href="http://list.suning.com/0-500316-0.html" target="_blank" name="index3_homepage1_975307737_word02">无人机</a>
+                        <a href="http://list.suning.com/0-20064-0.html" target="_blank" name="index3_homepage1_975307737_word03">单反</a>
+                        <a href="http://shop.suning.com/30000948/index.html" target="_blank" name="index3_homepage1_975307737_word04">云智能锁</a>
+                        <a href="http://list.suning.com/0-20063-0.html" target="_blank" name="index3_homepage1_975307737_word05">数码相机</a>
+                        <a href="http://list.suning.com/0-232003-0.html" target="_blank" name="index3_homepage1_975307737_word06">耳机/耳麦</a>
+                        <a href="http://list.suning.com/0-243003-0.html" target="_blank" name="index3_homepage1_975307737_word07">微单/单电</a>
+                        <a href="http://list.suning.com/0-20090-0.html" target="_blank" name="index3_homepage1_975307737_word08">影音电子</a>
+                    </div>
+                </div>
+                <div class="zuo-3">
+                    <a href="javascript:;"><img src="img/m3.png" alt=""></a>
+                </div>
+
+                <!--左边-->
+
+            </div>
+            <div class="fz-youbian">
+                <div class="huan">
+                    <a href="javascripr:;"><img src="img/m2.jpg" alt="" class="bian-1"></a>
+
+                </div>
+                <ul class="fz-right-0 ">
+
+                    <li>
+
+                        <a href="javascript:;"><img src="img/m4.jpg" alt="" class="fz-right-0-1"></a>
+
+
+
+                    </li>
+                    <li class="sj-right" style="width:406px;">
+
+                        <a href="javascript:;"><img src="img/m5.jpg" alt="" class="fz-right-0-2"></a>
+
+                        <a href="javascript:;"><img src="img/m6.png" alt="" class="sj-right-1"></a>
+
+
+
+                    </li>
+
+                </ul>
+                <div class="sj-right1">
+                    <ul>
+
+                        <li>
+                            <a href="javascript:;"><img src="img/m7.jpg" alt=""></a>
+                            <a href="javascript:;"><img src="img/m8.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sj-right2">
+                    <ul>
+                        <li>
+                            <a href="javascript:;"><img src="img/m9.jpg" alt=""></a>
+
+                            <a href="javascript:;"><img src="img/m10.jpg" alt="" class="sj-right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <!--电脑数码-->
+        <div class="fzbh">
+            <div class="tittle1">
+
+                <h3>F7 母婴玩具</h3>
+                <ul>
+                    <li class="fl"><a href=""><em>热门活动</em></a></li>
+                    <li class="fl"><a href=""><em>奶粉辅食</em></a></li>
+                    <li class="fl"><a href=""><em>尿裤用品</em></a></li>
+                    <li class="fl"><a href=""><em>玩具车床</em></a></li>
+                    <li class="fl"><a href=""><em>童装童鞋</em></a></li>
+                </ul>
+            </div>
+            <div class="zuo">
+
+                <img src="img/n1.png" alt="" class="zuo-1">
+
+
+                <div class="zuo-2">
+                    <div class="zuo-2-1">
+                        <a href="http://list.suning.com/0-362005-0.html" target="_blank" name="index3_homepage1_1261207736_word01">纸尿裤</a>
+                        <a href="http://search.suning.com/%E5%A5%B6%E7%B2%89/" target="_blank" name="index3_homepage1_1261207736_word02">奶粉</a>
+                        <a href="http://search.suning.com/%E5%A5%B6%E7%93%B6/" target="_blank" name="index3_homepage1_1261207736_word03">奶瓶</a>
+                        <a href="http://search.suning.com/%E8%8A%AD%E6%AF%94%E5%A8%83%E5%A8%83/" target="_blank" name="index3_homepage1_1261207736_word04">芭比娃娃</a>
+                        <a href="http://search.suning.com/%E7%AB%A5%E9%9E%8B/" target="_blank" name="index3_homepage1_1261207736_word05">童装</a>
+                        <a href="http://search.suning.com/%E7%AB%A5%E9%9E%8B/" target="_blank" name="index3_homepage1_1261207736_word06">童鞋</a>
+                        <a href="http://list.suning.com/0-315569-0.html" target="_blank" name="index3_homepage1_1261207736_word07">孕妇装</a>
+                        <a href="http://list.suning.com/0-313013-0.html" target="_blank" name="index3_homepage1_1261207736_word08">营养辅食</a>
+                    </div>
+                    <div class="zuo-2-2">
+                        <a href="http://list.suning.com/0-313008-0.html" target="_blank" name="index3_homepage1_1261207737_word01">3段奶粉</a>
+                        <a href="http://list.suning.com/0-313119-0-1.html" target="_blank" name="index3_homepage1_1261207737_word02">玩具早教</a>
+                        <a href="http://search.suning.com/%E6%88%8F%E6%B0%B4%E7%8E%A9%E6%B2%99/&amp;sc=0&amp;iy=1&amp;ct=-1&amp;st=0" target="_blank" name="index3_homepage1_1261207737_word03">户外玩具</a>
+                        <a href="http://list.suning.com/0-313128-0-1.html" target="_blank" name="index3_homepage1_1261207737_word04">积木拼插</a>
+                        <a href="http://search.suning.com/%E5%AE%89%E5%85%A8%E5%BA%A7%E6%A4%85/&amp;ch=1" target="_blank" name="index3_homepage1_1261207737_word05">安全座椅</a>
+                        <a href="http://search.suning.com/%E5%A9%B4%E5%84%BF%E6%8E%A8%E8%BD%A6/&amp;ch=1" target="_blank" name="index3_homepage1_1261207737_word06">婴儿推车</a>
+                        <a href="http://search.suning.com/%E5%A9%B4%E5%84%BF%E5%BA%8A/&amp;ch=1" target="_blank" name="index3_homepage1_1261207737_word07">婴儿床</a>
+                        <a href="http://search.suning.com/%E6%B9%BF%E5%B7%BE/" target="_blank" name="index3_homepage1_1261207737_word08">湿巾</a>
+                    </div>
+                </div>
+                <div class="zuo-3">
+                    <a href="javascript:;"><img src="img/n2.jpg" alt=""></a>
+                </div>
+
+                <!--左边-->
+
+            </div>
+            <div class="fz-youbian">
+                <div class="huan">
+                    <a href="javascripr:;"><img src="img/n3.jpg" alt="" class="bian-1"></a>
+
+                </div>
+                <ul class="fz-right-0 ">
+
+                    <li>
+
+                        <a href="javascript:;"><img src="img/n4.jpg" alt="" class="fz-right-0-1"></a>
+
+
+
+                    </li>
+                    <li class="sj-right" style="width:406px;">
+
+                        <a href="javascript:;"><img src="img/n5.jpg" alt="" class="fz-right-0-2"></a>
+
+                        <a href="javascript:;"><img src="img/n6.jpg" alt="" class="sj-right-1"></a>
+
+
+
+                    </li>
+
+                </ul>
+                <div class="sj-right1">
+                    <ul>
+
+                        <li>
+                            <a href="javascript:;"><img src="img/n7.jpg" alt=""></a>
+                            <a href="javascript:;"><img src="img/n8.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sj-right2">
+                    <ul>
+                        <li>
+                            <a href="javascript:;"><img src="img/n9.jpg" alt=""></a>
+
+                            <a href="javascript:;"><img src="img/n10.jpg" alt="" class="sj-right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <!--母婴玩具-->
+        <div class="jssp">
+            <div class="tittle1">
+
+                <h3>F8 生活日用</h3>
+                <ul>
+                    <li class="fl"><a href=""><em>热门活动</em></a></li>
+                    <li class="fl"><a href=""><em>家居家纺</em></a></li>
+                    <li class="fl"><a href=""><em>纸品清洁</em></a></li>
+                    <li class="fl"><a href=""><em>生活日用</em></a></li>
+                    <li class="fl"><a href=""><em>成人宠物</em></a></li>
+                </ul>
+            </div>
+            <div class="zuo">
+
+                <img src="img/s1.jpg" alt="" class="zuo-1">
+
+
+                <div class="zuo-2">
+                    <div class="zuo-2-1">
+                        <a href="http://search.suning.com/%E6%8A%BD%E7%BA%B8/" target="_blank" name="index3_homepage1_968967755_word01">抽纸</a>
+                        <a href="http://search.suning.com/%E6%B4%97%E8%A1%A3%E6%B6%B2/" target="_blank" name="index3_homepage1_968967755_word02">洗衣液</a>
+                        <a href="http://shop.suning.com/30000494/index.html" target="_blank" name="index3_homepage1_968967755_word03">超能</a>
+                        <a href="http://search.suning.com/%E6%B0%B4%E6%9D%AF/" target="_blank" name="index3_homepage1_968967755_word04">水杯</a>
+                        <a href="http://search.suning.com/%E6%AF%9B%E5%B7%BE/" target="_blank" name="index3_homepage1_968967755_word05">毛巾</a>
+                        <a href="http://search.suning.com/%E9%A3%9E%E6%9C%BA%E6%9D%AF/" target="_blank" name="index3_homepage1_968967755_word06">飞机杯</a>
+                        <a href="http://shop.suning.com/30000467/index.html" target="_blank" name="index3_homepage1_968967755_word07">维达</a>
+                        <a href="http://search.suning.com/%E5%9B%9B%E4%BB%B6%E5%A5%97/" target="_blank" name="index3_homepage1_968967755_word08">四件套</a>
+                    </div>
+                    <div class="zuo-2-2">
+                        <a href="http://search.suning.com/%E5%8D%B7%E7%BA%B8/" target="_blank" name="index3_homepage1_968967756_word01">卷纸</a>
+                        <a href="http://search.suning.com/%E6%9E%95%E5%A4%B4/" target="_blank" name="index3_homepage1_968967756_word02">枕头</a>
+                        <a href="http://search.suning.com/%E6%8B%96%E6%8A%8A/" target="_blank" name="index3_homepage1_968967756_word03">拖把</a>
+                        <a href="http://search.suning.com/%E9%81%BF%E5%AD%95%E5%A5%97/" target="_blank" name="index3_homepage1_968967756_word04">避孕套</a>
+                        <a href="http://shop.suning.com/30000482/index.html" target="_blank" name="index3_homepage1_968967756_word05">威露士</a>
+                        <a href="http://search.suning.com/%E4%BC%9E/" target="_blank" name="index3_homepage1_968967756_word06">伞</a>
+                        <a href="http://shop.suning.com/30000480/index.html" target="_blank" name="index3_homepage1_968967756_word07">清风</a>
+                        <a href="http://search.suning.com/%E6%94%B6%E7%BA%B3/" target="_blank" name="index3_homepage1_968967756_word08">收纳</a>
+                    </div>
+                </div>
+
+                <!--左边-->
+
+            </div>
+            <div class="youbian">
+                <div class="huan">
+                    <a href="javascripr:;"><img src="img/s2.jpg" alt="" class="bian-1"></a>
+
+                </div>
+                <ul class="right-0 ">
+
+                    <li>
+
+                        <a href="javascript:;"><img src="img/s3.jpg" alt="" class="right-0-1"></a>
+
+
+                    </li>
+                    <li>
+
+                        <a href="javascript:;"><img src="img/s4.jpg" alt="" class="right-0-2"></a>
+
+
+                    </li>
+
+                </ul>
+                <div class="right-1">
+                    <ul>
+
+                        <li>
+                            <a href="javascript:;"><img src="img/s5.jpg" alt=""></a>
+                            <a href="javascript:;"><img src="img/s7.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-2">
+                    <ul>
+                        <li>
+                            <a href="javascript:;"><img src="img/s6.jpg" alt=""></a>
+
+                            <a href="javascript:;"><img src="img/s8.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <!--生活日用-->
+        <div class="jssp">
+            <div class="tittle1">
+
+                <h3>F9 美妆个护</h3>
+                <ul>
+                    <li class="fl"><a href=""><em>热门活动</em></a></li>
+                    <li class="fl"><a href=""><em>面部护理</em></a></li>
+                    <li class="fl"><a href=""><em>个人护理</em></a></li>
+                    <li class="fl"><a href=""><em>香氛彩妆</em></a></li>
+                    <li class="fl"><a href=""><em>洗发沐浴</em></a></li>
+                </ul>
+            </div>
+            <div class="zuo">
+
+                <img src="img/h1.jpg" alt="" class="zuo-1">
+
+
+                <div class="zuo-2">
+                    <div class="zuo-2-1">
+                        <a href="http://list.suning.com/0-362506-0.html" target="_blank" name="index3_homepage1_968997755_word01">面膜</a>
+                        <a href="http://list.suning.com/0-316550-0.html" target="_blank" name="index3_homepage1_968997755_word02">洗发水</a>
+                        <a href="http://list.suning.com/0-330503-0.html" target="_blank" name="index3_homepage1_968997755_word03">洗面奶</a>
+                        <a href="http://list.suning.com/0-316028-0.html" target="_blank" name="index3_homepage1_968997755_word04">沐浴露</a>
+                        <a href="http://list.suning.com/0-330019-0.html" target="_blank" name="index3_homepage1_968997755_word05">防晒霜</a>
+                        <a href="http://list.suning.com/0-362508-0.html" target="_blank" name="index3_homepage1_968997755_word06">卫生巾</a>
+                        <a href="http://list.suning.com/0-330021-0.html" target="_blank" name="index3_homepage1_968997755_word07">护肤套装</a>
+                        <a href="http://list.suning.com/0-316563-0.html" target="_blank" name="index3_homepage1_968997755_word08">牙膏</a>
+                    </div>
+                    <div class="zuo-2-2">
+                        <a href="http://list.suning.com/0-316550-0-0-0-0-0-0-0-0-43272.html" target="_blank" name="index3_homepage1_968997756_word01">海飞丝</a>
+                        <a href="http://shop.suning.com/30000296/index.html" target="_blank" name="index3_homepage1_968997756_word02">百雀羚</a>
+                        <a href="http://shop.suning.com/30000666/index.html" target="_blank" name="index3_homepage1_968997756_word03">多芬</a>
+                        <a href="http://shop.suning.com/30000313/index.html" target="_blank" name="index3_homepage1_968997756_word04">韩束</a>
+                        <a href="http://shop.suning.com/30000408/index.html" target="_blank" name="index3_homepage1_968997756_word05">高洁丝</a>
+                        <a href="http://shop.suning.com/30000350/index.html" target="_blank" name="index3_homepage1_968997756_word06">御泥坊</a>
+                        <a href="http://shop.suning.com/70073392/index.html" target="_blank" name="index3_homepage1_968997756_word07">冷酸灵</a>
+                        <a href="http://shop.suning.com/30000263/index.html" target="_blank" name="index3_homepage1_968997756_word08">美即</a>
+                    </div>
+                </div>
+
+                <!--左边-->
+
+            </div>
+            <div class="youbian">
+                <div class="huan">
+                    <a href="javascripr:;"><img src="img/h2.jpg" alt="" class="bian-1"></a>
+
+                </div>
+                <ul class="right-0 ">
+
+                    <li>
+
+                        <a href="javascript:;"><img src="img/h3.jpg" alt="" class="right-0-1"></a>
+
+
+                    </li>
+                    <li>
+
+                        <a href="javascript:;"><img src="img/h4.jpg" alt="" class="right-0-2"></a>
+
+
+                    </li>
+
+                </ul>
+                <div class="right-1">
+                    <ul>
+
+                        <li>
+                            <a href="javascript:;"><img src="img/h5.jpg" alt=""></a>
+                            <a href="javascript:;"><img src="img/h6.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-2">
+                    <ul>
+                        <li>
+                            <a href="javascript:;"><img src="img/h7.jpg" alt=""></a>
+
+                            <a href="javascript:;"><img src="img/h8.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <!--美妆个护-->
+        <div class="fzbh">
+            <div class="tittle1">
+
+                <h3>F10 家装建材</h3>
+                <ul>
+                    <li class="fl"><a href=""><em>热门活动</em></a></li>
+                    <li class="fl"><a href=""><em>家具</em></a></li>
+                    <li class="fl"><a href=""><em>灯具灯饰</em></a></li>
+                    <li class="fl"><a href=""><em>厨卫建材</em></a></li>
+                    <li class="fl"><a href=""><em>五金电工</em></a></li>
+                    <li class="fl"><a href=""><em>热销单品</em></a></li>
+                </ul>
+            </div>
+            <div class="zuo">
+
+                <img src="img/j1.png" alt="" class="zuo-1">
+
+
+                <div class="zuo-2">
+                    <div class="zuo-2-1">
+                        <a href="http://search.suning.com/%E6%B2%99%E5%8F%91/" target="_blank" name="index3_homepage1_969037736_word01">沙发</a>
+                        <a href="http://search.suning.com/%E5%AE%A2%E5%8E%85%E7%81%AF/" target="_blank" name="index3_homepage1_969037736_word02">客厅灯</a>
+                        <a href="http://search.suning.com/%E5%BA%8A/" target="_blank" name="index3_homepage1_969037736_word03">床</a>
+                        <a href="http://search.suning.com/%E5%8D%A7%E5%AE%A4%E7%81%AF/" target="_blank" name="index3_homepage1_969037736_word04">卧室灯</a>
+                        <a href="http://search.suning.com/%E7%94%B5%E8%A7%86%E6%9F%9C/" target="_blank" name="index3_homepage1_969037736_word05">电视柜</a>
+                        <a href="http://search.suning.com/%E5%8F%B0%E7%81%AF/" target="_blank" name="index3_homepage1_969037736_word06">台灯</a>
+                        <a href="http://search.suning.com/%E5%BA%8A%E5%9E%AB/" target="_blank" name="index3_homepage1_969037736_word07">床垫</a>
+                        <a href="http://search.suning.com/%E5%90%B8%E9%A1%B6%E7%81%AF/" target="_blank" name="index3_homepage1_969037736_word08">吸顶灯</a>
+                    </div>
+                    <div class="zuo-2-2">
+                        <a href="http://search.suning.com/%E6%B0%B4%E6%A7%BD/" target="_blank" name="index3_homepage1_969037737_word01">水槽</a>
+                        <a href="http://search.suning.com/%E5%BC%80%E5%85%B3/" target="_blank" name="index3_homepage1_969037737_word02">开关</a>
+                        <a href="http://search.suning.com/%E8%8A%B1%E6%B4%92/" target="_blank" name="index3_homepage1_969037737_word03">花洒</a>
+                        <a href="http://search.suning.com/%E6%8F%92%E5%BA%A7/" target="_blank" name="index3_homepage1_969037737_word04">插座</a>
+                        <a href="http://search.suning.com/%E6%B5%B4%E5%AE%A4%E6%9F%9C/" target="_blank" name="index3_homepage1_969037737_word05">浴室柜</a>
+                        <a href="http://list.suning.com/0-500051-0.html" target="_blank" name="index3_homepage1_969037737_word06">电线</a>
+                        <a href="http://search.suning.com/%E9%A9%AC%E6%A1%B6/" target="_blank" name="index3_homepage1_969037737_word07">马桶</a>
+                        <a href="http://list.suning.com/0-500065-0.html" target="_blank" name="index3_homepage1_969037737_word08">五金工具</a>
+                    </div>
+                </div>
+                <div class="zuo-3">
+                    <a href="javascript:;"><img src="img/j2.jpg" alt=""></a>
+                </div>
+
+                <!--左边-->
+
+            </div>
+            <div class="fz-youbian">
+                <div class="huan">
+                    <a href="javascripr:;"><img src="img/j3.jpg" alt="" class="bian-1"></a>
+
+                </div>
+                <ul class="fz-right-0 ">
+
+                    <li>
+
+                        <a href="javascript:;"><img src="img/j4.jpg" alt="" class="fz-right-0-1"></a>
+
+
+
+                    </li>
+                    <li class="sj-right" style="width:406px;">
+
+                        <a href="javascript:;"><img src="img/j5.jpg" alt="" class="fz-right-0-2"></a>
+
+                        <a href="javascript:;"><img src="img/j6.jpg" alt="" class="sj-right-1"></a>
+
+
+
+                    </li>
+
+                </ul>
+                <div class="sj-right1">
+                    <ul>
+
+                        <li>
+                            <a href="javascript:;"><img src="img/j7.jpg" alt=""></a>
+                            <a href="javascript:;"><img src="img/j8.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sj-right2">
+                    <ul>
+                        <li>
+                            <a href="javascript:;"><img src="img/j9.jpg" alt=""></a>
+
+                            <a href="javascript:;"><img src="img/j10.jpg" alt="" class="sj-right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <!--家装建材-->
+        <div class="jssp">
+            <div class="tittle1">
+
+                <h3>F11 汽车运动</h3>
+                <ul>
+                    <li class="fl"><a href=""><em>热门活动</em></a></li>
+                    <li class="fl"><a href=""><em>养护配件</em></a></li>
+                    <li class="fl"><a href=""><em>电子装饰</em></a></li>
+                    <li class="fl"><a href=""><em>运动鞋服</em></a></li>
+                    <li class="fl"><a href=""><em>户外健身</em></a></li>
+                </ul>
+            </div>
+            <div class="zuo">
+
+                <img src="img/v1.png" alt="" class="zuo-1">
+
+
+                <div class="zuo-2">
+                    <div class="zuo-2-1">
+                        <a href="http://search.suning.com/%E8%B7%91%E6%AD%A5%E9%9E%8B/" target="_blank" name="index3_homepage1_969047755_word01">跑步鞋</a>
+                        <a href="http://search.suning.com/%E7%AF%AE%E7%90%83%E9%9E%8B/" target="_blank" name="index3_homepage1_969047755_word02">篮球鞋</a>
+                        <a href="http://search.suning.com/%E8%BF%90%E5%8A%A8%E5%8D%AB%E8%A1%A3/" target="_blank" name="index3_homepage1_969047755_word03">运动卫衣</a>
+                        <a href="http://search.suning.com/%E7%9A%AE%E8%82%A4%E8%A1%A3/" target="_blank" name="index3_homepage1_969047755_word04">皮肤衣</a>
+                        <a href="http://search.suning.com/%E8%BF%90%E5%8A%A8%E7%90%83/" target="_blank" name="index3_homepage1_969047755_word05">球类运动</a>
+                        <a href="http://search.suning.com/%E8%87%AA%E8%A1%8C%E8%BD%A6/" target="_blank" name="index3_homepage1_969047755_word06">自行车</a>
+                        <a href="http://search.suning.com/%E8%B7%91%E6%AD%A5%E6%9C%BA/" target="_blank" name="index3_homepage1_969047755_word07">跑步机</a>
+                        <a href="http://search.suning.com/%E6%B3%B3%E8%A1%A3/" target="_blank" name="index3_homepage1_969047755_word08">泳衣泳镜</a>
+                    </div>
+                    <div class="zuo-2-2">
+                        <a href="http://list.suning.com/0-344370-0.html" target="_blank" name="index3_homepage1_969047756_word01">汽车整车</a>
+                        <a href="http://list.suning.com/0-344326-0.html" target="_blank" name="index3_homepage1_969047756_word02">机油</a>
+                        <a href="http://list.suning.com/0-344332-0.html" target="_blank" name="index3_homepage1_969047756_word03">车蜡</a>
+                        <a href="http://list.suning.com/0-344259-0.html" target="_blank" name="index3_homepage1_969047756_word04">行车记录仪</a>
+                        <a href="http://list.suning.com/0-344339-0.html" target="_blank" name="index3_homepage1_969047756_word05">滤清器</a>
+                        <a href="http://list.suning.com/0-344271-0.html" target="_blank" name="index3_homepage1_969047756_word06">车载冰箱</a>
+                        <a href="http://list.suning.com/0-344327-0.html" target="_blank" name="index3_homepage1_969047756_word07">燃油添加剂</a>
+                        <a href="http://list.suning.com/0-344252-0.html" target="_blank" name="index3_homepage1_969047756_word08">美容清洗</a>
+                    </div>
+                </div>
+                <!--左边-->
+
+            </div>
+            <div class="youbian">
+                <div class="huan">
+                    <a href="javascripr:;"><img src="img/v2.png" alt="" class="bian-1"></a>
+
+                </div>
+                <ul class="right-0 ">
+
+                    <li>
+
+                        <a href="javascript:;"><img src="img/v3.png" alt="" class="right-0-1"></a>
+
+
+                    </li>
+                    <li>
+
+                        <a href="javascript:;"><img src="img/v4.jpg" alt="" class="right-0-2"></a>
+
+
+                    </li>
+
+                </ul>
+                <div class="right-1">
+                    <ul>
+
+                        <li>
+                            <a href="javascript:;"><img src="img/v5.jpg" alt=""></a>
+                            <a href="javascript:;"><img src="img/v6.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-2">
+                    <ul>
+                        <li>
+                            <a href="javascript:;"><img src="img/v7.jpg" alt=""></a>
+
+                            <a href="javascript:;"><img src="img/v8.jpg" alt="" class="right-1-1"></a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <!--运动汽车-->
+    </div>
+
+    <div class="baohan">
+        <div class="bo">
+            <div class="tittle">
+                <h3>掌上抢专区</h3>
+                <p>手机抢购更省钱</p>
+            </div>
+            <div class="lb">
+                <ul>
+                    <li>
+                        <a href="javascript:;"><img src="img/444251107019361picA_1.jpg" alt=""></a>
+                        <p class="zsq-name">【赠餐厨4件套】利仁LR-303F电饼铛煎烤机不锈钢机身</p>
+                        <div class="zsq-price">
+                            <p class="zsq-now-price">手机抢购价：<span><em>¥</em><i>89.00</i></span></p>
+                            <p class="pre-price"><span><em class="gan">¥</em><i class="gan">229.00</i></span></p>
+                        </div>
+                        <span class="zsq-discount">可省¥140.00</span>
+
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/444331156267277picA_1.jpg" alt=""></a>
+                        <p class="zsq-name">【韩国儿童杯】韩国杯具熊儿童杯保温杯带吸管便携水壶(送杯刷）</p>
+                        <div class="zsq-price">
+                            <p class="zsq-now-price">手机抢购价：<span><em>¥</em><i>12.90</i></span></p>
+                            <p class="pre-price"><span><em class="gan">¥</em><i class="gan">69.80</i></span></p>
+                        </div>
+                        <span class="zsq-discount">可省¥56.90</span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/444331157017464picA_1.jpg" alt=""></a>
+                        <p class="zsq-name">派莎洗衣片60片装可用2个月 玫瑰香味速溶易漂</p>
+                        <div class="zsq-price">
+                            <p class="zsq-now-price">手机抢购价：<span><em>¥</em><i>149.00</i></span></p>
+                            <p class="pre-price"><span><em class="gan">¥</em><i class="gan">387.00</i></span></p>
+                        </div>
+                        <span class="zsq-discount">可省¥238.00</span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/444331157243653picA_1.jpg" alt=""></a>
+                        <p class="zsq-name">【全国包邮】纽巴伦533飞织鞋</p>
+                        <div class="zsq-price">
+                            <p class="zsq-now-price">手机抢购价：<span><em>¥</em><i>198.00</i></span></p>
+                            <p class="pre-price"><span><em class="gan">¥</em><i class="gan">559.00</i></span></p>
+                        </div>
+                        <span class="zsq-discount">可省¥361.00</span>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/444331163977857picA_1.jpg" alt=""></a>
+                        <p class="zsq-name">【专属刻字送钥匙扣】缔晶天然黑曜石本命佛吊坠证书版</p>
+                        <div class="zsq-price">
+                            <p class="zsq-now-price">手机抢购价：<span><em>¥</em><i>68.00</i></span></p>
+                            <p class="pre-price"><span><em class="gan">¥</em><i class="gan">298.00</i></span></p>
+                        </div>
+                        <span class="zsq-discount">可省¥230.00</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="ng-ser-box">
+            <div class="ng-ser-box-con">
+                <div class="ng-promise">
+                    <dl>
+                        <dt class="zheng">正品保障</dt>
+                        <dd>
+                            <p><strong><a href="http://sale.suning.com/shfw/keepHeart1/index.html?relPro" target="_blank" rel="nofollow" name="public0_none_wb_fwxx01">正品保障</a></strong></p>
+                            <p>正品保障，提供发票</p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="jisu">急速物流</dt>
+                        <dd>
+                            <p><strong><a href="http://sale.suning.com/shfw/keepHeart1/index.html?halfDay" target="_blank" rel="nofollow" name="public0_none_wb_fwxx02">急速物流</a></strong></p>
+                            <p>急速物流，急速送达</p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="wuyou">无忧售后</dt>
+                        <dd>
+                            <p><strong><a href="http://sale.suning.com/shfw/keepHeart1/index.html?speed" target="_blank" rel="nofollow" name="public0_none_wb_fwxx03">无忧售后</a></strong></p>
+                            <p>7天无理由退换货</p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="te">特色服务</dt>
+                        <dd>
+                            <p><strong><a href="http://vbuy.suning.com/" target="_blank" rel="nofollow" name="public0_none_wb_fwxx04">特色服务</a></strong></p>
+                            <p>私人定制家电套餐</p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="help">帮助中心</dt>
+                        <dd>
+                            <p><strong><a href="http://help.suning.com/" target="_blank" rel="nofollow" name="public0_none_wb_fwxx05">帮助中心</a></strong></p>
+                            <p>您的购物指南</p>
+                        </dd>
+                    </dl>
+                    <div class="clear"></div>
+                </div>
+                <div class="ng-help-box">
+                    <dl>
+                        <dt name="public0_none_wb_bzxx01">购物指南</dt>
+                        <dd><a href="http://help.suning.com/page/id-222.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0101">导购演示</a></dd>
+                        <dd><a href="http://help.suning.com/page/id-26.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0102">免费注册</a></dd>
+                        <dd><a href="http://help.suning.com/page/id-447.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0103">会员等级</a></dd>
+                        <dd><a href="http://help.suning.com/faq/list.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0104">常见问题</a></dd>
+                        <dd><a href="http://www.suning.com/pinpai/" target="_blank" name="public0_none_wb_bzxx0104">品牌大全</a></dd>
+                    </dl>
+                    <dl>
+                        <dt name="public0_none_wb_bzxx02">支付方式</dt>
+                        <dd><a href="http://help.suning.com/page/id-14.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0201">易付宝支付</a></dd>
+                        <dd><a href="http://help.suning.com/page/id-15.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0202">网银支付</a></dd>
+                        <dd><a href="http://help.suning.com/page/id-18.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0203">快捷支付</a></dd>
+                        <dd><a href="http://help.suning.com/page/id-136.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0204">分期付款</a></dd>
+                        <dd><a href="http://help.suning.com/page/id-71.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0205">货到付款</a></dd>
+                        <dd><a href="http://help.suning.com/page/id-628.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0206">任性付支付</a></dd>
+                    </dl>
+                    <dl>
+                        <dt name="public0_none_wb_bzxx03">物流配送</dt>
+                        <dd><a href="http://help.suning.com/page/id-193.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0301">免运费政策</a></dd>
+                        <dd><a href="http://help.suning.com/page/id-197.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0302">配送服务承诺</a></dd>
+                        <dd><a href="http://help.suning.com/page/id-202.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0303">签收验货</a></dd>
+                        <dd><a href="http://help.suning.com/page/id-204.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0304">物流查询</a></dd>
+                    </dl>
+                    <dl>
+                        <dt name="public0_none_wb_bzxx04">售后服务</dt>
+                        <dd><a href="http://help.suning.com/page/id-205.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0401">退换货政策</a></dd>
+                        <dd><a href="http://help.suning.com/page/id-287.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0402">退换货流程</a></dd>
+                        <dd><a href="http://baoxian.suning.com/ins/jiaDian.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0403">购买延保服务</a></dd>
+                        <dd><a href="http://help.suning.com/page/id-290.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0404">退款说明</a></dd>
+                        <dd><a href="http://member.suning.com/emall/returnGoodsOrderView?storeId=10052&amp;catalogId=10051" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0405">退换货申请</a></dd>
+                        <dd><a href="http://member.suning.com/emall/SNRepairServiceApplyView?storeId=10052&amp;catalogId=10051" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0406">维修/保养</a></dd>
+                    </dl>
+                    <dl>
+                        <dt name="public0_none_wb_bzxx05">商家服务</dt>
+                        <dd><a href="http://sop.suning.com/" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0501">商家入驻</a></dd>
+                        <dd><a href="http://stc.suning.com/" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0502">培训中心</a></dd>
+                        <dd><a href="http://ap.suning.com" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0504">广告服务</a></dd>
+                        <dd><a href="http://sop.suning.com/sel/help/toMain.htm" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0505">商家帮助</a></dd>
+                        <dd><a href="http://fuwu.suning.com" target="_blank" rel="nofollow" name="public0_none_wb_bzxx0506">服务市场</a></dd>
+                    </dl>
+                </div>
+                <div class="ng-app-down">
+                    <p class="gan">易购客户端</p>
+                    <a href="http://sale.suning.com/syb/20120419xsjkhd/index.html" rel="nofollow" target="_blank">
+                        <img src="img/2wei.jpg" alt="苏宁易购APP二维码" height="87" width="87">
+                    </a>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+
+        </div>
+        <div class="ng-new-pro">
+            <div class="ng-new-pro-con">
+                <div class="ng-new-pro-list">
+                    <dl class="tuichi1">
+                        <dt class="tuichi">
+<a href="http://b.suning.com" name="public0_none_wb_xcp01" rel="nofollow" target="_blank"><img src="img/bt1.png" height="80" width="80"></a>
+</dt>
+                        <dd>
+                            <p class="ng-title"><a href="http://b.suning.com" name="public0_none_wb_xcp01" target="_blank" rel="nofollow" style="color:#eee;">政企采购</a></p>
+                            <p class="ng-intro"><a href="http://b.suning.com" name="public0_none_wb_xcp01" target="_blank" rel="nofollow" style="color:#eee;">为企业用户量身定做的采购平台，优选苏宁易购全站商品，为企业采购提供专业化的一站式采购解决方案。</a></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="tuichi">
+<a href="http://sncs.suning.com/" target="_blank" rel="nofollow" name="public0_none_wb_xcp02"><img src="img/bt2.png" height="80" width="80"></a>
+</dt>
+                        <dd>
+                            <p class="ng-title"><a href="http://sncs.suning.com/" target="_blank" rel="nofollow" name="public0_none_wb_xcp02" style="color:#eee;">苏宁众包</a></p>
+                            <p class="ng-intro"><a href="http://sncs.suning.com/" target="_blank" rel="nofollow" name="public0_none_wb_xcp02" style="color:#eee;">以苏宁全渠道包销为主要特点，整合全社会众包资源，扶持创新企业，推广创新产品。</a></p>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="ng-serch-suning">
+                    <dl>
+                        <dt></dt>
+                        <dd class="ng-ti">
+                            <p class="ng-title" style="color:#eee;">身边苏宁</p>
+                            <p class="ng-intro" style="color:#eee;">全国300个城市1600家门店3000个服务点为您提供最贴心的服务！</p>
+                            <a href="http://vbuy.suning.com/" target="_blank" class="srh-btn" name="public0_none_wb_xcp03"></a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="footer-egg-con"></div>
+            </div>
+            <div class="footer-egg-btn" style="width: 79.5px;"></div>
+        </div>
+        <div class="ng-s-footer">
+            <div class="ng-s-f-con">
+                <p class="ng-url-list">
+                    <a href="http://www.suningholdings.com/" target="_blank" name="public0_none_wb_yqlj0114">苏宁控股</a><span>|</span>
+                    <a href="http://www.suning.cn/" target="_blank" name="public0_none_wb_yqlj0101">苏宁云商</a><span>|</span>
+                    <a href="http://10035.suning.com/" target="_blank" name="public0_none_wb_yqlj0102" rel="nofollow">苏宁互联</a><span>|</span>
+                    <a href="http://jinrong.suning.com/" target="_blank" name="public0_none_wb_yqlj0111" rel="nofollow">苏宁金融</a><span>|</span>
+                    <a href="https://passport.suning.com/ids/trustLogin?sysCode=epp&amp;targetUrl=https://pay.suning.com/epp-epw/login/login.action" rel="nofollow" target="_blank" name="public0_none_wb_yqlj0103">易付宝</a><span>|</span>
+                    <a href="http://www.pptv.com?rcc_id=snyg" target="_blank" name="public0_none_wb_yqlj0105" rel="nofollow">PPTV</a><span>|</span>
+                    <a href="http://redbaby.suning.com/" target="_blank" name="public0_none_wb_yqlj0106" rel="nofollow">红孩子</a><span>|</span>
+                    <a href="http://laox.suning.com/" target="_blank" name="public0_none_wb_yqlj0108" rel="nofollow">乐购仕</a><span>|</span>
+                    <a href="http://wuliu.suning.com/" target="_blank" name="public0_none_wb_yqlj0111" rel="nofollow">苏宁物流</a><span>|</span>
+                    <a href="http://sale.suning.com/syb/20120419xsjkhd/index.html" target="_blank" name="public0_none_wb_yqlj0111">手机苏宁</a><span>|</span>
+                    <a href="http://www.suninghotel.com/" target="_blank" name="public0_none_wb_yqlj0112">苏宁酒店</a><span>|</span>
+                    <a href="http://ipp.suning.com/" target="_blank" name="public0_none_wb_yqlj0113">知识产权举报</a>
+                </p>
+                <p class="ng-url-list">
+                    <a href="http://club.suning.com/hr/aboutus.html" target="_blank" name="public0_none_wb_yqlj0201" rel="nofollow">关于苏宁易购</a><span>|</span>
+                    <a href="http://help.suning.com/page/id-469.htm" target="_blank" name="public0_none_wb_yqlj0202" rel="nofollow">联系我们</a><span>|</span>
+                    <a href="http://careers.cnsuning.com/" target="_blank" name="public0_none_wb_yqlj0203" rel="nofollow">诚聘英才</a><span>|</span>
+                    <a href="http://sop.suning.com/" target="_blank" name="public0_none_wb_yqlj0204" rel="nofollow">供应商入驻</a><span>|</span>
+                    <a href="http://ap.suning.com/" target="_blank" name="public0_none_wb_yqlj0204" rel="nofollow">广告平台</a><span>|</span>
+                    <a href="http://union.suning.com/" target="_blank" name="public0_none_wb_yqlj0205" rel="nofollow">苏宁联盟</a><span>|</span>
+                    <a href="http://zb.suning.com/" target="_blank" name="public0_none_wb_yqlj0206" rel="nofollow">苏宁招标</a><span>|</span>
+                    <a href="http://union.suning.com/aas/links.html" target="_blank" name="public0_none_wb_yqlj0207">友情链接</a><span>|</span>
+                    <a href="http://help.suning.com/page/id-281.htm" target="_blank" name="public0_none_wb_yqlj0208" rel="nofollow">法律申明</a><span>|</span>
+                    <a href="http://ued.suning.com/survey/" target="_blank" name="public0_none_wb_yqlj0209" rel="nofollow">用户体验提升计划</a><span>|</span>
+                    <a href="http://mrs.suning.com/mrs-web/stockholder/check.htm" target="_blank" name="public0_none_wb_yqlj0209" rel="nofollow">股东会员认证</a>
+                </p>
+                <p class="ng-copyright">
+                    Copyright© 2002-2016 ，苏宁云商集团股份有限公司版权所有
+                    <a href="http://www.miitbeian.gov.cn" target="_blank" style="color:#999">苏ICP备10207551号-4</a><span>|</span>
+                    <a href="//res.suning.cn/public/v3/images/SUB1-20130131.png" target="_blank" rel="nofollow" style="color:#999">苏B1-20130131</a><span>|</span>
+                    <a href="//res.suning.cn/public/v3/images/SUB2-20130376.png" target="_blank" rel="nofollow" style="color:#999">苏B2-20130376</a></p>
+                <p class="ng-copyright ng-copyright-2">
+                    <a href="//res.suning.cn/public/v3/images/SUB2-20130391.png" target="_blank" rel="nofollow" style="color:#999">苏B2-20130391</a> 出版物经营许可证新出发苏批字第A-243号
+                    <span>|</span> 互联网药品信息服务资格证书
+                    <a href="//res.suning.cn/public/v3/images/yaopin_content.jpg" target="_blank" rel="nofollow" style="color:#999">（苏）-非经营性-2016-0005</a></p>
+                <p></p>
+                <p class="ng-copyright">本网站直接或间接向消费者推销商品或者服务的商业宣传均属于“广告”（包装及参数、售后保障等商品信息除外）</p>
+                <div class="ng-authentication">
+                    <a href="https://search.szfw.org/cert/l/CX20111018000608000610" target="_blank" name="public0_none_wb_zs0302" rel="nofollow">
+                        <img src="img/di1.png" height="24" width="76" alt="诚信网站">
+                    </a>
+                    <a href="http://image.suning.cn/uimg/snnet/snnetImg/142891196680527240.jpg" target="_blank" name="public0_none_wb_zs0303" rel="nofollow">
+                        <img src="img/di2.png" height="24" width="76" alt="中国联通授权网络经营代理商">
+                    </a>
+                    <a href="//res.suning.cn/public/v3/images/dianxin_content.jpg" target="_blank" name="public0_none_wb_zs0304" rel="nofollow">
+                        <img src="img/di3.jpg" height="24" width="76" alt="中国电信授权网络经营代理商">
+                    </a>
+                    <a href="http://odr.jsdsgsxt.gov.cn:8081/mbm/entweb/elec/certView?siteId=27cfad762f3d45069d79a9f8f83f458f" target="_blank" rel="nofollow" name="public0_none_wb_zs0303">
+                        <img src="img/di4.png" height="24" width="76" alt="电子营业执照">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+
+</body>
+
+<script type="text/javascript" src="js/tplb.js"></script>
+<script type="text/javascript" src="js/head.js"></script>
+<script type="text/javascript" src="js/middle.js"></script>
+<script type="text/javascript">
+    var a = 0;
+    $('#xia-1').hover(function() {
+        $('.oniu').fadeToggle(0);
+    })
+    $('#ou2').click(function() {
+        xiage();
+    })
+    $('#ou1').click(function() {
+        shangge();
+    })
+
+    function xiage() {
+        var a = parseInt($('#xia-1-1').css('left'))
+        if (a == 0) {
+            $('#xia-1-1').animate({
+                left: '-1190px'
+            }, 200)
+        } else if (a == -1190) {
+            $('#xia-1-1').animate({
+                left: '-2380px'
+            }, 200)
+        } else {
+            $('#xia-1-1').animate({
+                left: '-3570px'
+            }, 200, function() {
+                $('#xia-1-1').css('left', "0px");
+            })
+            console.log(1)
+
+
+        }
+    }
+
+    function shangge() {
+        var a = parseInt($('#xia-1-1').css('left'))
+        if (a == -3570) {
+            $('#xia-1-1').animate({
+                left: '-2380px'
+            }, 200)
+        } else if (a == -2380) {
+            $('#xia-1-1').animate({
+                left: '-1190px'
+            }, 200)
+        } else {
+            $('#xia-1-1').animate({
+                left: '0px'
+            }, 200, function() {
+                $('#xia-1-1').css('left', "-3570px");
+            })
+            console.log(1)
+
+
+        }
+    }
+</script>
+<!--<script type="text/javascript">
+    var index = 0;
+    var a = $('.yinying-2-1');
+    var b = $('.yinying-2-2');
+    a.mouseover(function() {
+        var index = $(this).index();
+        console.log(index);
+
+        a.eq(index).addClass('yingzi');
+    })
+    a.mouseout(function() {
+        var index = $(this).index();
+
+        console.log(index);
+
+        a.eq(index).removeClass('yingzi');
+    })
+</script>-->
+<script type="text/javascript">
+    var k = 0
+    $('.xuanze').mouseover(function() {
+        var k = $(this).index()
+        console.log(k);
+        $('.black-cover').eq(k).css('display', 'block');
+        $('.cover-content').eq(k).css('display', 'block');
+    })
+    $('.xuanze').mouseout(function() {
+        var k = $(this).index()
+        console.log(k);
+        $('.black-cover').eq(k).css('display', 'none');
+        $('.cover-content').eq(k).css('display', 'none');
+    })
+
+
+    $(function() {
+
+        $("#searchKeywords").keyup(function() {
+            $.ajax({
+                url: "search.json",
+                type: "get",
+                dataType: "json",
+                success: function(data) {
+                    console.log(data)
+                    var html = "";
+                    for (var i = 0; i < data.length; i++) {
+                        html += '<li>' + data[i] + '</li>';
+                        console.log(data[i]);
+                    }
+                    $("#srk").html(html);
+                }
+            })
+        })
+
+    })
+
+    $("#searchKeywords").click(function() {
+        $('#ssl').show();
+        $(this).css('outline','none')
+        $('#searchKeywords').blur(function() {
+            $('#ssl').hide();
+        })
+    })
+</script>
+
+
+</html>

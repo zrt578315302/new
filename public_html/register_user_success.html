@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+<title>注册用户成功</title>
+<link href="css/base.css" type="text/css" rel="stylesheet"/>
+<link href="css/common.css" type="text/css" rel="stylesheet"/>
+<link href="css/animate.css" type="text/css" rel="stylesheet"/>
+</head>
+<body class="bg3bb4">
+    <div class="main texC">
+    	<div class="register_wap mB20">
+            <img src="img/r_19.png" width="54" style="margin-top:170px;" />
+            <p class="font17 cfff mT5">注册成功</p>
+            <p id="user_code" class="font12 cfff mT5">您的用户编号是：<span>123456789</span></p>
+            <p class="font12 cfff">请截图保存或牢记，这将是您登陆的账号</p>
+            <p class="font12 cfff">同时也是您的推荐码。</p>
+        </div>
+        <input type="button" value="确 定" class="borN register_pass bgfff c3bb4 font16" onclick="window.location.href='login.html'">
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/style.js"></script>
+<script type="text/javascript" src="apijs/config.js"></script>
+<script type="text/javascript" src="apijs/common.js"></script>
+<script type="text/javascript" src="apijs/zepto.min.js"></script>
+<script type="text/javascript" src="apijs/template.js"></script>
+<script>
+	$(function(){
+		var user_code=getQueryString('user_code');
+		$("#user_code span").text(user_code);
+	})
+</script>
+</html>

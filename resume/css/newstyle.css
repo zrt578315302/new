@@ -1,0 +1,236 @@
+			body
+				{
+					background: #ffffff;
+					
+					font-weight: 400;
+					position: relative;
+				}
+			html,body {
+				width: 100%;
+				overflow-x: hidden;
+			}
+			
+			h1,h2,h3,h4 {
+				font-weight: bold;
+			}	
+			.bold{
+				
+				font-weight: bold;
+			}
+			section{
+				background: #f4f4f4;
+			}
+			#home {
+			  background: url(../img/2.png) no-repeat;
+			  
+			  -webkit-background-size: cover;
+			  background-size: cover;
+			  background-position: center;
+			  display: -webkit-box;
+			  display: -webkit-flex;
+			  display: -ms-flexbox;
+			  display: flex;
+			  -webkit-box-align: center;
+			  -webkit-align-items: center;
+			   -ms-flex-align: center;
+			    align-items: center;
+			  height: 100vh;
+			  text-align: center;
+			  
+			}
+			#home hr{ border: 2px solid #404040;
+						width: 100px;
+			}
+			#home h3{
+				letter-spacing: 2px;
+			}
+			.heading {
+				font-size: 60px;
+			}
+			#home .btn {
+			  background: transparent;
+			  border-radius: 0;
+			  border: 3px solid #404040;
+			  color: #404040;
+			  font-weight: bold;
+			  padding: 16px 42px;
+			  margin-top: 40px;
+			  
+			}
+			#home .btn:hover {
+			  background: #404040;
+			  color: #ffffff;
+			}
+			#about,
+			#team, #contact {
+				padding-top: 100px;
+				padding-bottom: 100px;
+			}
+			#about .fa {
+				font-size: 28px;
+				min-width: 34px;
+			}
+			#about{
+				background-color: white;
+			}
+			#about .col-md-4 .fa {
+			    background: #FFD321;
+			    border-radius: 50%;
+			    color: #ffffff;
+			    font-size: 32px;
+			    width: 80px;
+			    height: 80px;
+			    line-height: 80px;
+			    text-align: center;
+			    margin-bottom: 10px;
+			}
+			#about .col-md-6 {
+			  padding-top: 60px;
+			}
+			#about .col-md-6 h3 {
+			  padding-top: 40px;
+			  padding-bottom: 10px;
+			}
+			#about .col-md-6 p {
+			  padding-bottom: 30px;
+			}
+			#about span {
+			  display: block;
+			  padding-bottom: 6px;
+			}
+			#about .progress {
+			  border-radius: 0;
+			  box-shadow: none;
+			  height: 6px;
+			}
+			#about .progress .progress-bar-primary {
+			  background: #FFD321;
+			}
+			.subheading {
+			    font-size: 14px;
+			    font-weight: bold;
+			    padding-bottom: 60px;
+			}
+			.progress{
+				background: #E3E3E3;
+			}
+			#portfolio {
+			  padding-top: 100px;
+			  background: #f9f9f9;
+			  text-align: center;
+			  }
+			 .filter-wrapper {
+			    width: 100%;
+			    margin: 40px 0 24px 0;
+			    overflow: hidden;
+			    text-align: center;
+			}
+			.filter-wrapper li {
+			    display: inline-block;
+			    margin: 4px;
+			}
+			.filter-wrapper li a {
+			    color: #999999;
+			    font-size: 13px;
+			    font-weight: bold;
+			    letter-spacing: 2px;
+			    text-transform: uppercase;
+			    padding: 8px 17px;
+			    display: block;
+			    text-decoration: none;
+			    transition: all 0.4s ease-in-out;
+			}
+			.filter-wrapper li .selected,
+			.filter-wrapper li a:focus,
+			.filter-wrapper li a:hover {
+			    background: #FFD321;
+			    color: #ffffff;
+			    outline: none;
+			  } 
+			#portfolio img {
+			    width: 100%;
+			    height: 422px;
+			    transition: all 0.4s ease-in-out;
+			}
+			.iso-box-section {
+			    width: 100%;
+			}
+			.iso-box-wrapper {
+			    width: 100%;
+			    padding: 0;
+			    clear: both;
+			    position: relative;
+			}
+			.iso-box {
+			    position: relative;
+			    min-height: 50px;
+			    float: left;
+			    overflow: hidden;
+			    margin-bottom: 20px;
+			}
+			.iso-box > a {
+			    display: block;
+			    width: 100%;
+			    height: 100%;
+			    overflow: hidden;
+			}
+			.iso-box > a {
+			    display: block;
+			    width: 100%;
+			    height: 100%;
+			    overflow: hidden;
+			}
+			.fluid-img {
+			  width: 100%;
+			  display: block;
+			}
+			
+
+
+
+
+
+
+
+			footer {
+			  background: url('../img/footer-bg.jpg') no-repeat;
+			  -webkit-background-size: cover;
+			  background-size: cover;
+			  background-position: center;
+			  text-align: center;
+			  padding-top: 80px;
+			  padding-bottom: 80px;
+			  height: 270px;
+			}
+			#copyright {
+			  background: #404040;
+			  color: #ffffff;
+			  padding-top: 20px;
+			  padding-bottom: 20px;
+			}
+			.box{
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				align-items: center;
+				
+			}
+			.item{
+				border: 1px solid #FFD321;
+				width: 300px;
+				background: #ffffff;
+				height: 300px;
+				margin-top: 20px;
+				position: relative;
+			}
+			.black-cover {
+			   position: absolute;
+			   	left: 0;
+			   	top: 0;
+			    width: 100%;
+			    height:100%
+			    background-color: #000;
+			    opacity: 0.8;
+			    z-index: 2;
+			}

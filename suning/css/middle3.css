@@ -1,0 +1,113 @@
+ * {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        body img {
+            border: 0px;
+            display: block;
+            width: 210px;
+            height: 158px;
+        }
+        
+        body li {
+            list-style: none;
+        }
+        
+        dody a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .baohan {
+            width: 1349px;
+            margin: 0 auto;
+        }
+        
+        .bo {
+            width: 1190px;
+            height: 426px;
+            overflow: hidden;
+            margin: 0 auto;
+            
+        }
+        
+        .tittle {
+            margin-top: 10px;
+            height: 40px;
+            color: #222;
+        }
+        
+        .tittle h3 {
+            float: left;
+            font: bold 20px/40px 'microsoft yahei';
+        }
+        
+        .tittle p {
+            float: left;
+            line-height: 40px;
+            margin-top: 10px;
+            font: normal 12px/30px arial;
+        }
+        
+        .lb li {
+            position: relative;
+            float: left;
+            height: 331px;
+            width: 237px;
+            border-right: 1px solid #EEE;
+            margin-left: -1px;
+        }
+        .lb{width: 10000px;
+            margin-top: 10px;
+            height: 332px;
+            border: 1px solid #eee;
+            
+            
+            
+        }
+        .lb li img {
+            margin: 14px auto 5px;
+        }
+        
+        .zsq-name {
+            width: 210px;
+            height: 44px;
+            margin: 0 auto;
+            font: 12px/22px "Microsoft YaHei";
+            overflow: hidden;
+        }
+        
+        .zsq-now-price {
+            float: left;
+            height: 20px;
+            overflow: hidden;
+            font: 14px/20px "microsoft YaHei";
+            color: #e12228;
+        }
+        
+        .zsq-price {
+            height: 26px;
+            margin: 12px 3px 0 14px;
+        }
+        
+        .gan {
+            float: left;
+            height: 16px;
+            overflow: hidden;
+            margin-left: 5px;
+            font: 12px/20px "microsoft YaHei";
+            color: #999;
+        }
+        
+        .zsq-discount {
+            float: left;
+            height: 18px;
+            background: #fa4b4b;
+            color: #FFF;
+            font: 12px/18px "microsoft YaHei";
+            text-align: center;
+            border-radius: 2px;
+            margin-left: 14px;
+            padding: 0 5px;
+        }
